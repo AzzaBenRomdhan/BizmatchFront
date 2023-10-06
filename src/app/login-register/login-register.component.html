@@ -1,0 +1,80 @@
+<!-- Just an image -->
+<div class="container-fluid">
+        <div class="text-center">
+       <a routerLink="/home"><img src="../../assets/images/logo2.png" alt="Your Logo" class="img-fluid mt-1 mb-2 h-auto" style="max-width: 7%;"  /></a>
+        </div>
+
+
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#" ngSubmit="registerUser()">
+			<h5>Créer votre compte</h5>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>ou utiliser votre email pour s'inscrire</span>
+			<input type="text" placeholder="userName" name="userName" placeholder="userName" [(ngModel)]="newUser.userName" />
+			<input type="text" placeholder="email" name="userEmail" placeholder="userEmail" [(ngModel)]="newUser.userEmail"/>
+			<input type="text" placeholder="userFirstName" name="userFirstName" placeholder="userFirstName" [(ngModel)]="newUser.userFirstName"/>
+			<input type="text" placeholder="userLastName" name="userLastName" placeholder="userLastName" [(ngModel)]="newUser.userLastName"/>
+			<input type="password" placeholder="Password" name="userPassword" placeholder="userPassword" [(ngModel)]="newUser.userPassword"/>
+			<button (click)="registerUser()">S'inscire</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+			<h1>S'authentifier</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>ou utiliser votre compte</span>
+			<input type="userName" placeholder="userName"   ngModel
+			name="userName"
+			id="userName"
+			placeholder="Enter your username" />
+			<input type="password" placeholder="Password" ngModel
+			name="userPassword"
+			id="userPassword"/>
+
+			<a href="#">Mot de passe oublier?</a>
+      <re-captcha (resolved)="resolved($event)" siteKey="6LdvxH8oAAAAAMDwSekzs4uJru5TtUZJWNvRf3LN"></re-captcha>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<button>S'authentifier</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Bienvenue ! </h1>
+				<p>Pour rester connecté avec nous, veuillez vous connecter avec vos informations personnelles.</p>
+				<button class="ghost" id="signIn">S'authentifier</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h4>LE MEILLEUR OFFRE POUR VOTRE BUISNESS!</h4>
+				<p>Bizmatch est une plateforme en ligne conçue pour aider les entreprises B2B à développer des relations solides,
+                      à explorer de nouveaux marchés et à trouver des partenaires commerciaux pertinents.</p>
+				<button class="ghost" id="signUp">S'inscrire</button>
+			</div>
+		</div>
+	</div>
+</div>
+
