@@ -7,7 +7,6 @@ import { UserAuthService } from '../services/user-auth.service';
 import { NgForm } from '@angular/forms';
 
 
-
 @Component({
   selector: 'app-login-register',
   templateUrl: './login-register.component.html',

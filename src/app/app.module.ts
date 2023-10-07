@@ -12,14 +12,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ApropsComponent } from './aprops/aprops.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PremiumComponent } from './premium/premium.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { BlogComponent } from './blog/blog.component';
+import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 // app.module.ts
 import { RecaptchaModule } from "ng-recaptcha";
-// if you need forms support:
-// import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
-
 
 
 @NgModule({
@@ -32,6 +32,10 @@ import { RecaptchaModule } from "ng-recaptcha";
     MatchComponent,
     ApropsComponent,
     UserProfileComponent,
+    PremiumComponent,
+    ForgetPasswordComponent,
+    BlogComponent,
+    DialogOverviewExampleDialogComponent,
   ],
   imports: [
     BrowserModule,

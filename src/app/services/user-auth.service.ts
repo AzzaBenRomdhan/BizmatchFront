@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class UserAuthService {
   private username: string | null = null;
-  private userEmail: string | null = null;
 
   constructor() {}
 
@@ -44,7 +43,4 @@ export class UserAuthService {
     return this.getRoles() && this.getToken();
   }
 
-  getUserEmail(): string | null {
-    return this.userEmail;
-  }
 }
