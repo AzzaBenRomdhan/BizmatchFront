@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginRegisterComponent } from './login-register/login-register.component';
 import { MatchComponent } from './match/match.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule } from '@angular/forms';
 import { ApropsComponent } from './aprops/aprops.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
@@ -22,6 +22,9 @@ import { PremiumComponent } from './premium/premium.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { BlogComponent } from './blog/blog.component';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+import { RecaptchaModule } from "ng-recaptcha";
+
+
 import { ProfileComponent } from './profile/profile.component';
 
 
@@ -50,8 +53,11 @@ import { ProfileComponent } from './profile/profile.component';
     MatButtonModule,
     MatMenuModule,
     MatFormFieldModule,
+  
+   
+    RecaptchaModule,
     MatInputModule,
-    MatDialogModule,
+    MatDialogModule
 
   ],
   providers: [],
