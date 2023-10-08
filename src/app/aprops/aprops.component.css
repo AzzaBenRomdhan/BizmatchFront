@@ -8,7 +8,7 @@ body{
   .share{
     width: 200px;
     height: 200px;
-    margin: 5em auto;
+    margin: auto;
     background: #fff;
     text-align: center;
     border-radius: 100px;
@@ -66,7 +66,7 @@ body{
 .contact-form{
     background: #fff;
     margin-top: 10%;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
     width: 70%;
 }
 .contact-form .form-control{

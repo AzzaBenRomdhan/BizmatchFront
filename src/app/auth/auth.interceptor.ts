@@ -10,12 +10,13 @@ import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { UserAuthService } from '../services/user-auth.service';
 import { Injectable } from '@angular/core';
+import { User } from '../model/User';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   constructor(private userAuthService: UserAuthService,
     private router:Router) {}
-
+   
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
@@ -33,7 +34,7 @@ export class AuthInterceptor implements HttpInterceptor {
             (err:HttpErrorResponse) => {
                 console.log(err.status);
                 if(err.status === 401) {
-                    this.router.navigate(['/login']);
+                    this.router.navigate(['/sinscrire']);
                 } else if(err.status === 403) {
                     this.router.navigate(['/forbidden']);
                 }

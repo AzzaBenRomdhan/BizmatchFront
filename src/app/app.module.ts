@@ -11,7 +11,6 @@ import { MatchComponent } from './match/match.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormGroup, FormsModule } from '@angular/forms';
 import { ApropsComponent } from './aprops/aprops.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
@@ -19,7 +18,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 import { DialogElementsExampleDialogComponent } from './ResetPasswordFromProfil/dialog-elements-example-dialog.component';
-import { TestComponent } from './test/test.component';
 import { PremiumComponent } from './premium/premium.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { BlogComponent } from './blog/blog.component';
@@ -27,6 +25,7 @@ import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-
 import { RecaptchaModule } from "ng-recaptcha";
 
 
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -38,13 +37,12 @@ import { RecaptchaModule } from "ng-recaptcha";
     LoginRegisterComponent,
     MatchComponent,
     ApropsComponent,
-    UserProfileComponent,
     DialogElementsExampleDialogComponent,
-    TestComponent,
     PremiumComponent,
     ForgetPasswordComponent,
     BlogComponent,
     DialogOverviewExampleDialogComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,21 +5,19 @@ import { LoginRegisterComponent } from './login-register/login-register.componen
 import { MatchComponent } from './match/match.component';
 import { ApropsComponent } from './aprops/aprops.component';
 import { useAnimation } from '@angular/animations';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { TestComponent } from './test/test.component';
 import { PremiumComponent } from './premium/premium.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { BlogComponent } from './blog/blog.component';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent},
   { path: "home", component: HomeComponent},
   { path: "sinscrire", component: LoginRegisterComponent},
   { path: "match", component: MatchComponent},
-  { path: "profile", component: UserProfileComponent},
+  { path: "profile", component: ProfileComponent},
   { path: "apropos", component: ApropsComponent},
-  { path: "test", component: TestComponent},
 
   { path: "premium", component: PremiumComponent},
   { path: "forgetPassword", component: ForgetPasswordComponent},
