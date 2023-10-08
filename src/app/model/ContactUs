@@ -1,0 +1,8 @@
+export class ContactUs {
+  idContact: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  contenu: string;
+  location: string;
+}
