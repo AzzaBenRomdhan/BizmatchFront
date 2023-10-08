@@ -19,6 +19,7 @@ export class LoginRegisterComponent  implements AfterViewInit {
     userLastName: '',
     userPassword: '',
     userEmail:'',
+    userCode:'',
     role : [],
   };
   registrationSuccess = false;
@@ -100,5 +101,6 @@ export class LoginRegisterComponent  implements AfterViewInit {
         }
       );
     }
-  
-}
+    resolved(captchaResponse: string) {
+      console.log(`Resolved captcha with response: ${captchaResponse}`);
+}}

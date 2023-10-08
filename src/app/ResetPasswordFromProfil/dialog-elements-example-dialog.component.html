@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Changer mot de passe </h1>
+<div mat-dialog-content  *ngIf="!valider">
+  Êtes-vous sûr de vouloir changer votre mot de passe ?
+  Si oui, vous allez recevoir un code sur votre boîte e-mail, vérifiez-la.</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close  *ngIf="!valider">Non</button>
+  <button mat-button  cdkFocusInitial  *ngIf="!valider" (click)="resetPassword()">Oui</button>
+  <form (submit)="onResetPassword()">
+    <div mat-dialog-content *ngIf="valider"><input type="text" class="form-control" placeholder="saisie votre email" id="code" name="userEmail"  [(ngModel)]="UserNewPassword.email"></div>
+  <div mat-dialog-content *ngIf="valider"><input type="text" class="form-control" placeholder="saisie votre code" id="code" name="code"  [(ngModel)]="UserNewPassword.code"></div>
+  <div mat-dialog-content *ngIf="valider"><input type="password" class="form-control" placeholder="saisie votre nouveau password" id="password" name="paswword" [(ngModel)]="UserNewPassword.password"></div>
+  <button type="submit" mat-button mat-dialog-close  *ngIf="valider" >Entrer</button>  
+</form>  
+</div>

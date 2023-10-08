@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserAuthService } from './user-auth.service';
 import {Observable} from 'rxjs';
+import { UserNewPassword } from '../model/UserNewPassword';
+import { User } from '../model/User';
 
 
 @Injectable({
@@ -79,5 +81,8 @@ export class UserService {
     return this.httpclient.post<any>(`${this.PATH_OF_API}/user/checkEmail`, resetPassword, {
       headers: headers,
     });
+  }
+  changerMotDepass(newPassword:any): Observable<any> {
+    return this.httpclient.post<any>(`${this.PATH_OF_API}/user/resetPassword`, newPassword);
   }
 }

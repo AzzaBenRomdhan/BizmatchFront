@@ -35,6 +35,7 @@
             <input type="text" placeholder="Nom d'utilisateur" ngModel name="userName" id="userName" />
             <input type="password" placeholder="Mot de passe" ngModel name="userPassword" id="userPassword" />
             <a routerLink="/forgetPassword">Mot de passe oublié ?</a>
+            <re-captcha (resolved)="resolved($event)" siteKey="6LdvxH8oAAAAAMDwSekzs4uJru5TtUZJWNvRf3LN"></re-captcha>
             <button>S'authentifier</button>
         </form>
     </div>
