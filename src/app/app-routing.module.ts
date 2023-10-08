@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: "profile", component: UserProfileComponent},
   { path: "apropos", component: ApropsComponent},
   { path: "premium", component: PremiumComponent},
-  { path: "forget-password", component: ForgetPasswordComponent},
+  { path: "forgetPassword", component: ForgetPasswordComponent},
   { path: "blog", component: BlogComponent},
   { path: "blog-exemple", component: DialogOverviewExampleDialogComponent}
 

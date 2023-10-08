@@ -1,5 +1,6 @@
-
+/* Styles pour la section du blog */
 .blog-section {
+    margin-top:20px; /* Vous pouvez ajuster la valeur selon vos besoins */
     padding: 40px 0;
     background-color: #f8f8f8;
     text-align: center;
@@ -9,9 +10,10 @@
     font-size: 24px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 200px;
 }
 
+/* Styles pour chaque article de blog */
 .blog-item {
     background-color: #fff;
     border-radius: 8px;
@@ -59,7 +61,7 @@
 
 /* Styles pour la mise en page */
 .container {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 20px;
 }
