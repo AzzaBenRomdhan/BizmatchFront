@@ -51,6 +51,7 @@ export class LoginRegisterComponent  implements AfterViewInit {
     this.userService.registerNewUser(this.newUser).subscribe(
       (response) => {
         this.showSuccessAlert('Votre compte a créé avec succès.');
+        console.log(this.newUser)
         location.reload();
       },
       (error) => {
@@ -74,9 +75,11 @@ export class LoginRegisterComponent  implements AfterViewInit {
         (response: any) => {
           this.userAuthService.setRoles(response.user.role);
           this.userAuthService.setToken(response.jwtToken);
+          this.userAuthService.setUser(response.user);
           this.isLoggedIn = true;
           localStorage.setItem('isLoggedIn', 'true');
           this.activateAccount(response.verificationToken);
+
           const role = response.user.role[0].roleName;
           if (role === 'Admin') {
             this.router.navigate(['/admin']);

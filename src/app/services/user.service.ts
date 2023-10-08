@@ -28,7 +28,7 @@ export class UserService {
 
   // tslint:disable-next-line:typedef
   public login(loginData:any) {
-    return this.httpclient.post(this.PATH_OF_API + '/authenticate', loginData, {
+    return this.httpclient.post(this.PATH_OF_API + '/authen', loginData, {
       headers: this.requestHeader,
     })
   }
@@ -69,7 +69,7 @@ export class UserService {
   }
   
   registerNewUser(user: any): Observable<any> {
-    return this.httpclient.post(`${this.PATH_OF_API1}/user/registerNewUser`, user);
+    return this.httpclient.post(`${this.PATH_OF_API1}/registerNewUser`, user);
   }
   activateUser(verificationToken: string): Observable<any> {
     return this.httpclient.put(`${this.PATH_OF_API1}/activate/${verificationToken}`, {});
@@ -78,11 +78,11 @@ export class UserService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const resetPassword = { email: email };
 
-    return this.httpclient.post<any>(`${this.PATH_OF_API}/user/checkEmail`, resetPassword, {
+    return this.httpclient.post<any>(`${this.PATH_OF_API1}/checkEmail`, resetPassword, {
       headers: headers,
     });
   }
   changerMotDepass(newPassword:any): Observable<any> {
-    return this.httpclient.post<any>(`${this.PATH_OF_API}/user/resetPassword`, newPassword);
+    return this.httpclient.post<any>(`${this.PATH_OF_API1}/resetPassword`, newPassword);
   }
 }

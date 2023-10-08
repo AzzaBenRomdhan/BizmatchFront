@@ -1,11 +1,11 @@
 <!-- Just an image -->
-<div class="container-fluid">
-    <div class="text-center">
+<div class="container-fluid ">
+    <div class="text-center pt-5 mt-5">
    <a routerLink="/home"><img src="../../assets/images/logo2.png" alt="Your Logo" class="img-fluid mt-1 mb-2 h-auto" style="max-width: 7%;"  /></a>   
     </div>
   
 
-<div class="container" id="container">
+<div class="container mb-5" id="container">
 <div class="form-container sign-up-container">
     <form action="#" ngSubmit="registerUser()">
         <h5>Créer votre compte</h5>
@@ -39,7 +39,7 @@
         <input type="password" placeholder="Password" ngModel
         name="userPassword"
         id="userPassword"/>
-        <a href="#">Mot de passe oublier?</a>
+        <a routerLink="/forgetPassword">Mot de passe oublier?</a>
         <button>S'authentifier</button>
     </form>
 </div>

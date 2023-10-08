@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { User } from '../model/User';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class UserAuthService {
   private username: string | null = null;
   private userEmail: string | null = null;
-
+  user!: User;
   constructor() {}
 
   setLoggedInUsername(username: string): void {
@@ -33,6 +34,19 @@ export class UserAuthService {
     localStorage.setItem('jwtToken', jwtToken);
   }
 
+  public setUser(user: User) {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+  public getUser(): User | null {
+    const userString = localStorage.getItem('user');
+    if (userString) {
+      const user = JSON.parse(userString) as User;
+      return user;
+    }
+    return null;
+  }
+  
+
   public getToken(): string {
     return localStorage.getItem('jwtToken') ?? ''; 
   }
@@ -47,4 +61,5 @@ export class UserAuthService {
   getUserEmail(): string | null {
     return this.userEmail;
   }
+
 }
