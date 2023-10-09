@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  
   constructor(private userAuthService: UserAuthService, private router : Router){}
   redirectToMatch(): void {
     // Vérifiez si l'utilisateur est déjà connecté

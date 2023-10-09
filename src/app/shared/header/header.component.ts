@@ -24,6 +24,7 @@ export class HeaderComponent {
 
  logout(){
   this.userService.logout();
+  this.isLoggedIn = false; 
   this.router.navigate(['/sinscrire']);
  }
 
