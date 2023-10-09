@@ -26,8 +26,8 @@
                         <li><a routerLink="/premium">abonnement</a></li>
                         <li><a routerLink="/blog">blog</a></li>
                         <li><a *ngIf="!isLoggedIn" routerLink="/sinscrire">connexion</a></li>
-                        <li>
-                            <button *ngIf="isLoggedIn" mat-button [matMenuTriggerFor]="menu">
+                        <li *ngIf="isLoggedIn==true">
+                            <button  mat-button [matMenuTriggerFor]="menu">
                               <i class="fa-solid fa-user" style="color: #ffffff;"></i>
                             </button>
                             <mat-menu #menu="matMenu">

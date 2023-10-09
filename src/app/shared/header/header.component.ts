@@ -15,7 +15,7 @@ export class HeaderComponent {
   constructor(private userAuthService: UserAuthService, private userService :UserService,
      private router: Router ){}
   
-  isLoggedIn: boolean = false;
+  isLoggedIn!:boolean;
 
   ngOnInit() {
     // Initialisez isLoggedIn avec la valeur actuelle de localStorage lors du chargement du composant
@@ -25,6 +25,7 @@ export class HeaderComponent {
  logout(){
   this.userService.logout();
   this.isLoggedIn = false; 
+  localStorage.setItem('isLoggedIn', 'false');
   this.router.navigate(['/sinscrire']);
  }
 

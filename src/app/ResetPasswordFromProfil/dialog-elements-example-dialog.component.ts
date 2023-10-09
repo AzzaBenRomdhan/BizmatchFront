@@ -33,7 +33,7 @@ export class DialogElementsExampleDialogComponent {
   resultMessage: any;
   valider= false;
   resetPassword() {
-    const email ="benromdhan.azza99@gmail.com" 
+    const email ="eya.mallouki@esprit.tn" 
     this.valider= true;
      this.userService.resetPasswordEmail(email).subscribe(
        (response) => {
