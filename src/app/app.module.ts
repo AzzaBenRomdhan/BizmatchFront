@@ -26,6 +26,7 @@ import { RecaptchaModule } from "ng-recaptcha";
 
 
 import { ProfileComponent } from './profile/profile.component';
+import { MarcheServiceComponent } from './marche-service/marche-service.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { ProfileComponent } from './profile/profile.component';
     BlogComponent,
     DialogOverviewExampleDialogComponent,
     ProfileComponent,
+    MarcheServiceComponent,
   ],
   imports: [
     BrowserModule,
