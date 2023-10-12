@@ -22,7 +22,7 @@ import { PremiumComponent } from './premium/premium.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { BlogComponent } from './blog/blog.component';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
-// @ts-ignore
+
 import { RecaptchaModule } from "ng-recaptcha";
 
 
