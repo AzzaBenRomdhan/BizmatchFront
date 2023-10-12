@@ -1,28 +1,29 @@
+<app-header></app-header>
 <div class="container-fluid">
-    
+
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form action="#">
                 <h1>Formulaire Partenaire</h1>
-                
+
                 <input type="text" placeholder="Nom de la société" />
                 <input type="text" placeholder="Adresse de la Société" />
                 <input type="text" placeholder="Site Web de la Société" />
                 <input type="number" id="budget" name="budget" placeholder="Entrez le budget" />
-               
+
 
                 <fieldset style="margin-bottom: 20px;">
                     <label for="Durée du partenariat" class="form-label">Durée du partenariat</label>
                     <select name="Durée du partenariat" class="form-select" aria-label="Default select example" id="choosePartenariat">
-                        
+
                         <option value="à court terme">à court terme</option>
                         <option value="à moyen terme">à moyen terme</option>
                         <option value="à long terme">à long terme</option>
                         <!-- Ajoutez d'autres types de partenariat ici -->
                     </select>
-                
+
             </fieldset>
-                
+
             <fieldset style="margin-bottom: 20px;">
                 <label for="choosePartenariat" class="form-label">Type de Partenariat</label>
                 <select name="Partenariat" class="form-select" aria-label="Default select example" id="choosePartenariat">
@@ -41,9 +42,9 @@
                     <!-- Ajoutez d'autres types de partenariat ici -->
                 </select>
             </fieldset>
-            
-                 
-                
+
+
+
                 <button>Envoyer Match</button>
             </form>
         </div>
@@ -61,7 +62,7 @@
             <label for="disponibilite" class="form-label">Sélectionnez la date de disponibilité :</label>
          <input type="date" id="disponibilite" name="disponibilite">
         </fieldset>
-                
+
                 <fieldset style="margin-bottom: 20px;">
                     <label for="recruteur" class="form-label">Type de recruteur</label>
                     <select name="recruteur" class="form-select" aria-label="Default select example" id="recruteur">
@@ -79,7 +80,7 @@
                         <!-- Ajoutez d'autres types de recruteur ici -->
                     </select>
                 </fieldset>
-                
+
                 <button>Envoyez Match</button>
             </form>
         </div>
@@ -88,17 +89,18 @@
                 <div class="overlay-panel overlay-left">
                     <h1>Partenaire !</h1>
                     <h6>Bienvenue à votre formulaire de match.</h6>
-                    <p class="large-text">Pour basculer vers recruteur cliquez sur la bouton en dessous</p>                     
+                    <p class="large-text">Pour basculer vers recruteur cliquez sur la bouton en dessous</p>
                    <button class="ghost" id="signIn">Recruteur</button>
                 </div>
-                
+
                 <div class="overlay-panel overlay-right">
                     <h1>Recruteur !</h1>
                     <h6>Bienvenue à votre formulaire de match. </h6>
-                    <p class="large-text">Pour basculer vers partenaire cliquez sur la bouton en dessous</p>  
+                    <p class="large-text">Pour basculer vers partenaire cliquez sur la bouton en dessous</p>
                     <button class="ghost" id="signUp">Partenaire</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<app-footer></app-footer>

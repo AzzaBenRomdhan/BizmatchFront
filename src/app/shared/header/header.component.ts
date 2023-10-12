@@ -14,21 +14,21 @@ import {MatMenuModule} from '@angular/material/menu';
 export class HeaderComponent {
   constructor(private userAuthService: UserAuthService, private userService :UserService,
      private router: Router ){}
-  
+
   isLoggedIn!:boolean;
   isAdmin!:boolean;
   ngOnInit() {
     // Initialisez isLoggedIn avec la valeur actuelle de localStorage lors du chargement du composant
-    this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+   this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-    const rolesData = localStorage.getItem('roles');
-    
+    /*const rolesData = localStorage.getItem('roles');
+
     if (rolesData) {
       const roles = JSON.parse(rolesData);
-    
+
       if (roles.length > 0) {
         const roleName = roles[0].roleName;
-    
+
         if (roleName === 'Admin') {
           localStorage.setItem('isAdmin', 'true');
         } else {
@@ -40,11 +40,11 @@ export class HeaderComponent {
     }
     this.isAdmin = localStorage.getItem('isAdmin') === 'true';
     console.log(this.isAdmin);
-
+*/
   }
  logout(){
   this.userService.logout();
-  this.isLoggedIn = false; 
+  this.isLoggedIn = false;
   localStorage.setItem('isLoggedIn', 'false');
   this.router.navigate(['/sinscrire']);
  }
@@ -57,6 +57,6 @@ export class HeaderComponent {
 
 
 
- 
+
 
 }
