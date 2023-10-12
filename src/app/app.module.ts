@@ -27,6 +27,9 @@ import { RecaptchaModule } from "ng-recaptcha";
 
 import { ProfileComponent } from './profile/profile.component';
 import { MarcheServiceComponent } from './marche-service/marche-service.component';
+import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objectifs.component';
+import { AddReclamationComponent } from './add-reclamation/add-reclamation.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -45,6 +48,9 @@ import { MarcheServiceComponent } from './marche-service/marche-service.componen
     DialogOverviewExampleDialogComponent,
     ProfileComponent,
     MarcheServiceComponent,
+    SuiviObjectifsComponent,
+    AddReclamationComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

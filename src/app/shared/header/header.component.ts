@@ -16,12 +16,32 @@ export class HeaderComponent {
      private router: Router ){}
   
   isLoggedIn!:boolean;
-
+  isAdmin!:boolean;
   ngOnInit() {
     // Initialisez isLoggedIn avec la valeur actuelle de localStorage lors du chargement du composant
     this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-  }
 
+    const rolesData = localStorage.getItem('roles');
+    
+    if (rolesData) {
+      const roles = JSON.parse(rolesData);
+    
+      if (roles.length > 0) {
+        const roleName = roles[0].roleName;
+    
+        if (roleName === 'Admin') {
+          localStorage.setItem('isAdmin', 'true');
+        } else {
+          localStorage.setItem('isAdmin', 'false');
+        }
+      }
+    } else {
+      console.log("Aucune donnée de rôle dans le localStorage.");
+    }
+    this.isAdmin = localStorage.getItem('isAdmin') === 'true';
+    console.log(this.isAdmin);
+
+  }
  logout(){
   this.userService.logout();
   this.isLoggedIn = false; 
@@ -31,5 +51,12 @@ export class HeaderComponent {
 
 
 
+
+
+
+
+
+
+ 
 
 }

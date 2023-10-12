@@ -1,52 +1,40 @@
 <!-- ***** Header Area Start ***** -->
-<header class="header-area header-sticky" >
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- *** Logo Start *** -->
-                    <style>
-                        .logo img {
-                            height: 105px; /* Adjust the height to your desired size */
-        width: auto;
-        margin-top: -10px; /* Adjust the top margin */
-        margin-left: -10px; /* Adjust the left margin */
-                        }
-                    </style>
-                    
-                    <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png" alt="">
-                    </a>
-                                      
-                    <!-- *** Logo End *** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><a routerLink="/home" class="active">Acceuil</a></li>
-                        <li><a routerLink="/apropos">A propos</a></li>
-                        <li><a routerLink="/premium">abonnement</a></li>
-                        <li><a routerLink="/blog">blog</a></li>
-                        <li><a routerLink="/marché">Découverte </a></li>
-                        <li><a *ngIf="!isLoggedIn" routerLink="/sinscrire">connexion</a></li>
-                        <li *ngIf="isLoggedIn==true">
-                            <button  mat-button [matMenuTriggerFor]="menu">
-                              <i class="fa-solid fa-user" style="color: #ffffff;"></i>
-                            </button>
-                            <mat-menu #menu="matMenu">
-                              <button mat-menu-item routerLink="/profile">Mon profile</button>
-                              <button mat-menu-item (click)="logout()">Déconnexion<i class="fas fa-sign-out-alt" style="color: #22b3c1;"></i></button>
-                            </mat-menu>
-                          </li>
-                          
-                    </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+<header *ngIf="!isAdmin" class="header-area header-sticky" >
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <nav class="main-nav">
+                    <!-- *** Logo *** -->
+                  <a href="index.html" class="logo"> <img src="assets/images/logo.png" alt=""> </a>                 
+                  <!-- *** Logo End *** -->
+                  <!-- ***** Menu Start ***** -->
+                  <ul class="nav">
+                      <li><a routerLink="/home" class="active">Acceuil</a></li>
+                      <li><a routerLink="/apropos">A propos</a></li>
+                      <li><a routerLink="/premium">abonnement</a></li>
+                      <li><a routerLink="/blog">blog</a></li>
+                      <li><a routerLink="/marché">Découverte </a></li>
+                      <li><a *ngIf="!isLoggedIn" routerLink="/sinscrire">connexion</a></li>
+                      <li *ngIf="isLoggedIn==true">
+                          <button  mat-button [matMenuTriggerFor]="menu">
+                            <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                          </button>
+                          <mat-menu #menu="matMenu">
+                            <button mat-menu-item routerLink="/profile">Mon profile</button>
+                            <button mat-menu-item (click)="logout()">Déconnexion<i class="fas fa-sign-out-alt" style="color: #22b3c1;"></i></button>
+                          </mat-menu>
+                        </li>
+                        
+                  </ul>   
+                  <a class='menu-trigger'>
+                      <span>Menu</span>
+                  </a>
+                  <!-- ***** Menu End ***** -->
+              </nav>
+          </div>
+      </div>
+  </div>
+</header>
+<!-- ***** Header Area End ***** -->
 
 
