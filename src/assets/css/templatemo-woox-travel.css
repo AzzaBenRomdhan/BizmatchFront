@@ -1860,7 +1860,7 @@ Deals Page Style
   font-size: 50px;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .page-heading .border-button a {
@@ -1932,8 +1932,8 @@ Deals Page Style
 }
 
 .amazing-deals .item .image {
-  border-top-left-radius: 23px;
-  border-bottom-left-radius: 23px;
+  border-top-left-radius: 55px;
+  border-bottom-left-radius: 55px;
   overflow: hidden;
 }
 
@@ -1954,8 +1954,8 @@ Deals Page Style
 .amazing-deals .item h4 {
   font-size: 20px;
   font-weight: 700;
-  padding-bottom: 25px;
-  margin-bottom: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 5px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -1983,7 +1983,7 @@ Deals Page Style
 
 .amazing-deals ul.page-numbers {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .amazing-deals ul.page-numbers li {
