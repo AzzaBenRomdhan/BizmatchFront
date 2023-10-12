@@ -1,42 +1,40 @@
-<!-- ***** Preloader Start ***** -->
-<div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
+<!-- ***** Header Area Start ***** -->
+<header *ngIf="!isAdmin" class="header-area header-sticky" >
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <nav class="main-nav">
+                    <!-- *** Logo *** -->
+                  <a href="index.html" class="logo"> <img src="assets/images/logo.png" alt=""> </a>                 
+                  <!-- *** Logo End *** -->
+                  <!-- ***** Menu Start ***** -->
+                  <ul class="nav">
+                      <li><a routerLink="/home" class="active">Acceuil</a></li>
+                      <li><a routerLink="/apropos">A propos</a></li>
+                      <li><a routerLink="/premium">abonnement</a></li>
+                      <li><a routerLink="/blog">blog</a></li>
+                      <li><a routerLink="/marché">Découverte </a></li>
+                      <li><a *ngIf="!isLoggedIn" routerLink="/sinscrire">connexion</a></li>
+                      <li *ngIf="isLoggedIn==true">
+                          <button  mat-button [matMenuTriggerFor]="menu">
+                            <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                          </button>
+                          <mat-menu #menu="matMenu">
+                            <button mat-menu-item routerLink="/profile">Mon profile</button>
+                            <button mat-menu-item (click)="logout()">Déconnexion<i class="fas fa-sign-out-alt" style="color: #22b3c1;"></i></button>
+                          </mat-menu>
+                        </li>
+                        
+                  </ul>   
+                  <a class='menu-trigger'>
+                      <span>Menu</span>
+                  </a>
+                  <!-- ***** Menu End ***** -->
+              </nav>
+          </div>
       </div>
-    </div>
   </div>
-  <!-- ***** Preloader End ***** -->
+</header>
+<!-- ***** Header Area End ***** -->
 
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png" alt="">
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="deals.html">Deals</a></li>
-                        <li><a href="reservation.html">Reservation</a></li>
-                        <li><a href="reservation.html">Book Yours</a></li>
-                    </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+

@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Formulaire Partenaire</h1>
+                
+                <input type="text" placeholder="Nom de la société" />
+                <input type="text" placeholder="Adresse de la Société" />
+                <input type="text" placeholder="Site Web de la Société" />
+                <input type="number" id="budget" name="budget" placeholder="Entrez le budget" />
+               
+
+                <fieldset style="margin-bottom: 20px;">
+                    <label for="Durée du partenariat" class="form-label">Durée du partenariat</label>
+                    <select name="Durée du partenariat" class="form-select" aria-label="Default select example" id="choosePartenariat">
+                        
+                        <option value="à court terme">à court terme</option>
+                        <option value="à moyen terme">à moyen terme</option>
+                        <option value="à long terme">à long terme</option>
+                        <!-- Ajoutez d'autres types de partenariat ici -->
+                    </select>
+                
+            </fieldset>
+                
+            <fieldset style="margin-bottom: 20px;">
+                <label for="choosePartenariat" class="form-label">Type de Partenariat</label>
+                <select name="Partenariat" class="form-select" aria-label="Default select example" id="choosePartenariat">
+                    <option value="Marketing">Marketing</option>
+                    <option value="Technologie">Technologie</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Santé">Santé</option>
+                    <option value="Éducation">Éducation</option>
+                    <option value="Mode">Mode</option>
+                    <option value="Alimentation">Alimentation</option>
+                    <option value="Immobilier">Immobilier</option>
+                    <option value="Consultation">Consultation</option>
+                    <option value="Production">Production</option>
+                    <option value="Recherche">Recherche</option>
+                    <option value="Autre">Autre</option>
+                    <!-- Ajoutez d'autres types de partenariat ici -->
+                </select>
+            </fieldset>
+            
+                 
+                
+                <button>Envoyer Match</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Formulaire Recruteur</h1>
+                <input type="nom" placeholder="Nom" />
+                <input type="Prenom" placeholder="Prenom" />
+                <input type="email" placeholder="Email" />
+                <input type="tel" placeholder="Téléphone" />
+
+                <!-- Partie de la date de disponibilité -->
+         <fieldset style="margin-bottom: 20px;">
+
+            <label for="disponibilite" class="form-label">Sélectionnez la date de disponibilité :</label>
+         <input type="date" id="disponibilite" name="disponibilite">
+        </fieldset>
+                
+                <fieldset style="margin-bottom: 20px;">
+                    <label for="recruteur" class="form-label">Type de recruteur</label>
+                    <select name="recruteur" class="form-select" aria-label="Default select example" id="recruteur">
+                        <option value="CDI">CDI (Contrat à Durée Indéterminée)</option>
+                        <option value="CDD">CDD (Contrat à Durée Déterminée)</option>
+                        <option value="Stage">Stage</option>
+                        <option value="Freelance">Freelance</option>
+                        <option value="Intérim">Intérim</option>
+                        <option value="Indépendant">Indépendant</option>
+                        <option value="Consultant">Consultant</option>
+                        <option value="Apprentissage">Apprentissage</option>
+                        <option value="Bénévole">Bénévole</option>
+                        <option value="Volontaire">Volontaire</option>
+                        <option value="Autre">Autre</option>
+                        <!-- Ajoutez d'autres types de recruteur ici -->
+                    </select>
+                </fieldset>
+                
+                <button>Envoyez Match</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Partenaire !</h1>
+                    <h6>Bienvenue à votre formulaire de match.</h6>
+                    <p class="large-text">Pour basculer vers recruteur cliquez sur la bouton en dessous</p>                     
+                   <button class="ghost" id="signIn">Recruteur</button>
+                </div>
+                
+                <div class="overlay-panel overlay-right">
+                    <h1>Recruteur !</h1>
+                    <h6>Bienvenue à votre formulaire de match. </h6>
+                    <p class="large-text">Pour basculer vers partenaire cliquez sur la bouton en dessous</p>  
+                    <button class="ghost" id="signUp">Partenaire</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

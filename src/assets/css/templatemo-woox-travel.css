@@ -343,7 +343,7 @@ Header Style
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 200;
   -webkit-transition: all .5s ease 0s;
   -moz-transition: all .5s ease 0s;
   -o-transition: all .5s ease 0s;
@@ -1137,7 +1137,7 @@ About Page Style
 
 .about-main-content {
   margin-top: 70px;
-  background-image: url(../images/about-content-bg.jpg);
+  background-image: url(../images/th.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1148,7 +1148,7 @@ About Page Style
 .blur-bg {
 	width: 100%;
   height: 100%;
-  background: url(../images/about-content-bg.jpg) no-repeat center center fixed;
+  background: url(../images/th.jpg) no-repeat center center fixed;
   background-size: cover;
   filter: blur(8px) brightness(80%);
   position: absolute;
@@ -1860,7 +1860,7 @@ Deals Page Style
   font-size: 50px;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .page-heading .border-button a {
@@ -1932,8 +1932,8 @@ Deals Page Style
 }
 
 .amazing-deals .item .image {
-  border-top-left-radius: 23px;
-  border-bottom-left-radius: 23px;
+  border-top-left-radius: 55px;
+  border-bottom-left-radius: 55px;
   overflow: hidden;
 }
 
@@ -1954,8 +1954,8 @@ Deals Page Style
 .amazing-deals .item h4 {
   font-size: 20px;
   font-weight: 700;
-  padding-bottom: 25px;
-  margin-bottom: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 5px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -1983,7 +1983,7 @@ Deals Page Style
 
 .amazing-deals ul.page-numbers {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .amazing-deals ul.page-numbers li {
@@ -2166,7 +2166,6 @@ Reservation Page Style
   background-color: #22b3c1;
   border: 1px solid #22b3c1;
   padding: 12px 30px;
-  width: 100%;
   text-align: center;
   display: inline-block;
   border-radius: 25px;
@@ -2326,4 +2325,7 @@ body {
   .weekly-offers .container-fluid {
     padding: 0px;
   }
+}
+.element {
+  background-image: url('/assets/images/logo.jpg'), url('image2.jpg');
 }
