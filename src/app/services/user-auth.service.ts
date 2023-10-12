@@ -9,7 +9,7 @@ export class UserAuthService {
   private userEmail: string | null = null;
   user!: User;
   constructor() {}
-
+  
   setLoggedInUsername(username: string): void {
     this.username = username;
   }

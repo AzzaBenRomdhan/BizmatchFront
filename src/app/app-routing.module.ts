@@ -10,6 +10,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { BlogComponent } from './blog/blog.component';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: "premium", component: PremiumComponent},
   { path: "forgetPassword", component: ForgetPasswordComponent},
   { path: "blog", component: BlogComponent},
-  { path: "blog-exemple", component: DialogOverviewExampleDialogComponent}
+  { path: "blog-exemple", component: DialogOverviewExampleDialogComponent},
+  { path: "test", component: TestComponent}
 
 ];
 

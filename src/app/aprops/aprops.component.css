@@ -33,7 +33,7 @@ body{
     right: 0;
     top: 40%;
     font-size: 25px;
-    font-weight: normal;
+    font-weight: bold;
     font-style: bold;
     text-transform: uppercase;
     color: #000000; 
@@ -70,6 +70,7 @@ body{
     width: 70%;
 }
 .contact-form .form-control{
+  margin-top: 1rem;
     border-radius:1rem;
 }
 .contact-image{
@@ -96,6 +97,7 @@ body{
 .contact-form .btnContact {
     width: 50%;
     border: none;
+    margin-top: 1rem;
     border-radius: 1rem;
     padding: 1.5%;
     background: #22b3c1;
