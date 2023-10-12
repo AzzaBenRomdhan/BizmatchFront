@@ -10,7 +10,10 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { BlogComponent } from './blog/blog.component';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MarcheServiceComponent } from './marche-service/marche-service.component';
 import { TestComponent } from './test/test.component';
+import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objectifs.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent},
@@ -24,7 +27,12 @@ const routes: Routes = [
   { path: "forgetPassword", component: ForgetPasswordComponent},
   { path: "blog", component: BlogComponent},
   { path: "blog-exemple", component: DialogOverviewExampleDialogComponent},
-  { path: "test", component: TestComponent}
+  { path: "marché", component: MarcheServiceComponent},
+  { path: "suiviObjectif", component: SuiviObjectifsComponent},
+  { path: "test", component: TestComponent},
+  { path: "admin", component: AdminComponent}
+
+
 
 ];
 
