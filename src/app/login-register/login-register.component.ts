@@ -26,7 +26,7 @@ export class LoginRegisterComponent  implements AfterViewInit {
   registrationError = false;
 
   userRole = '';
-  isLoggedIn: boolean = false;
+  isLoggedIn!: boolean ;
 
   constructor(private renderer: Renderer2, private el: ElementRef, 
     private userService: UserService, private router: Router, private userAuthService: UserAuthService,
@@ -76,7 +76,7 @@ export class LoginRegisterComponent  implements AfterViewInit {
           this.userAuthService.setRoles(response.user.role);
           this.userAuthService.setToken(response.jwtToken);
           this.userAuthService.setUser(response.user);
-          this.isLoggedIn = true;
+          this.isLoggedIn = true; 
           localStorage.setItem('isLoggedIn', 'true');
           this.activateAccount(response.verificationToken);
 
@@ -106,4 +106,7 @@ export class LoginRegisterComponent  implements AfterViewInit {
     }
     resolved(captchaResponse: string) {
       console.log(`Resolved captcha with response: ${captchaResponse}`);
-}}
+}
+
+ 
+}

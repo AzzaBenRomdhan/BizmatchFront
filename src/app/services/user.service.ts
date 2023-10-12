@@ -38,10 +38,11 @@ export class UserService {
     this.isLoggedIn = false;
     localStorage.removeItem('jwtToken');
     localStorage.removeItem('roles');
+    localStorage.removeItem('user');
+    localStorage.removeItem('_grecaptcha');
     localStorage.setItem('isLoggedIn', 'false');
 
   }
-
 
   // tslint:disable-next-line:typedef
   public forUser() {

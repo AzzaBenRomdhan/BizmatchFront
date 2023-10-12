@@ -21,16 +21,21 @@
                     <!-- *** Logo End *** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html" class="active">Acceuil</a></li>
+                        <li><a routerLink="/home" class="active">Acceuil</a></li>
                         <li><a routerLink="/apropos">A propos</a></li>
-                        <li><a href="reservation.html">Formulaire</a></li>
-                        <li><a href="reservation.html">Réclamation</a></li>
+                        <li><a routerLink="/premium">abonnement</a></li>
+                        <li><a routerLink="/blog">blog</a></li>
                         <li><a *ngIf="!isLoggedIn" routerLink="/sinscrire">connexion</a></li>
-                        <li><button *ngIf="isLoggedIn"  mat-button [matMenuTriggerFor]="menu"><i class="fa-solid fa-user" style="color: #ffffff;"></i></button>
+                        <li *ngIf="isLoggedIn==true">
+                            <button  mat-button [matMenuTriggerFor]="menu">
+                              <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+                            </button>
                             <mat-menu #menu="matMenu">
-                            <button mat-menu-item routerLink="/profile" >Mon profile</button>
-                            <button mat-menu-item  (click)="logout()" >Déconnexion<i class="fas fa-sign-out-alt" style="color: #22b3c1;"></i></button>
-                            </mat-menu></li>
+                              <button mat-menu-item routerLink="/profile">Mon profile</button>
+                              <button mat-menu-item (click)="logout()">Déconnexion<i class="fas fa-sign-out-alt" style="color: #22b3c1;"></i></button>
+                            </mat-menu>
+                          </li>
+                          
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
