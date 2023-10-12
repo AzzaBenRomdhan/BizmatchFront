@@ -1,28 +1,90 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+<div class="more-info reservation-info " style="margin-top: 150px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-sm-6">
+        <div class="info-item">
+          <i class="fa fa-phone"></i>
+          <h4>Passer un appel téléphonique</h4>
+          <a href="#">+123 456 789 (0)</a>
         </div>
-        <div class="modal-body">
-          ...
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="info-item">
+          <i class="fa fa-envelope"></i>
+          <h4>Contactez nous </h4>
+          <a href="#">bizmatch@email.com</a>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="info-item">
+          <i class="fa fa-map-marker"></i>
+          <h4>Visitez nos bureaux</h4>
+          <a href="#">24th Street North Avenue London, UK</a>
         </div>
       </div>
     </div>
   </div>
-  <script>$('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-  })</script>
+</div>
+
+<div class="reservation-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <form id="reservation-form" name="gs" method="submit" role="search" action="#">
+          <div class="row">
+            <div class="col-lg-12">
+              <h4>Passez votre <em>Réclamation</em> Via ce <em>Formulaire</em></h4>
+            </div>
+            <div class="col-lg-6">
+                <fieldset>
+                    <label for="Name" class="form-label">Votre nom</label>
+                    <input type="text" name="Name" class="Name" placeholder="votre nom" autocomplete="on" required>
+                </fieldset>
+            </div>
+            
+            <div class="col-lg-6">
+              <fieldset>
+                  <label for="prenom" class="form-label">Votre prénom</label>
+                  <input type="text" name="prenom" class="Name" placeholder="votre prénom" autocomplete="on" required>
+              </fieldset>
+          </div>
+            <div class="col-lg-6">
+              <fieldset>
+                  <label for="Number" class="form-label">Votre téléphone</label>
+                  <input type="text" name="Number" class="Number" placeholder="Ex. +xxx xxx xxx" autocomplete="on" required>
+              </fieldset>
+            </div>
+            <div class="col-lg-6">
+              <fieldset>
+                  <label for="prenom" class="form-label">Votre adress </label>
+                  <input type="text" name="prenom" class="Name" placeholder="votre adress" autocomplete="on" required>
+              </fieldset>
+          </div>
+            <div class="col-lg-6">
+                <fieldset>
+                    <label for="chooseDestination" class="form-label">Type de réclamation</label>
+                    <select name="Destination" class="form-select" aria-label="Default select example" id="chooseCategory" onChange="this.form.click()">
+                        <option selected>Réclamation d'entreprise</option>
+                        <option value="Italy, Roma">Réclamation Premium</option>
+                        <option value="France, Paris">Réclamation Réunion</option>
+                    </select>
+                </fieldset>
+            </div>
+           
+            <div class="col-lg-12">                        
+              <fieldset>
+                <label for="contenu" class="form-label">Votre message</label>
+                <textarea rows="4" cols="50"> </textarea>
+              </fieldset>
+          </div>
+            <div class="col-lg-12">                        
+                <fieldset>
+                    <button class="main-button">Envoyer</button>
+                </fieldset>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

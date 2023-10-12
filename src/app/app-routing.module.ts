@@ -14,6 +14,8 @@ import { MarcheServiceComponent } from './marche-service/marche-service.componen
 import { TestComponent } from './test/test.component';
 import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objectifs.component';
 import { AdminComponent } from './admin/admin.component';
+import { DashbordComponent } from './dashbord/dashbord.component';
+import { AddReclamationComponent } from './add-reclamation/add-reclamation.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent},
@@ -30,7 +32,8 @@ const routes: Routes = [
   { path: "marché", component: MarcheServiceComponent},
   { path: "suiviObjectif", component: SuiviObjectifsComponent},
   { path: "test", component: TestComponent},
-  { path: "admin", component: AdminComponent}
+  { path: "dashboard", component: DashbordComponent},
+  { path: "reclamation", component: AddReclamationComponent}
 
 
 
