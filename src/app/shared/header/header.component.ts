@@ -23,6 +23,11 @@ export class HeaderComponent {
 
     /*const rolesData = localStorage.getItem('roles');
 
+<<<<<<< HEAD
+=======
+   /* const rolesData = localStorage.getItem('roles');
+    
+>>>>>>> 7afe8fe809ca67874571812a86f393d43eb0154b
     if (rolesData) {
       const roles = JSON.parse(rolesData);
 
