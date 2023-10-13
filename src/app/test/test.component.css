@@ -210,7 +210,7 @@ button, a {
   width: 32px;
   height: 32px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
   margin-right: 4px;
 }
@@ -403,7 +403,7 @@ button, a {
 .message-box img {
   border-radius: 50%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 40px;
   height: 40px;
 }
@@ -650,7 +650,7 @@ button, a {
   border-radius: 50%;
   overflow: hidden;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .participants img:not(:first-child) {
   margin-left: -8px;
@@ -777,7 +777,7 @@ button, a {
     height: 24px;
   }
 
-  
+
 
   .search-input {
     max-width: 120px;
@@ -801,7 +801,7 @@ button, a {
   }
 
   .projects-section-header p,
-.projects-section-header .time {
+  .projects-section-header .time {
     font-size: 18px;
   }
 
@@ -903,7 +903,7 @@ button, a {
   --b:22px;
   --c:darkred;
   --w:100px;
-  
+
   width:var(--w);
   aspect-ratio:1;
   position:relative;
@@ -926,7 +926,7 @@ button, a {
     radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
     conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
   -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-          mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
 }
 .pie:after {
   inset:calc(50% - var(--b)/2);
