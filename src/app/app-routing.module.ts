@@ -14,6 +14,7 @@ import { MarcheServiceComponent } from './marche-service/marche-service.componen
 import { TestComponent } from './test/test.component';
 import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objectifs.component';
 import { AdminComponent } from './admin/admin.component';
+import {AuthGuard} from "./auth/auth.guard";
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { AddReclamationComponent } from './add-reclamation/add-reclamation.component';
 
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: "marché", component: MarcheServiceComponent},
   { path: "suiviObjectif", component: SuiviObjectifsComponent},
   { path: "test", component: TestComponent},
+  { path: "admin", component: AdminComponent,canActivate:[AuthGuard], data:{roles:['Admin']}},
   { path: "dashboard", component: DashbordComponent},
   { path: "reclamation", component: AddReclamationComponent}
 

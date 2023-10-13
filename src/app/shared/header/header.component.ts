@@ -21,7 +21,7 @@ export class HeaderComponent {
     // Initialisez isLoggedIn avec la valeur actuelle de localStorage lors du chargement du composant
     this.isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-    const rolesData = localStorage.getItem('roles');
+   /* const rolesData = localStorage.getItem('roles');
     
     if (rolesData) {
       const roles = JSON.parse(rolesData);
@@ -40,7 +40,7 @@ export class HeaderComponent {
     }
     this.isAdmin = localStorage.getItem('isAdmin') === 'true';
     console.log(this.isAdmin);
-
+*/
   }
  logout(){
   this.userService.logout();
