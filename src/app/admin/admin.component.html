@@ -1,3 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <!-- Inclure Bootstrap CSS depuis un CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    /* Ajoutez ce code dans un fichier CSS séparé ou dans une balise <style> dans l'en-tête de votre HTML */
+
+    /* Style du menu latéral */
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #333;
+      padding: 20px;
+      color: #fff;
+    }
+
+    #sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #sidebar ul li {
+      margin-bottom: 10px;
+    }
+
+    #sidebar a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    /* Style de l'en-tête du tableau de bord */
+    h1 {
+      font-size: 24px;
+    }
+
+    /* Style du contenu principal */
+    main {
+      padding: 20px;
+    }
+
+    /* Style des liens de navigation */
+    .nav-link {
+      color: #000;
+    }
+
+    .logout-button {
+      color: #100f0f; /* Couleur de l'icône */
+      display: flex;
+      justify-content: space-between; /* Pour aligner le texte et l'icône horizontalement */
+    }
+
+    .icon {
+      margin-left: 8px; /* Espacement entre le texte et l'icône */
+    }
+
+    /* Style des liens actifs */
+    .nav-link.active {
+      font-weight: bold;
+    }
+
+    /* Style des bordures en bas */
+    .border-bottom {
+      border-bottom: 1px solid rgba(55, 206, 233, 0.89);
+    }
+
+    /* Style de bouton */
+    .btn {
+      background-color: #007BFF;
+      color: #000;
+    }
+
+    /* Style du bouton actif */
+    .btn.active {
+      background-color: #0056b3;
+    }
+
+    /* Style du bouton de déconnexion */
+    .btn-logout {
+      background-color: #dc3545;
+    }
+
+    /* Style du bouton de déconnexion actif */
+    .btn-logout.active {
+      background-color: #bb2d3b;
+    }
+
+    /* Style du bouton d'action principal */
+    .btn-primary {
+      background-color: #007BFF;
+      color: #000;
+    }
+
+    /* Style du bouton d'action secondaire */
+    .btn-secondary {
+      background-color: #26dee7;
+      color: #fff;
+    }
+
+    /* Style du bouton d'action de succès */
+    .btn-success {
+      background-color: #28a745;
+      color: #fff;
+    }
+
+    /* Style du bouton d'action d'alerte */
+    .btn-warning {
+      background-color: #ffc107;
+      color: #000;
+    }
+
+    /* Style du bouton d'action d'erreur */
+    .btn-danger {
+      background-color: #dc3545;
+      color: #000;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+      <div class="position-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <h1><img src="assets/images/logo2.png" alt="Dashboard Icon" class="dashboard-icon"></h1>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Gestion Utulisateurs
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Gestion Marché et decouvert
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Gestion Forum
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Gestion Payment
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Gestion Calandrier et evenment
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Gestion Reclamation
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Gestion Decouvert
+            </a>
+          </li>
+          <!-- Ajoutez d'autres liens de navigation ici -->
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <button mat-menu-item (click)="logout()" class="logout-button">
+          <span>Déconnexion</span>
+        </button>
+
+        <h1 class="h2">Vue Général</h1>
+      </div>
+      <app-user-admin-back></app-user-admin-back>
+    </main>
+  </div>
 <div class="dashboard">
 	<aside class="search-wrap">
 		<div class="search">
@@ -418,4 +609,10 @@
 			</section>
 		</div>
 	</main>
+
 </div>
+
+<!-- Inclure Bootstrap JavaScript depuis un CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
