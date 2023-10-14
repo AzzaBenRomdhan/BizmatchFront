@@ -6,4 +6,7 @@ export class User {
     userEmail:any;
     userCode:any;
     role : any;
+
+
+
 }

@@ -4,6 +4,9 @@ import { UserAuthService } from './user-auth.service';
 import {Observable} from 'rxjs';
 import { UserNewPassword } from '../model/UserNewPassword';
 import { User } from '../model/User';
+import {AnalyseSentiment} from "../model/AnalyseSentiment";
+import {ContactUs} from "../model/ContactUs";
+import {PourcentageSentiment} from "../model/PourcentageSentiment";
 
 
 @Injectable({
@@ -62,13 +65,13 @@ export class UserService {
           if (userRoles[i].roleName === allowedRoles[j]) {
             isMatch = true;
             return isMatch;
-          } 
+          }
         }
       }
     }
     return isMatch;
   }
-  
+
   registerNewUser(user: any): Observable<any> {
     return this.httpclient.post(`${this.PATH_OF_API1}/registerNewUser`, user);
   }
@@ -85,5 +88,30 @@ export class UserService {
   }
   changerMotDepass(newPassword:any): Observable<any> {
     return this.httpclient.post<any>(`${this.PATH_OF_API1}/resetPassword`, newPassword);
+  }
+
+  addRoleToUser(roleName: string, userName: string) {
+    const url = `${this.PATH_OF_API1}/${roleName}/${userName}`;
+    return this.httpclient.put(url, {}); // Utilisez la variable "url" que vous avez définie
+  }
+
+
+  getAllUsers(): Observable<User[]> {
+    return this.httpclient.get<User[]>(`${this.PATH_OF_API1}/getallUser`, {});
+  }
+
+  getcountEntreprise() {
+    return this.httpclient.get<number>(`${this.PATH_OF_API1}/countentreprise`);
+
+  }
+  getCountUsers() {
+    return this.httpclient.get<number>(`${this.PATH_OF_API1}/countusers`);
+  }
+  analyserContenuParId(id: number): Observable<AnalyseSentiment> {
+    return this.httpclient.get<AnalyseSentiment>(`${this.PATH_OF_API1}/Claim/analyser-contenu/${id}`);
+  }
+
+  calculerPourcentageSentiment(contactUs: {}): Observable<PourcentageSentiment> {
+    return this.httpclient.post<PourcentageSentiment>(`${this.PATH_OF_API1}/Claim/calculer-pourcentage-sentiment`, contactUs);
   }
 }

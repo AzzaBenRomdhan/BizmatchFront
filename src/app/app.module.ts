@@ -31,6 +31,7 @@ import { MarcheServiceComponent } from './marche-service/marche-service.componen
 import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objectifs.component';
 import { AddReclamationComponent } from './add-reclamation/add-reclamation.component';
 import { AdminComponent } from './admin/admin.component';
+import { UserAdminBackComponent } from './user-admin-back/user-admin-back.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { AdminComponent } from './admin/admin.component';
     SuiviObjectifsComponent,
     AddReclamationComponent,
     AdminComponent,
+    UserAdminBackComponent,
   ],
   imports: [
     BrowserModule,
