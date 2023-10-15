@@ -1,146 +1,51 @@
-.calendar {
-    --side-padding: 20px;
-    --border-radius: 34px;
-    --accent-br: 15px;
-    width: 400px;
-  }
-  .calendar select {
-    background-color: #f3f4f6;
-    padding: 15px 20px;
-  }
-  .calendar__opts, .calendar__buttons {
-    background-color: #ffffff;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 15px;
-  }
-  .calendar__opts {
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
-    padding: 20px var(--side-padding);
-  }
-  .calendar__body {
-    background-image: linear-gradient(to bottom, #f3f4f6, #fff);
-  }
-  .calendar__days {
-    background-color: #fff;
-    padding: 0 var(--side-padding) 10px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-  }
-  .calendar__days > div {
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.02rem;
-    color: #c5c8ca;
-  }
-  .calendar__dates {
-    padding: 10px var(--side-padding);
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-  }
-  .calendar__date {
-    --height: calc(400px / 6 - var(--side-padding));
-    text-align: center;
-    height: var(--height);
-    line-height: var(--height);
-    font-weight: 600;
-    font-size: 1.02rem;
-    cursor: pointer;
-    position: relative;
-  }
-  .calendar__date::before {
-    content: "";
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0);
-    width: 100%;
-    height: calc(var(--height) * 0.9);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: var(--accent-br);
-    transition: background-color 0.3s ease;
-  }
-  .calendar__date:not(.calendar__date--selected):not(.calendar__date--grey):hover::before {
-    background-color: #ededed;
-  }
-  .calendar__date--grey {
-    color: #c5c8ca;
-    cursor: not-allowed;
-  }
-  .calendar__date--selected {
-    color: #22b3c1;
-  }
-  .calendar__date--selected::before {
-    background-color: #ffeaec;
-    border-radius: 0px;
-  }
-  .calendar__date--first-date::before {
-    border-top-left-radius: var(--accent-br);
-    border-bottom-left-radius: var(--accent-br);
-  }
-  .calendar__date--last-date::before {
-    border-top-right-radius: var(--accent-br);
-    border-bottom-right-radius: var(--accent-br);
-  }
-  .calendar__date--range-start::after {
-    content: "";
-    position: absolute;
-    bottom: 3px;
-    border-radius: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #22b3c1;
-    width: 10px;
-    height: 4px;
-  }
-  .calendar__date--range-end {
-    color: #fff;
-  }
-  .calendar__date--range-end::before {
-    box-shadow: 0 15px 20px -3px rgba(52, 16, 182, 0.35);
-    background-color: #22b3c1;
-    border-radius: var(--accent-br);
-    z-index: 1;
-  }
-  .calendar__date--range-end::after {
-    content: "";
-    position: absolute;
-    height: calc(var(--height) * 0.9);
-    background-color: #ffeaec;
-    width: 50px;
-    top: 50%;
-    right: 50%;
-    transform: translateY(-50%);
-  }
-  .calendar__date span {
-    position: relative;
-    z-index: 1;
-  }
-  .calendar__buttons {
-    padding: 10px var(--side-padding) 20px;
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-  }
-  .calendar__button {
-    cursor: pointer;
-  }
-  .calendar__button--grey {
-    background-color: #f3f4f6;
-  }
-  .calendar__button--primary {
-    background-color: #1752ff;
-    color: #fff;
-    transition: box-shadow 0.3s cubic-bezier(0.21, 0.68, 0.09, 0.27), transform 0.2s linear;
-  }
-  .calendar__button--primary:hover {
-    box-shadow: 0 20px 30px -13px rgba(23, 82, 255, 0.45);
-    transform: translateY(-3px);
-  }
-  .calendar__button--primary:active {
-    box-shadow: 0 10px 10px -6px rgba(23, 82, 255, 0.45);
-    transform: translateY(-1px);
-  }
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700");
+.blockquote {
+  font-size: 1.25rem;
+  border: 1px solid rgba(222, 226, 230, 0.54);
+  border-left: 0.5rem solid rgba(0, 123, 255, 0.54);
+  color: #6c757d;
+  font-family: "Open Sans", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-style: italic;
+  line-height: 1.6;
+  margin: 1.875rem auto;
+  max-width: 60%;
+  padding: 4.6875rem 1.875rem 1.875rem 4.6875rem;
+  position: relative;
+  width: 100%;
+}
+.blockquote:before {
+  font-size: 6.875rem;
+  color: rgba(0, 123, 255, 0.54);
+  content: "“";
+  font-family: "Noto Serif", "Georgia", "Times New Roman", "Times", serif;
+  font-size: 5.5rem;
+  height: 3.75rem;
+  left: 0.9375rem;
+  line-height: 1;
+  max-width: 3.75rem;
+  position: absolute;
+  text-align: inherit;
+  top: 0.9375rem;
+  width: 100%;
+}
+.blockquote:after {
+  content: "";
+}
+.blockquote-footer {
+  font-size: 80%;
+  color: #343a40;
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 1rem;
+  padding: 0;
+}
+.blockquote-footer:before {
+  content: "— ";
+}
   
   body {
     display: grid;
@@ -486,3 +391,41 @@ body {
 		background: #f1f1f1;
 	}
 }
+/*details css*/
+details summary {
+  width: 100%;
+  padding: 0.5rem 0;
+  border-top: 1px solid #3c97bf;
+  position: relative;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 300;
+  list-style: none;
+  font-family: "Nunito", sans-serif;
+}
+
+details summary:after {
+  content: "+";
+  color: #3c97bf;
+  position: absolute;
+  font-size: 1rem;
+  line-height: 0;
+  margin-top: 0.75rem;
+  right: 0;
+  font-weight: 200;
+  transform-origin: center;
+  transition: 200ms linear;
+}
+details[open] summary:after {
+  transform: rotate(45deg);
+  font-size: 2rem;
+}
+details summary {
+  outline: 0;
+}
+details p {
+  font-size: 0.95rem;
+  margin: 0 0 1rem;
+  padding-top: 1rem;
+}
+

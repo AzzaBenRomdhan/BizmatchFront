@@ -22,6 +22,7 @@ import { PremiumComponent } from './premium/premium.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { BlogComponent } from './blog/blog.component';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
+
 import { RecaptchaModule } from "ng-recaptcha";
 import { ScheduleModule , RecurrenceEditorModule, DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService} from '@syncfusion/ej2-angular-schedule';
 
@@ -30,6 +31,9 @@ import { MarcheServiceComponent } from './marche-service/marche-service.componen
 import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objectifs.component';
 import { AddReclamationComponent } from './add-reclamation/add-reclamation.component';
 import { AdminComponent } from './admin/admin.component';
+import { UserAdminBackComponent } from './user-admin-back/user-admin-back.component';
+import { ReunionComponent } from './reunion/reunion.component';
+import { DocumentComponent } from './document/document.component';
 
 
 @NgModule({
@@ -51,18 +55,20 @@ import { AdminComponent } from './admin/admin.component';
     SuiviObjectifsComponent,
     AddReclamationComponent,
     AdminComponent,
+    UserAdminBackComponent,
+    ReunionComponent,
+    DocumentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,
     MatFormFieldModule,
-  
-   
     RecaptchaModule,
     MatInputModule,
     MatDialogModule,
