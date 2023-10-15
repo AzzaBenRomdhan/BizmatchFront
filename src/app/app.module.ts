@@ -36,6 +36,7 @@ import { ReunionComponent } from './reunion/reunion.component';
 import { DocumentComponent } from './document/document.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,8 +73,7 @@ import { DocumentComponent } from './document/document.component';
     RecaptchaModule,
     MatInputModule,
     MatDialogModule,
-
-    ScheduleModule,RecurrenceEditorModule
+    ScheduleModule, RecurrenceEditorModule
   ],
   providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService ],
   bootstrap: [AppComponent]

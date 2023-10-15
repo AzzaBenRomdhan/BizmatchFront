@@ -15,7 +15,7 @@ export class AppelOffreServiceService {
         'Authorization': 'Bearer ' + localStorage.getItem('jwtToken')
     })
   }
- url = 'http://localhost:9090/appelOffre';
+ url = 'http://localhost:9093/appelOffre';
   newUrl!: string;
   APPELOFFRES = [];
 
