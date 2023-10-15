@@ -34,6 +34,7 @@ import { AdminComponent } from './admin/admin.component';
 import { UserAdminBackComponent } from './user-admin-back/user-admin-back.component';
 import { ReunionComponent } from './reunion/reunion.component';
 import { DocumentComponent } from './document/document.component';
+import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { DocumentComponent } from './document/document.component';
     MatFormFieldModule,
     RecaptchaModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    ScheduleModule, RecurrenceEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
