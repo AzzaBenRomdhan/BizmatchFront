@@ -23,7 +23,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { BlogComponent } from './blog/blog.component';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { RecaptchaModule } from "ng-recaptcha";
-
+import { ScheduleModule , RecurrenceEditorModule, DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService} from '@syncfusion/ej2-angular-schedule';
 
 import { ProfileComponent } from './profile/profile.component';
 import { MarcheServiceComponent } from './marche-service/marche-service.component';
@@ -65,10 +65,11 @@ import { AdminComponent } from './admin/admin.component';
    
     RecaptchaModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
 
+    ScheduleModule,RecurrenceEditorModule
   ],
-  providers: [],
+  providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
