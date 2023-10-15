@@ -32,6 +32,8 @@ import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objec
 import { AddReclamationComponent } from './add-reclamation/add-reclamation.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserAdminBackComponent } from './user-admin-back/user-admin-back.component';
+import { ReunionComponent } from './reunion/reunion.component';
+import { DocumentComponent } from './document/document.component';
 
 
 @NgModule({
@@ -54,6 +56,8 @@ import { UserAdminBackComponent } from './user-admin-back/user-admin-back.compon
     AddReclamationComponent,
     AdminComponent,
     UserAdminBackComponent,
+    ReunionComponent,
+    DocumentComponent,
   ],
   imports: [
     BrowserModule,

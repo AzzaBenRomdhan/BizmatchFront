@@ -16,10 +16,11 @@ import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objec
 import { AdminComponent } from './admin/admin.component';
 import {AuthGuard} from "./auth/auth.guard";
 import {UserAdminBackComponent} from "./user-admin-back/user-admin-back.component";
-
-
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { AddReclamationComponent } from './add-reclamation/add-reclamation.component';
+import { ReunionComponent } from './reunion/reunion.component';
+import { DocumentComponent } from './document/document.component';
+
 
 
 
@@ -45,7 +46,9 @@ const routes: Routes = [
   {path:"userBack",component:UserAdminBackComponent},
   { path: "admin", component: AdminComponent,canActivate:[AuthGuard], data:{roles:['Admin']}},
   { path: "dashboard", component: DashbordComponent},
-  { path: "reclamation", component: AddReclamationComponent}
+  { path: "reclamation", component: AddReclamationComponent},
+  { path: "reunion", component: ReunionComponent},
+  { path: "document", component: DocumentComponent}
 
 
 
