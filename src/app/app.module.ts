@@ -34,6 +34,9 @@ import { AdminComponent } from './admin/admin.component';
 import { UserAdminBackComponent } from './user-admin-back/user-admin-back.component';
 import { ReunionComponent } from './reunion/reunion.component';
 import { DocumentComponent } from './document/document.component';
+import { CancelComponent } from './payment/cancel/cancel.component';
+import { SucessComponent } from './payment/sucess/sucess.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -58,6 +61,8 @@ import { DocumentComponent } from './document/document.component';
     UserAdminBackComponent,
     ReunionComponent,
     DocumentComponent,
+    CancelComponent,
+    SucessComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +78,10 @@ import { DocumentComponent } from './document/document.component';
     MatInputModule,
     MatDialogModule,
 
-    ScheduleModule,RecurrenceEditorModule
+    ScheduleModule, 
+    RecurrenceEditorModule,
+    MatCardModule,
+
   ],
   providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService ],
   bootstrap: [AppComponent]

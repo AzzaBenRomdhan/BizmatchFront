@@ -20,6 +20,7 @@ import { DashbordComponent } from './dashbord/dashbord.component';
 import { AddReclamationComponent } from './add-reclamation/add-reclamation.component';
 import { ReunionComponent } from './reunion/reunion.component';
 import { DocumentComponent } from './document/document.component';
+import { CancelComponent } from './payment/cancel/cancel.component';
 
 
 
@@ -48,8 +49,9 @@ const routes: Routes = [
   { path: "dashboard", component: DashbordComponent},
   { path: "reclamation", component: AddReclamationComponent},
   { path: "reunion", component: ReunionComponent},
-  { path: "document", component: DocumentComponent}
+  { path: "document", component: DocumentComponent},
 
+  { path: "cancel", component: CancelComponent},
 
 
 
