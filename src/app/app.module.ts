@@ -34,6 +34,7 @@ import { AdminComponent } from './admin/admin.component';
 import { UserAdminBackComponent } from './user-admin-back/user-admin-back.component';
 import { ReunionComponent } from './reunion/reunion.component';
 import { DocumentComponent } from './document/document.component';
+import { EntrepriseComponent } from './entreprise/entreprise.component';
 
 
 
@@ -59,6 +60,7 @@ import { DocumentComponent } from './document/document.component';
     UserAdminBackComponent,
     ReunionComponent,
     DocumentComponent,
+    EntrepriseComponent,
   ],
   imports: [
     BrowserModule,
