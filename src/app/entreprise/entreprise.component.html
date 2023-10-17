@@ -31,18 +31,18 @@
             </div>
         </div>
         
-        <form>
+        <form #f ="ngForm">
             <h1>Entreprise</h1>
             <div class="question">
-                <input type="text" required />
+                <input id="nom" name="nom" [(ngModel)]="entreprise.nom" type="text" required />
                 <label>Nom de l'entreprise</label>
             </div>
             <div class="question">
-                <input type="text" required />
+                <input id="adresse" name="adresse" [(ngModel)]="entreprise.adresse" type="text" required />
                 <label>Adresse de l'entreprise</label>
             </div>
             <div class="question">
-                <input type="text" required />
+                <input id="details" name="details" [(ngModel)]="entreprise.details" type="text" required />
                 <label>Detail de l'entreprise</label>
             </div>
             <div class="select">
@@ -63,7 +63,7 @@
                 </select>
               
             </div>
-            <button>Enregistrer</button>
+            <button (click)="addEntreprise(f.value)" type ="submit">Enregistrer </button>
         </form>
     </div>
 </div>
