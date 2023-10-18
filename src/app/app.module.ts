@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginRegisterComponent } from './login-register/login-register.component';
 import { MatchComponent } from './match/match.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormGroup, FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApropsComponent } from './aprops/aprops.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
@@ -17,11 +17,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
 import { DialogElementsExampleDialogComponent } from './ResetPasswordFromProfil/dialog-elements-example-dialog.component';
 import { PremiumComponent } from './premium/premium.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { BlogComponent } from './blog/blog.component';
-import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 
 import { RecaptchaModule } from "ng-recaptcha";
 import { ScheduleModule , RecurrenceEditorModule, DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService} from '@syncfusion/ej2-angular-schedule';
@@ -37,7 +37,14 @@ import { DocumentComponent } from './document/document.component';
 import { CancelComponent } from './payment/cancel/cancel.component';
 import { SucessComponent } from './payment/sucess/sucess.component';
 import { MatCardModule } from '@angular/material/card';
-
+import { AllPostsComponent } from './forum/all-posts/all-posts.component';
+import { BlogDetailsComponent } from './forum/blog-details/blog-details.component';
+import { UpdateObjectifComponent } from './objectifs/update-objectif/update-objectif.component';
+import { DeleteObjectifComponent } from './objectifs/delete-objectif/delete-objectif.component';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatChipsModule} from '@angular/material/chips';
+import { AddObjectifComponent } from './objectifs/add-objectif/add-objectif.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +59,6 @@ import { MatCardModule } from '@angular/material/card';
     PremiumComponent,
     ForgetPasswordComponent,
     BlogComponent,
-    DialogOverviewExampleDialogComponent,
     ProfileComponent,
     MarcheServiceComponent,
     SuiviObjectifsComponent,
@@ -63,6 +69,12 @@ import { MatCardModule } from '@angular/material/card';
     DocumentComponent,
     CancelComponent,
     SucessComponent,
+    AllPostsComponent,
+    BlogDetailsComponent,
+    UpdateObjectifComponent,
+    DeleteObjectifComponent,
+    AddObjectifComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -77,11 +89,14 @@ import { MatCardModule } from '@angular/material/card';
     RecaptchaModule,
     MatInputModule,
     MatDialogModule,
-
+    MatIconModule,
     ScheduleModule, 
     RecurrenceEditorModule,
     MatCardModule,
-
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatChipsModule
   ],
   providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService ],
   bootstrap: [AppComponent]

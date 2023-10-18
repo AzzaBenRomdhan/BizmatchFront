@@ -19,8 +19,8 @@ export class PremiumComponent {
       name: 'premium',
       currency: 'usd',
       // amount on cents *10 => to be on dollar
-      amount: 49,
-      quantity: '0',
+      amount: 94900,
+      quantity: '1',
       cancelUrl: 'http://localhost:4200/cancel',
       successUrl: 'http://localhost:4200/success',
     };
@@ -30,16 +30,18 @@ export class PremiumComponent {
       return;
     }
   
-    this.http.post(`${environment.apiUrl}/payment/stripe`, payment)
-      .subscribe((data: any) => {
-        stripe.redirectToCheckout({
-          sessionId: data.id,
-        }).then((result) => {
-          if (result.error) {
-            console.error(result.error.message);
-          }
+    // this is a normal http call to a backend API
+    this.http.post(`${environment.serverUrl}/payment`, payment).subscribe(
+      (data: any) => {
+        // I use stripe to redirect to the Checkout page of the Stripe platform
+        stripe?.redirectToCheckout({
+          sessionId: data.id
         });
-      });
+      },
+      (error: any) => {
+        console.error('Error creating payment session:', error);
+      }
+    );
   }
 
 }

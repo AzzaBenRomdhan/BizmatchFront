@@ -8,10 +8,8 @@ import { useAnimation } from '@angular/animations';
 import { PremiumComponent } from './premium/premium.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { BlogComponent } from './blog/blog.component';
-import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MarcheServiceComponent } from './marche-service/marche-service.component';
-import { TestComponent } from './test/test.component';
 import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objectifs.component';
 import { AdminComponent } from './admin/admin.component';
 import {AuthGuard} from "./auth/auth.guard";
@@ -21,8 +19,9 @@ import { AddReclamationComponent } from './add-reclamation/add-reclamation.compo
 import { ReunionComponent } from './reunion/reunion.component';
 import { DocumentComponent } from './document/document.component';
 import { CancelComponent } from './payment/cancel/cancel.component';
-
-
+import { SucessComponent } from './payment/sucess/sucess.component';
+import { AllPostsComponent } from './forum/all-posts/all-posts.component';
+import { BlogDetailsComponent } from './forum/blog-details/blog-details.component';
 
 
 
@@ -38,11 +37,9 @@ const routes: Routes = [
 
   { path: "premium", component: PremiumComponent},
   { path: "forgetPassword", component: ForgetPasswordComponent},
-  { path: "blog", component: BlogComponent},
-  { path: "blog-exemple", component: DialogOverviewExampleDialogComponent},
+  { path: "blog", component: AllPostsComponent},
   { path: "marché", component: MarcheServiceComponent},
   { path: "suiviObjectif", component: SuiviObjectifsComponent},
-  { path: "test", component: TestComponent},
 
   {path:"userBack",component:UserAdminBackComponent},
   { path: "admin", component: AdminComponent,canActivate:[AuthGuard], data:{roles:['Admin']}},
@@ -52,7 +49,8 @@ const routes: Routes = [
   { path: "document", component: DocumentComponent},
 
   { path: "cancel", component: CancelComponent},
-
+  { path: "sucess", component: SucessComponent},
+  { path: 'blog-details/:idpostBlog', component: BlogDetailsComponent },
 
 
 ];

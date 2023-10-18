@@ -1,0 +1,71 @@
+<app-header></app-header>
+<div class="container mt-5 pt-5">
+    <div class="section-title text-center">
+        <h1>Nos Articles</h1>
+        <p>Découvrez nos offres Premium pour bénéficier d'avantages exclusifs.</p>
+        <div class="border-button mb-5"><a (click)="hideAllForm()" >ajouter une publication </a></div>
+    </div>
+      <form *ngIf="showForm" class="cf" #f="ngForm">
+      <div class="half left cf">
+        <input type="text" id="input-name" placeholder="Title" name="title" [(ngModel)]="pp.title"  style="margin-bottom: 20px;">
+        <select id="category" name="category"  [(ngModel)]="pp.category" class="form-control" class="form-select" aria-label="Default select example">
+            <option selected>Opinion</option>
+            <option value="1">Question</option>
+            <option value="2">Experience</option>
+            <option value="3">Success_Story</option>
+          </select>
+      </div>
+      <div class="half right cf">
+        <textarea type="text" id="input-message" placeholder="Description" name="content" [(ngModel)]="pp.content"></textarea>
+      </div>  
+      <input type="submit" value="next" id="input-submit" (click)="addP(f.value);hideForm(); ">
+      <div *ngIf="hideFormAdd==true" >
+        <h5 cl  class="modal-title" id="exampleModalLabel"> Upload Image</h5>
+        <div class="form-group">
+        <input type="file" (change)="onImageChange($event)"></div>
+        <br><br>
+        <input type="submit" id="input-submit" (click)="onUpload();showUploadImg();"  value="Share"> 
+      </div>
+
+    </form>
+    
+    
+
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                <div *ngFor="let post of posts" class=" mt-5">
+                    <div class="blog-date">{{post.publishedDate | date }}</div>
+                <img [src]="post.imageData" alt="" class="blog-image">
+                <h3><a href="javascript:void(0)" class="blog-title-link">{{post.title}}</a></h3>
+                <span>{{post.user?.userName}}</span>
+                <p class="blog-description">{{post.content}}</p>
+                <div><i class="fa fa-user"></i>By {{post.user?.userName}}</div>
+                <a  style="color: #cd2122;" (click)="showDetails(post.idpostBlog)">Read more <i class="fa fa-long-arrow-right"></i></a>
+                </div>
+                </div>
+                
+                <div class="col-sm mt-5">
+                    <!-- PAGE TITLE -->
+                     <h1 class="page__title my-3 text-center">
+                       Citation du jour 
+                    </h1>
+         
+                     <!-- BLOCKQUOTE -->
+                    <blockquote class="blockquote">
+                         <p class="mb-0">
+                           Le succès en B2B dépend de la manière dont vous établissez des relations, pas de la manière dont vous vendez
+                         </p>
+                         <footer class="blockquote-footer">
+                           Dharmesh Shah<cite title="Source Title"></cite>
+                         </footer>
+                     </blockquote>
+                 </div>
+            </div>
+        </div>
+        
+
+
+
+</div>
+<app-footer></app-footer>
