@@ -90,23 +90,31 @@ export class UserService {
     return this.httpclient.post<any>(`${this.PATH_OF_API1}/resetPassword`, newPassword);
   }
 
-  addRoleToUser(roleName: string, userName: string) {
-    const url = `${this.PATH_OF_API1}/${roleName}/${userName}`;
-    return this.httpclient.put(url, {}); // Utilisez la variable "url" que vous avez définie
+  addRoleToUser(roleName: string, userName: string): Observable<any> {
+    const url = `${this.PATH_OF_API1}/addroles/${roleName}/${userName}`;
+    return this.httpclient.put(url, {});
   }
 
 
   getAllUsers(): Observable<User[]> {
-    return this.httpclient.get<User[]>(`${this.PATH_OF_API1}/getallUser`, {});
+    return this.httpclient.get<User[]>(`${this.PATH_OF_API1}/getallUser`);
   }
 
-  getcountEntreprise() {
+ 
+  getCountEntreprise(): Observable<number> {
     return this.httpclient.get<number>(`${this.PATH_OF_API1}/countentreprise`);
+  } 
 
+  getCountFournisseur(): Observable<number> {
+    return this.httpclient.get<number>(`${this.PATH_OF_API1}/countFournisseur`);
   }
-  getCountUsers() {
-    return this.httpclient.get<number>(`${this.PATH_OF_API1}/countusers`);
+
+
+  getCountUsers(): Observable<number> {
+    return this.httpclient.get<number>(`${this.PATH_OF_API1}/userss`);
   }
+
+  //CRM Non Fonctionelles 
   analyserContenuParId(id: number): Observable<AnalyseSentiment> {
     return this.httpclient.get<AnalyseSentiment>(`${this.PATH_OF_API1}/Claim/analyser-contenu/${id}`);
   }

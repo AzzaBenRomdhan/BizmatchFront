@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -31,7 +30,7 @@ import { MarcheServiceComponent } from './marche-service/marche-service.componen
 import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objectifs.component';
 import { AddReclamationComponent } from './add-reclamation/add-reclamation.component';
 import { AdminComponent } from './admin/admin.component';
-import { UserAdminBackComponent } from './user-admin-back/user-admin-back.component';
+import { CrmComponent } from './crm/crm.component';
 import { ReunionComponent } from './reunion/reunion.component';
 import { DocumentComponent } from './document/document.component';
 import { EntrepriseComponent } from './entreprise/entreprise.component';
@@ -57,7 +56,7 @@ import { EntrepriseComponent } from './entreprise/entreprise.component';
     SuiviObjectifsComponent,
     AddReclamationComponent,
     AdminComponent,
-    UserAdminBackComponent,
+    CrmComponent,
     ReunionComponent,
     DocumentComponent,
     EntrepriseComponent,
@@ -75,6 +74,8 @@ import { EntrepriseComponent } from './entreprise/entreprise.component';
     RecaptchaModule,
     MatInputModule,
     MatDialogModule,
+    MatMenuModule,
+
     ScheduleModule, RecurrenceEditorModule
   ],
   providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService ],
