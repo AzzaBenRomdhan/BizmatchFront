@@ -5,19 +5,9 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- *** Logo Start *** -->
-                    <style>
-                        .logo img {
-                            height: 75px; /* Adjust the height to your desired size */
-        width: auto;
-        margin-top: -5px; /* Adjust the top margin */
-        margin-left: -10px; /* Adjust the left margin */
-                        }
-                    </style>
-                    
                     <a href="index.html" class="logo">
                         <img src="assets/images/logo.png" alt="">
                     </a>
-                                      
                     <!-- *** Logo End *** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
@@ -26,6 +16,7 @@
                         <li><a routerLink="/premium">abonnement</a></li>
                         <li><a routerLink="/blog">blog</a></li>
                         <li><a routerLink="/marché">Découverte</a></li>
+                      <li><a routerLink="/Four">Fournisseur</a></li>
                         <li><a *ngIf="!isLoggedIn" routerLink="/sinscrire">connexion</a></li>
                         <li *ngIf="isLoggedIn==true">
                             <button  mat-button [matMenuTriggerFor]="menu">
@@ -36,8 +27,8 @@
                               <button mat-menu-item (click)="logout()">Déconnexion<i class="fas fa-sign-out-alt" style="color: #22b3c1;"></i></button>
                             </mat-menu>
                           </li>
-                          
-                    </ul>   
+  
+                    </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
@@ -48,5 +39,6 @@
     </div>
   </header>
   <!-- ***** Header Area End ***** -->
-
-
+  
+  
+  

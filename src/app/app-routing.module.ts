@@ -13,7 +13,9 @@ import { MarcheServiceComponent } from './marche-service/marche-service.componen
 import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objectifs.component';
 import { AdminComponent } from './admin/admin.component';
 import {AuthGuard} from "./auth/auth.guard";
-import {UserAdminBackComponent} from "./user-admin-back/user-admin-back.component";
+
+
+
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { AddReclamationComponent } from './add-reclamation/add-reclamation.component';
 import { ReunionComponent } from './reunion/reunion.component';
@@ -22,6 +24,9 @@ import { CancelComponent } from './payment/cancel/cancel.component';
 import { SucessComponent } from './payment/sucess/sucess.component';
 import { AllPostsComponent } from './forum/all-posts/all-posts.component';
 import { BlogDetailsComponent } from './forum/blog-details/blog-details.component';
+import { EntrepriseComponent } from './entreprise/entreprise.component';
+
+
 
 
 
@@ -40,13 +45,14 @@ const routes: Routes = [
   { path: "blog", component: AllPostsComponent},
   { path: "marché", component: MarcheServiceComponent},
   { path: "suiviObjectif", component: SuiviObjectifsComponent},
-
-  {path:"userBack",component:UserAdminBackComponent},
+  
   { path: "admin", component: AdminComponent,canActivate:[AuthGuard], data:{roles:['Admin']}},
   { path: "dashboard", component: DashbordComponent},
   { path: "reclamation", component: AddReclamationComponent},
   { path: "reunion", component: ReunionComponent},
   { path: "document", component: DocumentComponent},
+  { path: "entreprise", component: EntrepriseComponent},
+
 
   { path: "cancel", component: CancelComponent},
   { path: "sucess", component: SucessComponent},

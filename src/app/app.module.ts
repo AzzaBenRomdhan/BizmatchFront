@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -31,7 +30,7 @@ import { MarcheServiceComponent } from './marche-service/marche-service.componen
 import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objectifs.component';
 import { AddReclamationComponent } from './add-reclamation/add-reclamation.component';
 import { AdminComponent } from './admin/admin.component';
-import { UserAdminBackComponent } from './user-admin-back/user-admin-back.component';
+import { CrmComponent } from './crm/crm.component';
 import { ReunionComponent } from './reunion/reunion.component';
 import { DocumentComponent } from './document/document.component';
 import { CancelComponent } from './payment/cancel/cancel.component';
@@ -45,6 +44,9 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatChipsModule} from '@angular/material/chips';
 import { AddObjectifComponent } from './objectifs/add-objectif/add-objectif.component';
+import { EntrepriseComponent } from './entreprise/entreprise.component';
+
+
 
 @NgModule({
   declarations: [
@@ -64,7 +66,7 @@ import { AddObjectifComponent } from './objectifs/add-objectif/add-objectif.comp
     SuiviObjectifsComponent,
     AddReclamationComponent,
     AdminComponent,
-    UserAdminBackComponent,
+    CrmComponent,
     ReunionComponent,
     DocumentComponent,
     CancelComponent,
@@ -75,6 +77,7 @@ import { AddObjectifComponent } from './objectifs/add-objectif/add-objectif.comp
     DeleteObjectifComponent,
     AddObjectifComponent,
     
+    EntrepriseComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,7 +99,9 @@ import { AddObjectifComponent } from './objectifs/add-objectif/add-objectif.comp
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatChipsModule
+    MatChipsModule,
+
+    ScheduleModule, RecurrenceEditorModule
   ],
   providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService ],
   bootstrap: [AppComponent]
