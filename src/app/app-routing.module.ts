@@ -11,11 +11,11 @@ import { BlogComponent } from './blog/blog.component';
 import { DialogOverviewExampleDialogComponent } from './dialog-overview-example-dialog/dialog-overview-example-dialog.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MarcheServiceComponent } from './marche-service/marche-service.component';
-import { TestComponent } from './test/test.component';
+
 import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objectifs.component';
 import { AdminComponent } from './admin/admin.component';
 import {AuthGuard} from "./auth/auth.guard";
-import {UserAdminBackComponent} from "./user-admin-back/user-admin-back.component";
+
 
 
 import { DashbordComponent } from './dashbord/dashbord.component';
@@ -40,9 +40,7 @@ const routes: Routes = [
   { path: "blog-exemple", component: DialogOverviewExampleDialogComponent},
   { path: "marché", component: MarcheServiceComponent},
   { path: "suiviObjectif", component: SuiviObjectifsComponent},
-  { path: "test", component: TestComponent},
-
-  {path:"userBack",component:UserAdminBackComponent},
+  
   { path: "admin", component: AdminComponent,canActivate:[AuthGuard], data:{roles:['Admin']}},
   { path: "dashboard", component: DashbordComponent},
   { path: "reclamation", component: AddReclamationComponent}

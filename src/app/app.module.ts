@@ -31,7 +31,8 @@ import { MarcheServiceComponent } from './marche-service/marche-service.componen
 import { SuiviObjectifsComponent } from './objectifs/suivi-objectifs/suivi-objectifs.component';
 import { AddReclamationComponent } from './add-reclamation/add-reclamation.component';
 import { AdminComponent } from './admin/admin.component';
-import { UserAdminBackComponent } from './user-admin-back/user-admin-back.component';
+import { CrmComponent } from './crm/crm.component';
+
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { UserAdminBackComponent } from './user-admin-back/user-admin-back.compon
     SuiviObjectifsComponent,
     AddReclamationComponent,
     AdminComponent,
-    UserAdminBackComponent,
+    CrmComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,9 @@ import { UserAdminBackComponent } from './user-admin-back/user-admin-back.compon
     MatFormFieldModule,
     RecaptchaModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
