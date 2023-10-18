@@ -1,70 +1,87 @@
 <app-header></app-header>
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
-        <script src="https://cdn.jsdelivr.net/gh/alpine-collective/alpine-magic-helpers@0.3.x/dist/index.js"></script>
-
-        <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
-            <!-- Photo File Input -->
-            <input type="file" class="hidden" x-ref="photo" x-on:add="
-                photoName = $refs.photo.files[0].name;
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    photoPreview = e.target.result;
-                };
-                reader.readAsDataURL($refs.photo.files[0]);
-            ">
-
-            <label class="block text-gray-700 text-sm font-bold mb-2 text-center" for="photo">
-                Image d'entreprise <span class="text-red-600"> </span>
-            </label>
-
-            <div class="text-center">
-                
-                <!-- New Profile Photo Preview -->
-                <div class="mt-2" x-show="! photoPreview">
-                    <img src="../assets/images/company-01" alt="Image d'entreprise" class="w-40 h-40 rounded-full m-auto shadow">
-                </div>
-                <button type="button" class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-400 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150 mt-2 ml-3" x-on:click.prevent="$refs.photo.click()">
-                    Ajouter une photo
-                </button>
+      <div class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
+        <!-- Photo File Input -->
+        <input type="file" class="hidden" #photoInput (change)="onFileSelected($event)">
+  
+        <label class="block text-gray-700 text-sm font-bold mb-2 text-center" for="photoInput">
+            Image d'entreprise
+          </label>
+          
+          <div class="text-center">
+            <!-- New Profile Photo Preview -->
+            <div class="mt-2" *ngIf="entreprise.photo">
+              <img [src]="entreprise.photo" alt="Image d'entreprise" class="w-40 h-40 rounded-full m-auto shadow">
             </div>
+            <input
+              type="file"
+              id="photoInput"
+              accept="image/*"
+              (change)="onFileSelected($event)"
+              style="display: none;"
+            />
+            <button
+              type="button"
+              class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-400 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150 mt-2 ml-3"
+              (click)="openFileInput()"
+            >
+              Ajouter une photo
+            </button>
+          </div>
+      
+
+      <form #f="ngForm" (ngSubmit)="addEntreprise(f.value)">
+        <h1>Entreprise</h1>
+        <div class="question">
+          <input id="nom" name="nom" [(ngModel)]="entreprise.nom" type="text" required>
+          <label>Nom de l'entreprise</label>
         </div>
-        
-        <form #f ="ngForm">
-            <h1>Entreprise</h1>
-            <div class="question">
-                <input id="nom" name="nom" [(ngModel)]="entreprise.nom" type="text" required />
-                <label>Nom de l'entreprise</label>
-            </div>
-            <div class="question">
-                <input id="adresse" name="adresse" [(ngModel)]="entreprise.adresse" type="text" required />
-                <label>Adresse de l'entreprise</label>
-            </div>
-            <div class="question">
-                <input id="details" name="details" [(ngModel)]="entreprise.details" type="text" required />
-                <label>Detail de l'entreprise</label>
-            </div>
-            <div class="select">
-                <label>Secteur d'activité</label>
-                <select required>
-                    <option value="Marketing">Marketing</option>
-                    <option value="Technologie">Technologie</option>
-                    <option value="Finance">Finance</option>
-                    <option value="Santé">Santé</option>
-                    <option value="Éducation">Éducation</option>
-                    <option value="Mode">Mode</option>
-                    <option value="Alimentation">Alimentation</option>
-                    <option value="Immobilier">Immobilier</option>
-                    <option value="Consultation">Consultation</option>
-                    <option value="Production">Production</option>
-                    <option value="Recherche">Recherche</option>
-                    <option value="Autre">Autre</option>
-                </select>
-              
-            </div>
-            <button (click)="addEntreprise(f.value)" type ="submit">Enregistrer </button>
-        </form>
+        <div class="question">
+          <input id="adresse" name="adresse" [(ngModel)]="entreprise.adresse" type="text" required>
+          <label>Adresse de l'entreprise</label>
+        </div>
+        <div class="question">
+          <input id="details" name="details" [(ngModel)]="entreprise.details" type="text" required>
+          <label>Detail de l'entreprise</label>
+        </div>
+        <div class="question">
+            <input id="budget" name="budget" [(ngModel)]="entreprise.budget" type="text" required>
+            <label>budget de l'entreprise</label>
+          </div>
+        <div class="select">
+          <label>Secteur d'activité</label>
+          <select id="domaine" name="domaine" [(ngModel)]="entreprise.domaine" required>
+            <option value="Marketing">Marketing</option>
+            <option value="Technologie">Technologie</option>
+            <option value="Finance">Finance</option>
+            <option value="Santé">Santé</option>
+            <option value="Éducation">Éducation</option>
+            <option value="Mode">Mode</option>
+            <option value="Alimentation">Alimentation</option>
+            <option value="Immobilier">Immobilier</option>
+            <option value="Consultation">Consultation</option>
+            <option value="Production">Production</option>
+            <option value="Recherche">Recherche</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
+        <button (click)="addEntreprise(f.value)" type ="submit">Enregistrer </button>
+      </form>
+          
+          <!-- Add the "Modifier" (Edit) button here
+          <div class="text-center">
+            <button
+                type="button"
+                class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-400 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150 mt-2 ml-3"
+                (click)="updateEntreprise(entreprise)"
+            >
+                Modifier
+            </button>
+             -->
+        </div>
     </div>
-</div>
+  </div>
+  
+  
 <app-footer></app-footer>
