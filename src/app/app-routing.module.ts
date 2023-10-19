@@ -25,6 +25,8 @@ import { SucessComponent } from './payment/sucess/sucess.component';
 import { AllPostsComponent } from './forum/all-posts/all-posts.component';
 import { BlogDetailsComponent } from './forum/blog-details/blog-details.component';
 import { EntrepriseComponent } from './entreprise/entreprise.component';
+import { FournisseurComponent } from './fournisseur/fournisseur.component';
+import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
 
 
 
@@ -57,6 +59,8 @@ const routes: Routes = [
   { path: "cancel", component: CancelComponent},
   { path: "sucess", component: SucessComponent},
   { path: 'blog-details/:idpostBlog', component: BlogDetailsComponent },
+  {path:"Four",component:FournisseurComponent},
+  {path:"DetailsFour",component:FournisseurDetailsComponent}
 
 
 ];
