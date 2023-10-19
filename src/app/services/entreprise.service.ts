@@ -34,7 +34,7 @@ export class EntrepriseService {
     return this.http.post<Entreprise>(`${this.url}/addavecImage`, entreprise);
   }
   updateEntreprise(entreprise: Entreprise): Observable<void> {
-    return this.http.put<void>(`${this.url}/edit`, entreprise);
+    return this.http.put<void>(`${this.url}/update`, entreprise);
   }
   deleteEntreprise(id: number): Observable<void> {
     return this.http.delete<void>(`${this.url}/delete/${id}`);

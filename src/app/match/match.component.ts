@@ -1,6 +1,8 @@
-import { Component, Renderer2, ElementRef, AfterViewInit } from '@angular/core';
 import { Demande } from '../model/Demande';
 import { DemandeService } from '../services/demande.service'; // Importez votre service
+import { Recruteur } from '../model/Recruteur';
+import { RecruteurService } from '../services/recruteur.service';
+import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-match',
@@ -8,13 +10,15 @@ import { DemandeService } from '../services/demande.service'; // Importez votre 
   styleUrls: ['./match.component.css']
 })
 export class MatchComponent implements AfterViewInit {
-  demandes: Demande[] = [];
-  newDemande: Demande = new Demande();
+
+  recruteur: Recruteur = new Recruteur();
+  demande: Demande = new Demande(); // Déclarez la propriété demande
 
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
-    private demandeService: DemandeService // Injectez votre service
+    private recruteurService: RecruteurService,
+    private demandeService: DemandeService
   ) {}
 
   ngAfterViewInit() {
@@ -32,56 +36,29 @@ export class MatchComponent implements AfterViewInit {
     }
   }
 
-  addDemande(demande: Demande): void {
-    this.demandeService.addDemande(demande).subscribe(
-      () => {
-        console.log('Demande ajoutée avec succès');
-        this.clearForm();
-        this.retrieveAllDemandes();
+  addRecruteur(recruteurData: Recruteur): void {
+    this.recruteurService.addRecruteur(recruteurData).subscribe(
+      (response) => {
+        console.log('Recruteur ajouté avec succès :', response);
+        // Réinitialisez le formulaire
+        this.recruteur = new Recruteur();
       },
       (error) => {
-        console.error('Échec de l\'ajout de la demande', error);
+        console.error('Une erreur est survenue :', error);
       }
     );
   }
 
-  updateDemande(demande: Demande): void {
-    this.demandeService.updateDemande(demande).subscribe(
-      () => {
-        console.log('Demande mise à jour avec succès');
-        this.retrieveAllDemandes();
+  addDemande(demandeData: Demande): void {
+    this.demandeService.addDemande(demandeData).subscribe(
+      (response) => {
+        console.log('Demande ajoutée avec succès :', response);
+        // Réinitialisez le formulaire
+        this.demande = new Demande();
       },
       (error) => {
-        console.error('Échec de la mise à jour de la demande', error);
+        console.error('Une erreur est survenue :', error);
       }
     );
-  }
-
-  deleteDemande(id: number): void {
-    this.demandeService.deleteDemande(id).subscribe(
-      () => {
-        console.log('Demande supprimée avec succès');
-        this.retrieveAllDemandes();
-      },
-      (error) => {
-        console.error('Échec de la suppression de la demande', error);
-      }
-    );
-  }
-
-  retrieveAllDemandes(): void {
-    this.demandeService.getAllDemandes().subscribe(
-      (demandes) => {
-        this.demandes = demandes;
-        console.log('Toutes les demandes récupérées', demandes);
-      },
-      (error) => {
-        console.error('Échec de la récupération de toutes les demandes', error);
-      }
-    );
-  }
-
-  private clearForm(): void {
-    this.newDemande = new Demande();
   }
 }

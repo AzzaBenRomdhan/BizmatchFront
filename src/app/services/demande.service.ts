@@ -12,22 +12,22 @@ export class DemandeService {
   constructor(private http: HttpClient) {}
 
   getAllDemandes(): Observable<Demande[]> {
-    return this.http.get<Demande[]>(this.url); // Use `this.url`
+    return this.http.get<Demande[]>(`${this.url}/getAll`);
   }
 
   getDemandeById(id: number): Observable<Demande> {
-    return this.http.get<Demande>(`${this.url}/${id}`); // Use `this.url`
+    return this.http.get<Demande>(`${this.url}/get/${id}`);
   }
 
   addDemande(demande: Demande): Observable<void> {
-    return this.http.post<void>(`${this.url}/add`, demande); // Use `this.url`
+    return this.http.post<void>(`${this.url}/add`, demande);
   }
 
-  updateDemande(demande: Demande): Observable<void> {
-    return this.http.put<void>(`${this.url}/edit`, demande); // Use `this.url`
+  updateDemande(id: number, demande: Demande): Observable<void> {
+    return this.http.put<void>(`${this.url}/update/${id}`, demande);
   }
 
   deleteDemande(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.url}/delete/${id}`); // Use `this.url`
+    return this.http.delete<void>(`${this.url}/delete/${id}`);
   }
 }
