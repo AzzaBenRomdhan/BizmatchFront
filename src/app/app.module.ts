@@ -45,6 +45,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatChipsModule} from '@angular/material/chips';
 import { AddObjectifComponent } from './objectifs/add-objectif/add-objectif.component';
 import { EntrepriseComponent } from './entreprise/entreprise.component';
+import { FournisseurComponent } from './fournisseur/fournisseur.component';
+import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
 
 
 
@@ -78,6 +80,8 @@ import { EntrepriseComponent } from './entreprise/entreprise.component';
     AddObjectifComponent,
     
     EntrepriseComponent,
+          FournisseurComponent,
+          FournisseurDetailsComponent,
   ],
   imports: [
     BrowserModule,

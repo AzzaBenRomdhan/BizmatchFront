@@ -1,0 +1,215 @@
+<app-header></app-header> 
+<style>
+    * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	height: 100vh;
+	background-color: #dfe2e9;
+	color: #fff;
+	font-size: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.star-rating {
+	white-space: nowrap;
+}
+.star-rating [type="radio"] {
+	appearance: none;
+}
+.star-rating i {
+	font-size: 1.2em;
+	transition: 0.3s;
+}
+
+.star-rating label:is(:hover, :has(~ :hover)) i {
+	transform: scale(1.35);
+	color: #fffdba;
+	animation: jump 0.5s calc(0.3s + (var(--i) - 1) * 0.15s) alternate infinite;
+}
+.star-rating label:has(~ :checked) i {
+	color: #faec1b;
+	text-shadow: 0 0 2px #ffffff, 0 0 10px #ffee58;
+}
+
+@keyframes jump {
+	0%,
+	50% {
+		transform: translatey(0) scale(1.35);
+	}
+	100% {
+		transform: translatey(-15%) scale(1.35);
+	}
+}
+/* styles.css */
+.formulaire-container {
+  max-width: 600px;
+  position: absolute;
+  top: 20px; /* Corrigez la valeur "15" pour le positionnement vertical souhaité */
+  right: 0;
+  padding: 80px;
+  border: 8px solid #ccc;
+  border-radius: 8px;
+  height: inherit;
+  background-image: url('assets/images/Collab-bro.png');
+  background-size: cover; /* Ajustez la taille de l'image à la div */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  background-color: #6ec7e2;
+  background-position: center center;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.871);
+  color: rgb(15, 14, 14);
+}
+
+
+
+/* Styles pour les labels */
+.formulaire-container label {
+  font-weight: bold;
+}
+
+/* Style personnalisé pour le bouton */
+.formulaire-container button {
+  background-color: #69c9e3;
+  color: #121111;
+  border: none;
+}
+
+
+
+</style>
+<div class="container">
+    
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/ytP9VP86DItizVX2YNA-xTYzV09IS7rh4WexVp7eilIcfHmm74B7odbcwD5DTXmL0PF42i2wnRKSFPBHlmSjCblWHDCD2oD1oaM1CGFcSd48VBKJfsCi4bS170PKxGwji8CPmehwPw=w200-h247-no" alt="Person" class="card__image">
+      <p class="card__name">Lily-Grace Colley</p>
+      <div class="grid-container">
+  
+        <div class="grid-child-posts">
+          156 Post
+        </div>
+  
+        <div class="grid-child-followers">
+          1012 Likes
+        </div>
+  
+      </div>
+      <p>Rating: <span class="star-rating">
+		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-1" value="1">
+		<label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-2" value="2" checked>
+		<label for="rate-3" style="--i:3"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-3" value="3">
+		<label for="rate-4" style="--i:4"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-4" value="4">
+		<label for="rate-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-5" value="5">
+	</span></p>
+     
+    <button class="btn draw-border" [routerLink]="['/DetailsFour']">Details</button>
+
+  
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/oUUiPB9sq3ACq4bUaRmo8pgvC4FUpRRrQKcGIBSOsafawZfRpF1vruFeYt6uCfL6wGDQyvOi6Ez9Bpf1Fb7APKjIyVsft7FLGR6QqdRFTiceNQBm1In9aZyrXp33cZi9pUNqjHASdA=s170-no" alt="Person" class="card__image">
+      <p class="card__name">Murray Reeve</p>
+      <div class="grid-container">
+  
+        <div class="grid-child-posts">
+          305 Post
+        </div>
+  
+        <div class="grid-child-followers">
+          2643 Likes
+        </div>
+  
+      </div>
+      <p>Rating: <span class="star-rating">
+		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-1" value="1">
+		<label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-2" value="2" checked>
+		<label for="rate-3" style="--i:3"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-3" value="3">
+		<label for="rate-4" style="--i:4"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-4" value="4">
+		<label for="rate-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-5" value="5">
+	</span></p>
+    
+    <button class="btn draw-border" [routerLink]="['/DetailsFour']">Details</button>
+
+    </div>
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/pZwZJ5HIL5iKbA91UGMUIPR0VJWa3K0vOGzDZmY6wU3EJBUdfsby3VEyxU162XxTyOyP3D154tjkr-4Jgcx8lygYUR8eB-jVmld4dsHi1c-mE_A8jKccseAG7bdEwVrcuuk6ciNtSw=s170-no" alt="Person" class="card__image">
+      <p class="card__name">Bianca Serrano</p>
+      <div class="grid-container">
+  
+        <div class="grid-child-posts">
+          902 Post
+        </div>
+  
+        <div class="grid-child-followers">
+          1300 Likes
+        </div>
+  
+      </div>
+      <p>Rating: <span class="star-rating">
+		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-1" value="1">
+		<label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-2" value="2" checked>
+		<label for="rate-3" style="--i:3"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-3" value="3">
+		<label for="rate-4" style="--i:4"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-4" value="4">
+		<label for="rate-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
+		<input type="radio" name="rating" id="rate-5" value="5">
+	</span></p>
+      
+    <button class="btn draw-border" [routerLink]="['/DetailsFour']">Details</button>
+
+    </div> 
+    <div class="formulaire-container">
+         <h1 class="mb-4">
+            <i class="fa-solid fa-lightbulb" style="color: #f2e44a;"></i> Collaborez
+  </h1>
+        <form>
+          <div class="mb-3">
+            <label for="nom" class="form-label">Nom :</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-user" > </i></span>
+              <input type="text" id="nom" name="nom" class="form-control">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="prenom" class="form-label">Prénom :</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-user" style="color: #072f74;"></i></span>
+              <input type="text" id="prenom" name="prenom" class="form-control">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="details" class="form-label" routerLink="DetailsFour">Détails :</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-circle-info" style="color: #072f74;"></i></span>
+              <textarea id="details" name="details" class="form-control"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="details" class="form-label">Domaine :</label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="fa-brands fa-creative-commons-pd" style="color: #072f74;"></i></span>
+                <textarea id="Domaine" name="Domaine" class="form-control"></textarea>
+              </div>
+            <button class="btn draw-border"> Confirmer</button>
+          </div>
+          </div>
+        </form>
+      </div>
+      
+  </div>
+  
+<app-footer></app-footer>
