@@ -7,6 +7,7 @@ import { Demande } from '../model/Demande';
   providedIn: 'root'
 })
 export class DemandeService {
+  
   private url = 'http://localhost:9093/demandeAchat';
 
   constructor(private http: HttpClient) {}

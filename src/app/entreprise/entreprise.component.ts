@@ -6,12 +6,13 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-entreprise',
   templateUrl: './entreprise.component.html',
-  styleUrls: ['./entreprise.component.css']
+  styleUrls: ['./entreprise.component.css'],
 })
 export class EntrepriseComponent {
-  constructor(private entrepriseservice: EntrepriseService, private router: Router) {}
+  constructor(private entrepriseservice: EntrepriseService, private router: Router) { }
 
   entreprise: Entreprise = {
+    id: 0,
     nom: '',
     adresse: '',
     details: '',
@@ -19,92 +20,85 @@ export class EntrepriseComponent {
     budget: 0,
     accepte: false,
     domaine: '',
-  
   };
   entreprises: Entreprise[] = [];
-  
+  showForm = false;
 
   openFileInput() {
-    const inputElement = document.getElementById('photoInput');
+    const inputElement = document.getElementById('photoInput') as HTMLInputElement;
     if (inputElement) {
+      inputElement.style.display = 'block';
       inputElement.click();
+      inputElement.style.display = 'none';
     }
   }
-  
-  onFileSelected(event: Event) {
+
+  onImageChange(event: Event) {
     const inputElement = event.target as HTMLInputElement;
     const files = inputElement.files;
     if (files && files.length > 0) {
       const file = files[0];
       const formData = new FormData();
-      formData.append('file', file);
-  
-      // Submit the file to the service for upload
+      formData.append('image', file);
+
       this.entrepriseservice.uploadPhoto(formData).subscribe((response) => {
         this.entreprise.photo = response.photo;
       });
     }
   }
-  
-  addEntreprise(entreprise: Entreprise) {
-    this.entrepriseservice.addEntreprise(entreprise).subscribe(
-      () => {
-        this.router.navigate(['/home']);
-        console.log('entreprise ajoutée');
-      },
-      (erreur) => {
-        console.log('echec d\'ajout de l\'entreprise');
-      }
-    );
-  }
 
-  updateEntreprise(entreprise: Entreprise) {
-    this.entrepriseservice.updateEntreprise(entreprise).subscribe(
-      () => {
-        console.log('entreprise mise à jour');
-      },
-      (error) => {
-        console.log('Échec de la mise à jour de l\'entreprise', error);
+  onUpload() {
+    if (typeof this.entreprise.photo === 'string') {
+      // Photo is already a string (image path), so call addEntreprise
+      this.entrepriseservice.addEntreprise(this.entreprise).subscribe(
+        () => {
+          this.retrieveAllEnterprises();
+          this.hideAllForm();
+          console.log('Entreprise ajoutée');
+        },
+        (erreur) => {
+          console.log("Échec d'ajout de l'entreprise", erreur);
+        }
+      );
+    } else if (this.entreprise.photo instanceof File) {
+      // Photo is a File, so call addEntrepriseWithImage
+      if (this.entreprise.recruteurId && this.entreprise.demandeAchatId) {
+        this.entrepriseservice.addEntrepriseWithImage(
+          this.entreprise.nom,
+          this.entreprise.photo,
+          this.entreprise.adresse,
+          this.entreprise.details,
+          this.entreprise.budget,
+          this.entreprise.domaine,
+          this.entreprise.recruteurId,
+          this.entreprise.demandeAchatId
+        ).subscribe(
+          () => {
+            this.retrieveAllEnterprises();
+            this.hideAllForm();
+            console.log('Entreprise ajoutée');
+          },
+          (erreur) => {
+            console.log("Échec d'ajout de l'entreprise", erreur);
+          }
+        );
+      } else {
+        console.log("Recruteur ID or DemandeAchat ID is undefined. Handle this case accordingly.");
       }
-    );
-  }
-  deleteEntreprise(id: number) {
-    this.entrepriseservice.deleteEntreprise(id).subscribe(
-      () => {
-        console.log('Entreprise supprimée avec succès');
-        // You can also refresh the list of entreprises if needed.
-        this.retrieveAllEntreprises();
-      },
-      (error) => {
-        console.log('Échec de la suppression de l\'entreprise', error);
-      }
-    );
-  }
-
-  retrieveEntrepriseById(id: number) {
-    this.entrepriseservice.getEntrepriseById(id).subscribe(
-      (entreprise) => {
-        // Handle the retrieved entreprise as needed
-        console.log('Entreprise récupérée par ID', entreprise);
-      },
-      (error) => {
-        console.log('Échec de la récupération de l\'entreprise par ID', error);
-      }
-    );
-  }
-
-  retrieveAllEntreprises() {
-    this.entrepriseservice.getAllEntreprises().subscribe(
-      (entreprises) => {
-        this.entreprises = entreprises;
-        console.log('Toutes les entreprises récupérées', entreprises);
-      },
-      (error) => {
-        console.log('Échec de la récupération de toutes les entreprises', error);
-      }
-    );
-  }
+    } else {
+      console.log("Invalid photo type");
+    }
   }
   
   
 
+  hideAllForm() {
+    this.showForm = !this.showForm;
+  }
+
+  retrieveAllEnterprises() {
+    this.entrepriseservice.getAllEntreprises().subscribe((enterprises) => {
+      this.entreprises = enterprises;
+    });
+  }
+}
