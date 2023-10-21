@@ -1,13 +1,10 @@
 export class Entreprise {
-    id!: number;
-    nom!: string;
-    adresse!: string;
-    details!: string;
-    photo: File | string = ''; // Set it as File or string
-    budget!: number;
-    accepte!: boolean;
-    domaine!: string;
-    demandeAchatId?: number;  // Make the property optional with '?'
-  recruteurId?: number;     // Make the property optional with '?'
-  }
   
+  nom!: string;
+  adresse!: string;
+  details!: string;
+  photo: File | null = null; // Utilisez le type File pour stocker l'image.
+  budget!: number;
+  accepte!: boolean;
+  domaine!: string;
+}

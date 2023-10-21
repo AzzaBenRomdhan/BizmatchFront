@@ -24,12 +24,14 @@ export class DocumentComponent implements OnInit {
     // Récupérer les données des demandes
     this.demandeService.getAllDemandes().subscribe((demandes) => {
       this.demandes = demandes;
+      this.demandes = this.demandes.reverse();
   
     });
 
     // Récupérer les données des recruteurs
     this.recruteurService.getAllRecruteurs().subscribe((recruteurs) => {
       this.recruteurs = recruteurs;
+      this.recruteurs = this.recruteurs.reverse();
       
     });
   }
@@ -43,22 +45,25 @@ export class DocumentComponent implements OnInit {
       },
       (error) => {
         console.error('Erreur lors de la suppression de la demande :', error);
-        // Affichez un message d'erreur à l'utilisateur
-        // this.errorMessage = 'Une erreur s'est produite lors de la suppression.';
+      
       }
     );
   }
   
 }
 
-
   deleteRecruteur(idR: number) {
     if (confirm('voulez-vous supprimer ce formulaire?')) {
       this.recruteurService.deleteRecruteur(idR).subscribe(() => {
         // Supprimer le recruteur de la liste après la suppression
         this.recruteurs = this.recruteurs.filter((recruteur) => recruteur.idR !== idR);
-      });
-    }
-   
+      },
+      (error) => {
+        console.error('Erreur lors de la suppression de la demande :', error);
+      
+      }
+    );
+  }
+  
   }
 }

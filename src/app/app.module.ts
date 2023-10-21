@@ -47,6 +47,7 @@ import { AddObjectifComponent } from './objectifs/add-objectif/add-objectif.comp
 import { EntrepriseComponent } from './entreprise/entreprise.component';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
+import { UploadFileService } from './services/upload-file.service';
 
 
 
@@ -107,7 +108,7 @@ import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-d
 
     ScheduleModule, RecurrenceEditorModule
   ],
-  providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService ],
+  providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService, UploadFileService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

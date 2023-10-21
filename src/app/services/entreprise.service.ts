@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subject, tap } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Entreprise } from '../model/Entreprise';
 
 
@@ -28,44 +28,20 @@ export class EntrepriseService {
   uploadPhoto(formData: FormData): Observable<{ photo: string }> {
     return this.http.post<{ photo: string }>(`${this.url}/upload-file`, formData);
   }
-  
-  
-  // Add an enterprise without an image
+
   addEntreprise(entreprise: Entreprise): Observable<Entreprise> {
-    return this.http.post<Entreprise>(`${this.url}/add`, entreprise, this.httpOptions);
+    return this.http.post<Entreprise>(`${this.url}/add`, entreprise);
   }
 
-  // Add an enterprise with an image
-  addEntrepriseWithImage(
-    nom: string,
-    image: File,
-    adresse: string,
-    details: string,
-    budget: number,
-    domaine: string,
-    recruteurId: number,
-    demandeAchatId: number
-  ): Observable<Entreprise> {
-    const formData = new FormData();
-    formData.append('nom', nom);
-    formData.append('image', image, image.name);
-    formData.append('adresse', adresse);
-    formData.append('details', details);
-    formData.append('budget', budget.toString());
-    formData.append('domaine', domaine);
-    formData.append('recruteurId', recruteurId.toString());
-    formData.append('demandeAchatId', demandeAchatId.toString());
-
-    return this.http.post<Entreprise>(`${this.url}/addavecImage`, formData);
+  add(formData: FormData): Observable<Entreprise> {
+    return this.http.post<Entreprise>(`${this.url}/add`, formData);
   }
-    
- 
+  
+  updateEntreprise(entreprise: Entreprise): Observable<void> {
+    return this.http.put<void>(`${this.url}/edit`, entreprise);
+  }
   deleteEntreprise(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.url}/delete/${id}`).pipe(
-      tap(() => {
-        this._refresh$.next();
-      })
-    );
+    return this.http.delete<void>(`${this.url}/delete/${id}`);
   }
   getEntrepriseById(id: number): Observable<Entreprise> {
     return this.http.get<Entreprise>(`${this.url}/${id}`);

@@ -1,237 +1,192 @@
-/* Styles pour la section du blog */
-.blog-section {
-    margin-top:20px; /* Vous pouvez ajuster la valeur selon vos besoins */
-    padding: 40px 0;
-    background-color: #f8f8f8;
-    text-align: center;
-  }
-  
-  .blog-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 200px;
-  }
-  
-  /* Styles pour chaque article de blog */
-  .blog-item {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
-    text-align: left;
-  }
-  
-  .blog-date {
-    background-color: #22b1c3;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 4px;
-    padding: 6px 12px;
-    display: inline-block;
-    margin-bottom: 10px;
-  }
-  
-  .blog-title-link {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .blog-title-link:hover {
-    color: #22b1c3;
-  }
-  
-  .blog-description {
-    font-size: 16px;
-    color: #777;
-    line-height: 1.5;
-  }
-  
-  /* Styles pour les images */
-  .blog-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  /* Styles pour la mise en page */
-  .container {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* Styles pour les médias responsives */
-  @media (min-width: 768px) {
-    .blog-item {
-        padding: 30px;
-    }
-  
-    .blog-title {
-        font-size: 28px;
-    }
-  
-    .blog-description {
-        font-size: 18px;
-    }
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700");
-  @import url("https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i");
-  @import url("https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700");
-  .blockquote {
-    font-size: 1.25rem;
-    border: 1px solid rgba(222, 226, 230, 0.54);
-    border-left: 0.5rem solid rgba(0, 123, 255, 0.54);
-    color: #6c757d;
-    font-family: "Open Sans", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-style: italic;
-    line-height: 1.6;
-    margin: 1.875rem auto;
-    max-width: 60%;
-    padding: 4.6875rem 1.875rem 1.875rem 4.6875rem;
+/* Transition pour tous les éléments concernés */
+.transition,
+form button,
+form .question label,
+form .question input[type="text"],
+form .question select {
+    -moz-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    -o-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    -webkit-transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+    transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
+}
+
+/* Style de base */
+* {
+    font-family: Helvetica, sans-serif;
+    font-weight: light;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    background-color: #22b3c1;
+}
+
+form {
     position: relative;
-    width: 100%;
-  }
-  .blockquote:before {
-    font-size: 6.875rem;
-    color: rgba(0, 123, 255, 0.54);
-    content: "“";
-    font-family: "Noto Serif", "Georgia", "Times New Roman", "Times", serif;
-    font-size: 5.5rem;
-    height: 3.75rem;
-    left: 0.9375rem;
-    line-height: 1;
-    max-width: 3.75rem;
-    position: absolute;
-    text-align: inherit;
-    top: 0.9375rem;
-    width: 100%;
-  }
-  .blockquote:after {
-    content: "";
-  }
-  .blockquote-footer {
-    font-size: 80%;
-    color: #343a40;
-    display: block;
-    font-style: normal;
-    font-weight: 700;
-    margin-top: 1rem;
-    padding: 0;
-  }
-  .blockquote-footer:before {
-    content: "— ";
-  }
-    
-  @import url(https://fonts.googleapis.com/css?family=Merriweather);
-  *,
-  *:before,
-  *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    display: inline-block;
+    max-width: 700px;
+    min-width: 500px;
     box-sizing: border-box;
-  }
-  
-  html, body {
-    background: #f1f1f1;
-    font-family: 'Merriweather', sans-serif;
-    padding: 1em;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #a8a8a8;
-    text-shadow: 1px 1px 0 white;
-  }
-  
-  form {
-    max-width: 600px;
-    text-align: center;
-    margin: 20px auto;
-  }
-  form input, form textarea {
-    border: 0;
-    outline: 0;
-    padding: 1em;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
-    display: block;
-    width: 100%;
-    margin-top: 1em;
-    font-family: 'Merriweather', sans-serif;
-    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    resize: none;
-  }
-  form input:focus, form textarea:focus {
-    -moz-box-shadow: 0 0px 2px #e74c3c !important;
-    -webkit-box-shadow: 0 0px 2px #e74c3c !important;
-    box-shadow: 0 0px 2px #e74c3c !important;
-  }
-  form #input-submit {
+    padding: 30px 25px;
+    background-color: white;
+    border-radius: 40px;
+    margin: 40px 0;
+    left: 50%;
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+form h1 {
+    color: #22b3c1;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    margin-left: 15px;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+
+form button {
+    margin-top: 35px;
+    background-color: white;
+    border: 1px solid #22b3c1;
+    line-height: 0;
+    font-size: 17px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 20px 15px;
+    border-radius: 60px;
+    color: #22b3c1;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+}
+
+form button:hover,
+form button:focus {
     color: white;
+    background-color: #22b3c1;
+}
+
+form .question {
+    position: relative;
+    padding: 10px 0;
+}
+
+form .question:first-of-type {
+    padding-top: 0;
+}
+
+form .question:last-of-type {
+    padding-bottom: 0;
+}
+
+form .question label {
+    transform-origin: left center;
+    color: #22b3c1;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    font-size: 17px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    display: block;
+    position: absolute;
+    margin-top: -40px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+form .question input[type="text"],
+form .question select {
+    appearance: none;
+    background-color: none;
+    border: 1px solid #22b3c1;
+    line-height: 0;
+    font-size: 17px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 60px;
+    color: #22b3c1;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+    color: #000000; /* Couleur du texte de la liste déroulante */
+}
+
+/* Style de l'option sélectionnée */
+form .question select option:checked {
+    background-color: #22b3c1; /* Fond bleu pour l'option sélectionnée */
+    color: #fff; /* Texte blanc pour l'option sélectionnée */
+}
+
+/* Style du champ de sélection en focus (sélectionné) */
+form .question select:focus {
+    outline: none;
+    background: #ffffff; /* Fond blanc lorsque sélectionné */
+    color: #000000; /* Texte noir lorsque sélectionné */
+    margin-top: 30px;
+}
+
+/* Style du champ de sélection validé */
+form .question select:valid {
+    margin-top: 30px;
+}
+
+/* Style pour le label lors du focus ou lorsque validé */
+form .question input[type="text"]:focus,
+form .question select:focus,
+form .question input[type="text"]:valid,
+form .question select:valid {
+    outline: none;
     background: #22b3c1;
-    cursor: pointer;
-  }
-  form #input-submit:hover {
-    -moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
-    -webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
-    box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
-  }
-  form textarea {
-    height: 126px;
-  }
-  
-  .half {
-    float: left;
-    width: 48%;
-    margin-bottom: 1em;
-  }
-  
-  .right {
-    width: 50%;
-  }
-  
-  .left {
-    margin-right: 2%;
-  }
-  
-  @media (max-width: 480px) {
-    .half {
-      width: 100%;
-      float: none;
-      margin-bottom: 0;
-    }
-  }
-  /* Clearfix */
-  .cf:before,
-  .cf:after {
-    content: " ";
-    /* 1 */
-    display: table;
-    /* 2 */
-  }
-  
-  .cf:after {
-    clear: both;
-  }
-  
+    color: white;
+    margin-top: 30px;
+}
+
+/* Transformation du label lors du focus ou lorsque validé */
+form .question input[type="text"]:focus ~ label,
+form .question select:focus ~ label,
+form .question input[type="text"]:valid ~ label,
+form .question select:valid ~ label {
+    -moz-transform: translate(0, -35px);
+    -ms-transform: translate(0, -35px);
+    -webkit-transform: translate(0, -35px);
+    transform: translate(0, -35px);
+}
+
+
+
+
+
+/* Copiez votre CSS ici */
+
+/* Ajoutez ces styles pour afficher les entreprises */
+.entreprise-list {
+  margin-top: 30px;
+}
+
+.entreprise-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.entreprise-item h2 {
+  color: #22b3c1;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin-left: 15px;
+}
+
+.entreprise-item p {
+  color: #000; /* Couleur du texte de l'entreprise */
+  font-size: 17px;
+}
