@@ -45,7 +45,6 @@ export class UserAuthService {
     }
     return null;
   }
-  
 
   public getToken(): string {
     return localStorage.getItem('jwtToken') ?? ''; 
@@ -60,6 +59,20 @@ export class UserAuthService {
 
   getUserEmail(): string | null {
     return this.userEmail;
+  }
+  //get userid from localstorage
+  public getUserName(): any  | null {
+    const userString = localStorage.getItem('user');
+    // Check if the userString exists
+    if (userString) {
+      // Parse the JSON string into an object
+      const user = JSON.parse(userString);
+      // Check if the user object and userId property exist
+      if (user && user.userName) {
+        return user.userName;
+      }
+    }  
+      return null; 
   }
 
 }

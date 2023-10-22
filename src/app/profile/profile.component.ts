@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogElementsExampleDialogComponent } from '../ResetPasswordFromProfil/dialog-elements-example-dialog.component';
 import { UserAuthService } from '../services/user-auth.service';
 import { User } from '../model/User';
+import { Objectif } from '../model/Objectif';
 
 @Component({
   selector: 'app-profile',
@@ -14,6 +15,9 @@ export class ProfileComponent implements OnInit {
       ngOnInit(){
     this.user= this.UserAuthService.getUser();
    }
+
+   
+
   constructor(public dialog: MatDialog, private UserAuthService :UserAuthService ) {}
   
 

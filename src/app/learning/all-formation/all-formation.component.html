@@ -1,0 +1,88 @@
+<app-header></app-header>
+<div class="container rounded bg-white mt-5">
+    <!------------------navbar orizetal---------------->
+    <ul class="bigButtons icon-nav mt-5">
+        <li class="button__item">
+          <a href="#" class="button__link card">
+            <svg id="learning" fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+        </svg>
+            <label class="buttonTitle" >Formation <span style="color: gold; font-weight: bold; font-size: 12px;">Premium</span></label>
+          </a>
+        </li>
+      </ul>
+<!------------------End navbar orizetal---------------->
+
+<!------------------toutes les formations-------------------->
+  
+  <div class="visit-country">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="items">
+            <div class="row">
+              <div class="col-lg-12" *ngFor="let f of formations">
+                <div class="item">
+                  <div class="row">
+                    <div class="col-lg-4 col-sm-5">
+                      <div class="image">
+                        <img [src]="f.imageData" alt="" >
+                      </div>
+                    </div>
+                    <div class="col-lg-8 col-sm-7">
+                      <div class="right-content">
+                        <h4>{{f.title}}</h4>
+                        <span>{{f.categori}}</span>
+                        <div class="main-button">
+                          <a href="about.html">Commencer maintenant</a>
+                        </div>
+                        <p>{{f.description}}</p>
+                        <ul>
+                           <li><i class="fa-solid fa-link"></i>{{f.lien}}</li> 
+
+                        </ul>
+                        <div class="text-button">
+                          <a href="about.html">Vois détails formation <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <ul class="page-numbers">
+                  <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+                  <li><a href="#">1</a></li>
+                  <li class="active"><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="side-bar-map">
+            <div class="row">
+              <div class="col-lg-12">
+                 <!-- PAGE TITLE -->
+                <h1 class="page__title my-3 text-center">
+                    Meilleures catégories
+                </h1>
+    
+                <!-- BLOCKQUOTE -->
+               <blockquote class="blockquote">
+                <h5>"L'apprentissage ne connaît pas de frontières. Il peut se faire n'importe où, n'importe quand." - Peter Jennings</h5>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!------------------End toutes les formations----------------->
+<app-footer></app-footer>

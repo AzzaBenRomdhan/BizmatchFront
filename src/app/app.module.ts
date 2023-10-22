@@ -45,6 +45,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatChipsModule} from '@angular/material/chips';
 import { AddObjectifComponent } from './objectifs/add-objectif/add-objectif.component';
 import { EntrepriseComponent } from './entreprise/entreprise.component';
+import { NgToastModule } from 'ng-angular-popup';
+import { FormationComponent } from './learning/formation/formation.component';
+import { AllFormationComponent } from './learning/all-formation/all-formation.component';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -78,6 +82,8 @@ import { EntrepriseComponent } from './entreprise/entreprise.component';
     AddObjectifComponent,
     
     EntrepriseComponent,
+          FormationComponent,
+          AllFormationComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,7 +107,9 @@ import { EntrepriseComponent } from './entreprise/entreprise.component';
     MatNativeDateModule,
     MatChipsModule,
 
-    ScheduleModule, RecurrenceEditorModule
+    ScheduleModule, RecurrenceEditorModule,
+    NgToastModule,
+    MatListModule
   ],
   providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService ],
   bootstrap: [AppComponent]

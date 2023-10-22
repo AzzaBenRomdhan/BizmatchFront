@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { loadStripe } from '@stripe/stripe-js';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { User } from '../model/User';
+import { UserAuthService } from '../services/user-auth.service';
 
 @Component({
   selector: 'app-premium',
@@ -11,7 +13,8 @@ import { environment } from 'src/environments/environment';
 export class PremiumComponent {
   stripePromise = loadStripe(environment.stripe);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private userAuthSzervice: UserAuthService) {}
+  user = this.userAuthSzervice.getUser();
 
   async pay(): Promise<void> {
     // here we create a payment object
@@ -19,7 +22,7 @@ export class PremiumComponent {
       name: 'premium',
       currency: 'usd',
       // amount on cents *10 => to be on dollar
-      amount: 94900,
+      amount: 69000,
       quantity: '1',
       cancelUrl: 'http://localhost:4200/cancel',
       successUrl: 'http://localhost:4200/success',
@@ -37,6 +40,7 @@ export class PremiumComponent {
         stripe?.redirectToCheckout({
           sessionId: data.id
         });
+        this.user?.isPremium == true;
       },
       (error: any) => {
         console.error('Error creating payment session:', error);
