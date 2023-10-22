@@ -52,7 +52,7 @@ const routes: Routes = [
   { path: "dashboard", component: DashbordComponent},
   { path: "reclamation", component: AddReclamationComponent},
   { path: "reunion", component: ReunionComponent},
-  { path: "document", component: DocumentComponent},
+  { path: "document/:id", component: DocumentComponent},
   { path: "entreprise", component: EntrepriseComponent},
 
 

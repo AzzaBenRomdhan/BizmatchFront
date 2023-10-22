@@ -3,6 +3,7 @@ import { DemandeService } from '../services/demande.service'; // Importez votre 
 import { Recruteur } from '../model/Recruteur';
 import { RecruteurService } from '../services/recruteur.service';
 import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-match',
@@ -13,12 +14,14 @@ export class MatchComponent implements AfterViewInit {
 
   recruteur: Recruteur = new Recruteur();
   demande: Demande = new Demande(); // Déclarez la propriété demande
+  id!:number
 
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
     private recruteurService: RecruteurService,
-    private demandeService: DemandeService
+    private demandeService: DemandeService,
+    private router :Router
   ) {}
 
   ngAfterViewInit() {
@@ -50,9 +53,11 @@ export class MatchComponent implements AfterViewInit {
   }
 
   addDemande(demandeData: Demande): void {
+
     this.demandeService.addDemande(demandeData).subscribe(
       (response) => {
         console.log('Demande ajoutée avec succès :', response);
+       this.router.navigateByUrl(`document/${demandeData.id}`);
         // Réinitialisez le formulaire
         this.demande = new Demande();
       },
@@ -61,4 +66,6 @@ export class MatchComponent implements AfterViewInit {
       }
     );
   }
+  
+  
 }
