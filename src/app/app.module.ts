@@ -51,6 +51,9 @@ import { AllFormationComponent } from './learning/all-formation/all-formation.co
 import {MatListModule} from '@angular/material/list';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
+import { UploadFileService } from './services/upload-file.service';
+import { NotifMatchComponent } from './notif-match/notif-match.component';
+import { DemandeComponent } from './demande/demande.component';
 
 
 
@@ -88,6 +91,8 @@ import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-d
           AllFormationComponent,
           FournisseurComponent,
           FournisseurDetailsComponent,
+          NotifMatchComponent,
+          DemandeComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,7 +120,7 @@ import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-d
     NgToastModule,
     MatListModule
   ],
-  providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService ],
+  providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService, UploadFileService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

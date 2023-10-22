@@ -39,12 +39,12 @@ form {
 }
 
 form h1 {
-    color: #22b3c1;
-    font-weight: 100;
-    letter-spacing: 0.01em;
-    margin-left: 15px;
-    margin-bottom: 35px;
-    text-transform: uppercase;
+  color: #22b3c1;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  margin-left: 15px;
+  margin-bottom: 35px;
+  text-transform: uppercase;
 }
 
 form button {
@@ -161,3 +161,107 @@ form .question select:valid ~ label {
 
 
 
+
+
+/* Copiez votre CSS ici */
+
+/* Ajoutez ces styles pour afficher les entreprises */
+.entreprise-list {
+  margin-top: 30px;
+}
+
+.entreprise-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.entreprise-item h2 {
+  color: #22b3c1;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin-left: 15px;
+}
+
+.entreprise-item p {
+  color: #000; /* Couleur du texte de l'entreprise */
+  font-size: 17px;
+}
+.btn {
+	background: #22a6b3;
+	color: black(255 255 255);
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.5em;
+	border-radius: 0.25em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hover {
+  border: 8px solid;
+  border-image: repeating-linear-gradient(
+      135deg,
+      #22b3c1 0 10px,
+      #334da5 0 20px,
+      #091bc4 0 30px
+    )
+    8;
+  -webkit-mask: conic-gradient(
+        from 180deg at top 8px right 8px,
+        #e9e6e600 90deg,
+        #000 0
+      )
+      var(--_i, 200%) 0 /200% var(--_i, 8px) border-box no-repeat,
+    conic-gradient(at bottom 8px left 8px, #0000 90deg, #000 0) 0
+      var(--_i, 200%) / var(--_i, 8px) 200% border-box no-repeat,
+    linear-gradient(#000 0 0) padding-box no-repeat;
+  transition: 0.3s, -webkit-mask-position 0.3s 0.3s;
+}
+.hover:hover {
+  --_i: 100%;
+  color: #22b3c1;
+  transition: 0.3s, -webkit-mask-size 0.3s 0.3s;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  align-items: center;
+}
+h3 {
+  font-family: system-ui, sans-serif;
+  font-size: 4rem;
+  margin: 0;
+  cursor: pointer;
+  padding: 0 0.1em;
+  margin-top: 20px;
+  margin: center;
+}
+.text-center {
+  text-align: center; /* Pour centrer le texte horizontalement */
+  font-size: 2rem; /* Modifiez la taille du texte en fonction de vos besoins */
+}
+
+
+.card__content > figure {
+	grid-area: img;
+	overflow: hidden;
+}

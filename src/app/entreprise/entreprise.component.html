@@ -1,38 +1,28 @@
 <app-header></app-header>
-<div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
-      <div class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
-        <!-- Photo File Input -->
-        <input type="file" class="hidden" #photoInput (change)="onFileSelected($event)">
-  
-        <label class="block text-gray-700 text-sm font-bold mb-2 text-center" for="photoInput">
-            Image d'entreprise
-          </label>
-          
-          <div class="text-center">
-            <!-- New Profile Photo Preview -->
-            <div class="mt-2" *ngIf="entreprise.photo">
-              <img [src]="entreprise.photo" alt="Image d'entreprise" class="w-40 h-40 rounded-full m-auto shadow">
-            </div>
-            <input
-              type="file"
-              id="photoInput"
-              accept="image/*"
-              (change)="onFileSelected($event)"
-              style="display: none;"
-            />
-            <button
-              type="button"
-              class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-400 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150 mt-2 ml-3"
-              (click)="openFileInput()"
-            >
-              Ajouter une photo
-            </button>
-          </div>
-      
 
+<div class="container rounded bg-white mt-5 mb-5">
+  <div class="row">
+   
+    <div class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
+      <!-- Photo File Input 
+      <input type="file" class="hidden" #photoInput (change)="onFileSelected($event)" id="photoInput">
+
+      <label class="block text-gray-700 text-sm font-bold mb-2 text-center" for="photoInput">
+        Image d'entreprise
+      </label>
+
+      
+      
+      <div>
+        <form (ngSubmit)="uploadImage()" enctype="multipart/form-data">
+          <input type="file" name="file" (change)="onFileSelected($event)">
+          <button type="submit">Envoyer l'image</button>
+        </form>
+      </div>
+-->  
       <form #f="ngForm" (ngSubmit)="addEntreprise(f.value)">
-        <h1>Entreprise</h1>
+        <h3 class="text-center hover">ENTREPRISE</h3>
+      
         <div class="question">
           <input id="nom" name="nom" [(ngModel)]="entreprise.nom" type="text" required>
           <label>Nom de l'entreprise</label>
@@ -69,6 +59,24 @@
         <button (click)="addEntreprise(f.value)" type ="submit">Enregistrer </button>
       </form>
           
+      <ul class="entreprise-list">
+        <li class="entreprise-item" *ngFor="let entreprise of entrprises2">
+          <div class="entreprise-content">
+            <h2>{{ entreprise.nom }}</h2>
+            <p>Adresse: {{ entreprise.adresse }}</p>
+            <p>Budget: {{ entreprise.budget }}</p>
+            <p>Domaine: {{ entreprise.domaine }}</p>
+
+            <p><a routerLink="/entreprise" class="btn btn--accent" (click)="deleteEntreprise(entreprise.id)">Supprimer</a></p>
+         
+      
+            
+              
+           
+        </div>
+    </li>
+    </ul>
+
           <!-- Add the "Modifier" (Edit) button here
           <div class="text-center">
             <button
@@ -79,9 +87,11 @@
                 Modifier
             </button>
              -->
+        
         </div>
+
     </div>
   </div>
-  
+
   
 <app-footer></app-footer>

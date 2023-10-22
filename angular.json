@@ -30,7 +30,10 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/@syncfusion/ej2-material-theme/styles/material.css"
             ],
-            "scripts": []
+            "scripts": [
+
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -170,85 +170,58 @@
       <div class="col-lg-5">
         <div class="section-heading">
           <form action="" class="search-bar">
-            <input type="search" name="search" pattern=".*\S.*" required>
-            <button class="search-btn" type="submit">
+            <input type="search" [(ngModel)]="nomEntreprise" name="search" pattern=".*\S.*" required>
+            <button class="search-btn" (click)="rechercheParNom()" type="button">
               <span>Search</span>
             </button>
           </form>
+          
+          
+          
 
           <h2>Explorez Nos Appels d'Offres Actuels</h2>
           <p>Découvrez des opportunités de partenariat commercial avec les sociétés du monde entier.</p>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-8">
-        <div class="items">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="item">
-                <div class="row">
-                  <div class="col-lg-4 col-sm-5">
-                    <div class="image">
-                      <img src="assets/images/company-01.jpg" alt="">
-                    </div>
-                  </div>
-                  <div class="col-lg-8 col-sm-7">
-                    <div class="right-content">
-                      <h4>Société Ey</h4>
-                      <span>Technologie</span>
-                      <div class="main-button">
-                        <a (click)="redirectToMatch()" >Match </a>
-                      </div>
-                      <p>Découvrez les derniers appels d'offres de la Société EY et explorez de nouvelles opportunités commerciales passionnantes.</p>
-                      <ul class="info">
-                        <li><i class="fa fa-handshake"></i> 20 Offres</li>
-                        <li><i class="fa fa-globe"></i> Secteur informatique et financiers</li>
-                        <li><i class="fa fa-money"></i> Budget: 1,000 TND</li>
-                      </ul>
-                      <details>
-                        <summary>Details</summary>
-                        <p>
-                          EY, anciennement connue sous le nom d'Ernst & Young, est l'une des quatre plus grandes sociétés de services professionnels au monde, offrant une gamme complète de services dans les domaines de la comptabilité, de l'audit, de la fiscalité, de la gestion des risques, de la consultation et de la stratégie d'entreprise. EY travaille avec des clients variés, allant des petites entreprises aux grandes multinationales, pour les aider à gérer leurs finances, à se conformer aux réglementations, à élaborer des stratégies commerciales efficaces, et à relever des défis complexes liés aux activités commerciales et financières.
-                        </p>
-                      </details>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+    <div class="col-lg-12">
+      <div class="item" *ngFor="let entreprise of entrprises2">
+        <div class="row">
+          <div class="col-lg-4 col-sm-5">
+            <div class="image">
+              <!-- Gardez votre balise img statique ici -->
+              <img src="assets/images/company-01.jpg" alt="{{ entreprise.nom }}">
             </div>
-            <div class="col-lg-12">
-              <div class="item">
-                <div class="row">
-                  <div class="col-lg-4 col-sm-5">
-                    <div class="image">
-                      <img src="assets/images/company-02.jpg" alt="">
-                    </div>
-                  </div>
-                  <div class="col-lg-8 col-sm-7">
-                    <div class="right-content">
-                      <h4>Société Ikea</h4>
-                      <span>Technologie</span>
-                      <div class="main-button">
-                        <a >Match</a>
-                      </div>
-                      <p>Explorez les opportunités offertes par la Société Ikea et trouvez des partenaires pour vos projets innovants.</p>
-                      <ul class="info">
-                        <li><i class="fa fa-handshake"></i> 15 Offres</li>
-                        <li><i class="fa fa-globe"></i> Secteur Technologique</li>
-                        <li><i class="fa fa-money"></i> Budget: 3,000 TND</li>
-                      </ul>
-                      <details>
-                        <summary>Details</summary>
-                        <p>
-                          IKEA, quant à elle, est une entreprise de commerce de détail suédoise mondialement connue pour ses meubles et articles de décoration d'intérieur. Elle est réputée pour ses conceptions innovantes, son modèle d'entreprise centré sur le client et son engagement envers la durabilité. IKEA propose une vaste gamme de produits pour la maison, allant des meubles aux articles de cuisine en passant par la décoration, et possède des magasins dans de nombreux pays du monde.
-                        </p>
-                      </details>
-                    </div>
-                  </div>
-                </div>
+          </div>
+          <div class="col-lg-8 col-sm-7">
+            <div class="right-content">
+              <div class="entreprise-content">
+                <h4>{{ entreprise.nom }}</h4>
+                <span>Domaine: {{ entreprise.domaine }}</span>
               </div>
+    
+              <div class="main-button">
+                <a (click)="redirectToMatch()" >Match </a>
+              </div>
+              <p>{{ entreprise.details }}</p>
+              <ul class="info">
+                <li><i class="fa fa-handshake"></i> 20 Offres</li>
+                <li><i class="fa fa-globe"></i> Adresse: {{ entreprise.adresse }}</li>
+                <li><i class="fa fa-money"></i> Budget: {{ entreprise.budget }} TND</li>
+              </ul>
+              <details>
+                <summary>Details</summary>
+                <p>{{ entreprise.nom }} est une entreprise dans le secteur {{ entreprise.domaine }}.</p>
+              </details>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+             
+            
             <div class="col-lg-12">
               <ul class="page-numbers">
                 <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
@@ -260,36 +233,19 @@
             </div>
           </div>
         </div>
-      </div>
+
       <div class="col-lg-4">
         <div class="side-bar-map">
           <div class="row">
             <div class="col-lg-12">
               <div class="section-heading">
                
-                <div class="row">
-                    <div class="col-sm-12">
-                       <!-- PAGE TITLE -->
-                        <h1 class="page__title my-3 text-center">
-                          Citation du jour 
-                       </h1>
-            
-                        <!-- BLOCKQUOTE -->
-                       <blockquote class="blockquote">
-                            <p class="mb-0">
-                              Le succès en B2B dépend de la manière dont vous établissez des relations, pas de la manière dont vous vendez
-                            </p>
-                           
-                        </blockquote>
-                    </div>
-                </div>
+               
             </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+  
 
 <app-footer></app-footer>
