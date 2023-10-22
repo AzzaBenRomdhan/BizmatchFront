@@ -49,6 +49,7 @@ import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
 import { UploadFileService } from './services/upload-file.service';
 import { NotifMatchComponent } from './notif-match/notif-match.component';
+import { DemandeComponent } from './demande/demande.component';
 
 
 
@@ -85,6 +86,7 @@ import { NotifMatchComponent } from './notif-match/notif-match.component';
           FournisseurComponent,
           FournisseurDetailsComponent,
           NotifMatchComponent,
+          DemandeComponent,
   ],
   imports: [
     BrowserModule,

@@ -27,6 +27,7 @@ import { BlogDetailsComponent } from './forum/blog-details/blog-details.componen
 import { EntrepriseComponent } from './entreprise/entreprise.component';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
+import { DemandeComponent } from './demande/demande.component';
 
 
 
@@ -54,6 +55,8 @@ const routes: Routes = [
   { path: "reunion", component: ReunionComponent},
   { path: "document", component: DocumentComponent},
   { path: "entreprise", component: EntrepriseComponent},
+  { path: "document", component: DocumentComponent},
+  { path: "demande", component: DemandeComponent},
 
 
   { path: "cancel", component: CancelComponent},
