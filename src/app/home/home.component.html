@@ -170,11 +170,14 @@
       <div class="col-lg-5">
         <div class="section-heading">
           <form action="" class="search-bar">
-            <input type="search" name="search" pattern=".*\S.*" required>
-            <button class="search-btn" type="submit">
+            <input type="search" [(ngModel)]="nomEntreprise" name="search" pattern=".*\S.*" required>
+            <button class="search-btn" (click)="rechercheParNom()" type="button">
               <span>Search</span>
             </button>
           </form>
+          
+          
+          
 
           <h2>Explorez Nos Appels d'Offres Actuels</h2>
           <p>Découvrez des opportunités de partenariat commercial avec les sociétés du monde entier.</p>
@@ -237,22 +240,7 @@
             <div class="col-lg-12">
               <div class="section-heading">
                
-                <div class="row">
-                    <div class="col-sm-12">
-                       <!-- PAGE TITLE -->
-                        <h1 class="page__title my-3 text-center">
-                          Citation du jour 
-                       </h1>
-            
-                        <!-- BLOCKQUOTE -->
-                       <blockquote class="blockquote">
-                            <p class="mb-0">
-                              Le succès en B2B dépend de la manière dont vous établissez des relations, pas de la manière dont vous vendez
-                            </p>
-                           
-                        </blockquote>
-                    </div>
-                </div>
+               
             </div>
               </div>
             </div>

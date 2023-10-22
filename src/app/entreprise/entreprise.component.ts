@@ -88,6 +88,7 @@ export class EntrepriseComponent implements OnInit {
     this.entrepriseservice.addEntreprise(entrpriseData).subscribe(
       (response) => {
         console.log('Entrprise ajoutée avec succès :', response);
+        
         // Réinitialisez le formulaire
         this.entreprise = new Entreprise();
       },

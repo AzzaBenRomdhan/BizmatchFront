@@ -13,7 +13,10 @@ import { EntrepriseService } from '../services/entreprise.service';
 
 export class HomeComponent implements OnInit {
   entrprises2: Entreprise [] = [];
-  
+  entreprises: Entreprise[] = [];
+  nomEntreprise: string = ''; // Ajoutez cette variable pour le champ de recherche
+  entreprise: Entreprise | undefined; // Variable pour stocker le résultat de la recherche
+
   constructor(private userAuthService: UserAuthService, private router : Router , private entrepriseservice: EntrepriseService) 
   {}
   redirectToMatch(): void {
@@ -34,5 +37,11 @@ ngOnInit() {
     this.entrprises2 = this.entrprises2.reverse();
 
   }); }
-
+  
+  rechercheParNom(): void {
+    if (this.nomEntreprise) {
+      this.entreprise = this.entrprises2.find(entreprise => entreprise.nom === this.nomEntreprise);
+    }
+  }
+  
 }

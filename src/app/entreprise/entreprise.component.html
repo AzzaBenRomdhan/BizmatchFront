@@ -1,6 +1,8 @@
 <app-header></app-header>
+
 <div class="container rounded bg-white mt-5 mb-5">
   <div class="row">
+   
     <div class="col-span-6 ml-2 sm:col-span-4 md:mr-3">
       <!-- Photo File Input 
       <input type="file" class="hidden" #photoInput (change)="onFileSelected($event)" id="photoInput">
@@ -17,9 +19,10 @@
           <button type="submit">Envoyer l'image</button>
         </form>
       </div>
--->
+-->  
       <form #f="ngForm" (ngSubmit)="addEntreprise(f.value)">
-        <h1>Entreprise</h1>
+        <h3 class="text-center hover">ENTREPRISE</h3>
+      
         <div class="question">
           <input id="nom" name="nom" [(ngModel)]="entreprise.nom" type="text" required>
           <label>Nom de l'entreprise</label>
@@ -65,7 +68,8 @@
             <p>Domaine: {{ entreprise.domaine }}</p>
 
             <p><a routerLink="/entreprise" class="btn btn--accent" (click)="deleteEntreprise(entreprise.id)">Supprimer</a></p>
-        
+         
+      
             <div id="container">
                 <div id="success-box">
                   <div class="dot"></div>
@@ -89,7 +93,7 @@
                   </div>
                   <div class="shadow move"></div>
                   <div class="message"><h1 class="alert">Echec!</h1></div>
-                  <button class="button-box"><h1 class="red">tRefuser</h1></button>
+                  <button class="button-box"><h1 class="red">Refuser</h1></button>
                 </div>
               </div>
               
@@ -108,10 +112,11 @@
                 Modifier
             </button>
              -->
-        </div>
         
+        </div>
+
     </div>
   </div>
-  
+
   
 <app-footer></app-footer>
