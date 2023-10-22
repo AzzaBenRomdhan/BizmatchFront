@@ -4,6 +4,7 @@ import { Recruteur } from '../model/Recruteur';
 import { DemandeService } from '../services/demande.service';
 import { RecruteurService } from '../services/recruteur.service';
 import { Router } from '@angular/router';
+import { EntrepriseService } from '../services/entreprise.service';
 
 @Component({
   selector: 'app-document',
@@ -13,10 +14,13 @@ import { Router } from '@angular/router';
 export class DocumentComponent implements OnInit {
   demandes: Demande[] = [];
   recruteurs: Recruteur[] = [];
+  id!:number
+  message!:string
 
   constructor(
     private demandeService: DemandeService,
     private recruteurService: RecruteurService,
+    private entrepriseService: EntrepriseService
  
   ) {}
 
@@ -34,7 +38,22 @@ export class DocumentComponent implements OnInit {
       this.recruteurs = this.recruteurs.reverse();
       
     });
+
+    this.messageNotif(this.id)
   }
+
+
+  demandes2: Demande = {
+    id: 0,
+    nom: '',
+    adresse: '',
+    siteWeb: '',
+    dure: '',
+    budget: 0 ,
+    description: '',
+    typePart: '',
+  
+  };
 
  deleteDemande(id: number) {
   if (confirm('voulez-vous supprimer ce formulaire?')) {
@@ -66,4 +85,17 @@ export class DocumentComponent implements OnInit {
   }
   
   }
+  messageNotif(id: number){
+    this.entrepriseService.messageNotif(this.demandes2.id).subscribe(
+      (data) =>{
+        this.message=data
+        console.log("get de message de notification a été effectué avec succée", data)
+      },
+      (error) =>{
+        console.log("error lors de get de message de notification", error);
+      }
+    )
+  }
 }
+
+

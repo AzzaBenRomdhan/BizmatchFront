@@ -50,6 +50,8 @@ export class EntrepriseService {
     return this.http.get<Entreprise[]>(this.url);
   }
   
-  
+  messageNotif(id:number){
+    return this.http.request('GET',`${this.url + '/meilleurMatch'}/${id}`, { responseType: 'text' });
+  }
   constructor(private http: HttpClient) { }
 }
