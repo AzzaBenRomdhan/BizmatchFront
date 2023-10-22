@@ -55,8 +55,7 @@ const routes: Routes = [
   { path: "reunion", component: ReunionComponent},
   { path: "document", component: DocumentComponent},
   { path: "entreprise", component: EntrepriseComponent},
-  { path: "document", component: DocumentComponent},
-  { path: "demande", component: DemandeComponent},
+  { path: "recruteur", component: DemandeComponent},
 
 
   { path: "cancel", component: CancelComponent},

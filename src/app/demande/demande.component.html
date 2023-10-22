@@ -1,50 +1,72 @@
-<!-- This is an example component -->
 <app-header></app-header>
 
-
-<div class="flex h-screen">
-    <div class="m-auto">
-      <div class="bg-white rounded-lg border-gray-300 border p-3 shadow-lg">
-        <div class="flex flex-row">
-          <div class="px-2">
-            <div class="uppercase text-xs leading-4 font-semibold text-center text-yellow-100">Loaded</div>
-            <svg width="24" height="24" viewBox="0 0 1792 1792" fill="#44C997" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1299 813l-422 422q-19 19-45 19t-45-19l-294-294q-19-19-19-45t19-45l102-102q19-19 45-19t45 19l147 147 275-275q19-19 45-19t45 19l102 102q19 19 19 45t-19 45zm141 83q0-148-73-273t-198-198-273-73-273 73-198 198-73 273 73 273 198 198 273 73 273-73 198-198 73-273zm224 0q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/>
-              </svg>
-              
+<div class="row d-flex justify-content-center container">
+  <div class="col-md-8">
+    <div class="card-hover-shadow-2x mb-3 card">
+      <div class="card-header-tab card-header">
+        <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+          <i class="fa fa-tasks"></i>&nbsp;Liste des recruteurs
+        </div>
+      </div>
+      <div class="scroll-area-sm">
+        <div style="position: static;" class="ps ps--active-y">
+          <div class="ps-content">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" *ngFor="let recruteur of recruteurs">
+                <div class="todo-indicator bg-warning"></div>
+                <div class="widget-content p-0">
+                  <div class="widget-content-wrapper">
+                    <div class="widget-content-left mr-2">
+                      <div class="custom-checkbox custom-control">
+                        <input class="custom-control-input" [id]="'exampleCustomCheckbox' + recruteur.idR" type="checkbox">
+                        <label class="custom-control-label" [for]="'exampleCustomCheckbox' + recruteur.idR">&nbsp;</label>
+                      </div>
+                    </div>
+                    <div class="widget-content-left">
+                      <div class="widget-heading">Nom & Prénom:
+                        {{ recruteur.nom }} {{ recruteur.prenom }}
+                        <div class="badge badge-danger ml-2">Numéro :{{ recruteur.telephone }}</div>
+                      </div>
+                      <div class="widget-subheading"><i>de {{ recruteur.email }}</i></div>
+                      <div class="widget-subheading">pendant {{ recruteur.dure }}</div>
+                      <div class="widget-subheading">Type de recrutement:{{ recruteur.typeRec }}</div>
+                    </div>
+                    <div class="widget-content-right">
+                        <button class="border-0 btn-transition btn btn-outline-success" (click)="showNotificationMessage()">
+                            <i class="fa fa-check"></i>
+                          </button>     
+                      <button class="border-0 btn-transition btn btn-outline-danger"
+                        (click)="deleteRecruteur(recruteur.idR)">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
-         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="notification" *ngIf="showNotification">
+    <div class="container d-flex justify-content-center">
+      <div class="card mt-5 p-3">
+        <div class="media">
+          <div class="notification-icon">
+            <!-- Your image or icon here -->
+            <img src="../assets/images/logo.png" class="mr-3">
+          </div>
+          <div class="media-body">
+            <h6 class="mt-2 mb-0">Ce recruteur  </h6>
+            <small class="text">sera contacter avec l'entreprise </small>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  
-    <main>
-  <ul id="cards">
-    <li class="card" *ngFor="let demande of demandes">
-      <div class="card__content">
-        <div>
-          <h2>{{ demande.nom }}</h2>
-          <h3>{{ demande.siteWeb}}</h3>
-          <h3>{{ demande.adresse}}</h3>
-          <h3>{{ demande.dure}}</h3>
-          <h3>{{ demande.budget }}</h3>
-          <h3>{{ demande.typePart }}</h3>
 
-          <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-          <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-          <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-          <!------ Include the above in your HEAD tag ---------->
-          
-          
-          <div class="button">Meilleur Match</div>
-          <!-- Autres données de demande ici -->
-        </div>
-        
-       
-       
-      </div>
-    </li>
-  </ul>
-  <app-footer></app-footer>
+<app-footer></app-footer>
