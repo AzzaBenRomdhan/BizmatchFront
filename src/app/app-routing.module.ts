@@ -25,10 +25,14 @@ import { SucessComponent } from './payment/sucess/sucess.component';
 import { AllPostsComponent } from './forum/all-posts/all-posts.component';
 import { BlogDetailsComponent } from './forum/blog-details/blog-details.component';
 import { EntrepriseComponent } from './entreprise/entreprise.component';
+
 import { DeleteObjectifComponent } from './objectifs/delete-objectif/delete-objectif.component';
 import { UpdateObjectifComponent } from './objectifs/update-objectif/update-objectif.component';
 import { FormationComponent } from './learning/formation/formation.component';
 import { AllFormationComponent } from './learning/all-formation/all-formation.component';
+
+import { FournisseurComponent } from './fournisseur/fournisseur.component';
+import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
 
 
 
@@ -64,9 +68,15 @@ const routes: Routes = [
   { path: "cancel", component: CancelComponent},
   { path: "success", component: SucessComponent},
   { path: 'blog-details/:idpostBlog', component: BlogDetailsComponent },
+
   { path: 'formation', component: FormationComponent },
   { path: 'listFormation', component: AllFormationComponent },
   
+
+  {path:"Four",component:FournisseurComponent},
+  {path:"DetailsFour",component:FournisseurDetailsComponent}
+
+
 
 ];
 

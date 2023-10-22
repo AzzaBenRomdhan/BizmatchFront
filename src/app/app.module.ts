@@ -49,6 +49,8 @@ import { NgToastModule } from 'ng-angular-popup';
 import { FormationComponent } from './learning/formation/formation.component';
 import { AllFormationComponent } from './learning/all-formation/all-formation.component';
 import {MatListModule} from '@angular/material/list';
+import { FournisseurComponent } from './fournisseur/fournisseur.component';
+import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
 
 
 
@@ -84,6 +86,8 @@ import {MatListModule} from '@angular/material/list';
     EntrepriseComponent,
           FormationComponent,
           AllFormationComponent,
+          FournisseurComponent,
+          FournisseurDetailsComponent,
   ],
   imports: [
     BrowserModule,
