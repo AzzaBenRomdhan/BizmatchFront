@@ -57,7 +57,7 @@ export class MatchComponent implements AfterViewInit {
     this.demandeService.addDemande(demandeData).subscribe(
       (response) => {
         console.log('Demande ajoutée avec succès :', response);
-       this.router.navigateByUrl(`document/${demandeData.id}`);
+     //  this.router.navigateByUrl(`document/${demandeData.id}`);
         // Réinitialisez le formulaire
         this.demande = new Demande();
       },
