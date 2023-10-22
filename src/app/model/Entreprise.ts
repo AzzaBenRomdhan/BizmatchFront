@@ -1,5 +1,5 @@
 export class Entreprise {
-  
+  id!: number;
   nom!: string;
   adresse!: string;
   details!: string;
@@ -7,4 +7,5 @@ export class Entreprise {
   budget!: number;
   accepte!: boolean;
   domaine!: string;
+  
 }

@@ -63,18 +63,37 @@
             <p>Adresse: {{ entreprise.adresse }}</p>
             <p>Budget: {{ entreprise.budget }}</p>
             <p>Domaine: {{ entreprise.domaine }}</p>
+
+            <p><a routerLink="/entreprise" class="btn btn--accent" (click)="deleteEntreprise(entreprise.id)">Supprimer</a></p>
         
-            <!-- Autres données de demande ici 
-            <p><a routerLink="/document" class="btn btn--accent" (click)="delete(demande.id)">Supprimer</a></p>
-          </div>
-         
-          <figure>
-            <img src="./assets/images/partenaire.png" alt="Image description">
-          </figure>
-          <figure>
-         
-          </figure>
-           -->
+            <div id="container">
+                <div id="success-box">
+                  <div class="dot"></div>
+                  <div class="dot two"></div>
+                  <div class="face">
+                    <div class="eye"></div>
+                    <div class="eye right"></div>
+                    <div class="mouth happy"></div>
+                  </div>
+                  <div class="shadow scale"></div>
+                  <div class="message"><h1 class="alert">Succés!</h1></div>
+                  <button class="button-box"><h1 class="green">Accepter</h1></button>
+                </div>
+                <div id="error-box">
+                  <div class="dot"></div>
+                  <div class="dot two"></div>
+                  <div class="face2">
+                    <div class="eye"></div>
+                    <div class="eye right"></div>
+                    <div class="mouth sad"></div>
+                  </div>
+                  <div class="shadow move"></div>
+                  <div class="message"><h1 class="alert">Echec!</h1></div>
+                  <button class="button-box"><h1 class="red">tRefuser</h1></button>
+                </div>
+              </div>
+              
+           
         </div>
     </li>
     </ul>
@@ -90,6 +109,7 @@
             </button>
              -->
         </div>
+        
     </div>
   </div>
   

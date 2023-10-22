@@ -13,7 +13,10 @@ import { UploadFileService } from '../services/upload-file.service';
 })
 export class EntrepriseComponent implements OnInit {
   entrprises2: Entreprise [] = [];
+
+  id!:number
   selectedFile: File | null = null;
+
   constructor(
     private entrepriseservice: EntrepriseService,
     private router: Router,
@@ -30,6 +33,7 @@ export class EntrepriseComponent implements OnInit {
     }); }
 
   entreprise: Entreprise = {
+    id:0,
     nom: '',
     adresse: '',
     details: '',
@@ -117,7 +121,21 @@ export class EntrepriseComponent implements OnInit {
     );
   }
 
- 
+  deleteEntreprise(id: number) {
+    if (confirm('Voulez-vous supprimer cette entreprise?')) {
+      this.entrepriseservice.deleteEntreprise(id).subscribe(
+        () => {
+          // Supprimer l'entreprise de la liste après la suppression
+          this.entrprises2 = this.entrprises2.filter((entreprise) => entreprise.id !== id);
+          console.log('Entreprise supprimée avec succès');
+        },
+        (error) => {
+          console.error('Erreur lors de la suppression de l entreprise :', error);
+        }
+      );
+    }
+  }
+  
   }
   
 

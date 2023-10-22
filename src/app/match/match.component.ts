@@ -3,7 +3,7 @@ import { DemandeService } from '../services/demande.service'; // Importez votre 
 import { Recruteur } from '../model/Recruteur';
 import { RecruteurService } from '../services/recruteur.service';
 import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-match',
@@ -21,8 +21,26 @@ export class MatchComponent implements AfterViewInit {
     private el: ElementRef,
     private recruteurService: RecruteurService,
     private demandeService: DemandeService,
-    private router :Router
+    private router :Router,
+    private route: ActivatedRoute
   ) {}
+
+  ngOnInit() {
+    this.route.params.subscribe((params) => {
+      this.id = +params['id']; // Get the 'id' parameter from the route
+      if (this.id) {
+        this.demandeService.getDemandeById(this.id).subscribe(
+          (demande) => {
+            this.demande = demande;
+            // Now, 'this.demande' will contain the data from the service
+          },
+          (error) => {
+            console.error('Error fetching Demande:', error);
+          }
+        );
+      }
+    });
+  }
 
   ngAfterViewInit() {
     const signUpButton = this.el.nativeElement.querySelector('#signUp');
@@ -52,12 +70,13 @@ export class MatchComponent implements AfterViewInit {
     );
   }
 
-  addDemande(demandeData: Demande): void {
+  addDemande(demandeData: Demande ): void {
 
     this.demandeService.addDemande(demandeData).subscribe(
       (response) => {
         console.log('Demande ajoutée avec succès :', response);
-     //  this.router.navigateByUrl(`document/${demandeData.id}`);
+   // Use the Router to navigate to the document route with the 'id' parameter
+   this.router.navigate(['/document', this.demande.id]);
         // Réinitialisez le formulaire
         this.demande = new Demande();
       },

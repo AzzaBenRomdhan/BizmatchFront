@@ -31,5 +31,6 @@ export class DemandeService {
   deleteDemande(id: number): Observable<void> {
     return this.http.delete<void>(`${this.url}/delete/${id}`);
   }
+ 
   
 }
