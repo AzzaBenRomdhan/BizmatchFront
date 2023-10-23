@@ -27,6 +27,8 @@ import { BlogDetailsComponent } from './forum/blog-details/blog-details.componen
 import { EntrepriseComponent } from './entreprise/entreprise.component';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
+import { AjoutMarcheComponent } from './ajout-marche/ajout-marche.component';
+
 
 
 
@@ -60,8 +62,8 @@ const routes: Routes = [
   { path: "sucess", component: SucessComponent},
   { path: 'blog-details/:idpostBlog', component: BlogDetailsComponent },
   {path:"Four",component:FournisseurComponent},
-  {path:"DetailsFour",component:FournisseurDetailsComponent}
-
+  { path: 'DetailsFour/:username',component:FournisseurDetailsComponent},
+  {path:'ajout-marche',component:AjoutMarcheComponent}
 
 ];
 

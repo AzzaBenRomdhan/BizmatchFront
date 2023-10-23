@@ -47,6 +47,8 @@ import { AddObjectifComponent } from './objectifs/add-objectif/add-objectif.comp
 import { EntrepriseComponent } from './entreprise/entreprise.component';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
+import { AjoutMarcheComponent } from './ajout-marche/ajout-marche.component';
+
 
 
 
@@ -82,6 +84,8 @@ import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-d
     EntrepriseComponent,
           FournisseurComponent,
           FournisseurDetailsComponent,
+          AjoutMarcheComponent,
+         
   ],
   imports: [
     BrowserModule,
