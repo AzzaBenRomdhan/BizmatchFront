@@ -48,15 +48,16 @@ userCount: number = 0;
 
   sendEmail() {
     const fournisseurEmail = this.fournisseur.email;
-    const emailSubject = 'Demandes de Colaboration Via Bizmatch';
-    const emailBody = 'Veuillez ecrivez Votre demande';
-    
-    // Spécifiez le lien Gmail manuellement
+    const emailSubject = 'Demande de Collaboration Via Bizmatch';
+    const emailBody = 'Veuillez écrire votre demande ici';
+  
+    // Spécifiez le lien Gmail manuellement avec les paramètres du destinataire, du sujet et du corps de l'e-mail
     const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${fournisseurEmail}&su=${emailSubject}&body=${emailBody}`;
-    
-    // Redirigez vers le lien Gmail
-    window.location.href = gmailLink;
-}
+  
+    // Ouvrir la fenêtre Gmail dans un nouvel onglet
+    window.open(gmailLink, '_blank');
+  }
+  
 
   
 }

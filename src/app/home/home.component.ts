@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   entreprises: Entreprise[] = [];
   nomEntreprise: string = ''; // Ajoutez cette variable pour le champ de recherche
   entreprise: Entreprise | undefined; // Variable pour stocker le résultat de la recherche
-  showNotification: boolean = false;
+
 
   constructor(private userAuthService: UserAuthService, private router : Router , private entrepriseservice: EntrepriseService,
     private demandeService: DemandeService, private toast: NgToastService) {}
@@ -83,13 +83,6 @@ ngOnInit() {
     )
   }
  
-
-  showNotificationMessage() {
-    this.showNotification = true; // Show the notification
-    setTimeout(() => {
-      this.showNotification = false; // Hide the notification after 5 seconds
-    }, 5000);
-  }
 }
 
   
