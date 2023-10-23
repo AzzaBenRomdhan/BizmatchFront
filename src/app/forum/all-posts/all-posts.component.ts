@@ -57,7 +57,7 @@ constructor(private s: PostService, private ac:ActivatedRoute,private comSer: Co
   
 
     gty(page: any) {
-      this.http.get(`http://localhost:9090/PostBlog?page=${page}&size=${this.itemsPerPage}&sort=date,desc`).subscribe((posts: any) => {
+      this.http.get(`http://localhost:9094/PostBlog?page=${page}&size=${this.itemsPerPage}&sort=date,desc`).subscribe((posts: any) => {
         this.posts = posts;
         for (let i = 0; i < this.posts.length; i++) {
           const idpostBlog = this.posts[i].idpostBlog;
