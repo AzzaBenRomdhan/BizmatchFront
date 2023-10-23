@@ -431,26 +431,48 @@ details p {
 
 
 
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: -250px;
+  margin-left: 100x;
+} 
+.alert {
+  margin-top: -500px;
+  width: 512px;
+  padding: 16px;
+  margin: 8px;
+  max-width: 90%;
+}
 
+.alert-2-success {
+  border-left: 4px solid #2ec946;
+  background-color: #22b3c1;
+}
+.alert-2-success .alert-title {
+  color: #2ec946;
+}
 
+.alert-2-secondary {
+  border-left: 4px solid #22b3c1;
+  background-color: rgba(102, 102, 102, 0.05);
+}
+.alert-2-secondary .alert-title {
+  color: #666666;
+}
 
+.alert-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.alert-content {
+  margin: 0;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  color: #555555;
+}
 
