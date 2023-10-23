@@ -28,6 +28,7 @@ import { EntrepriseComponent } from './entreprise/entreprise.component';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
 import { DemandeComponent } from './demande/demande.component';
+import { NotifMatchComponent } from './notif-match/notif-match.component';
 
 
 
@@ -56,7 +57,7 @@ const routes: Routes = [
   { path: "document", component: DocumentComponent},
   { path: "entreprise", component: EntrepriseComponent},
   { path: "recruteur", component: DemandeComponent},
-
+  { path: "notif", component: NotifMatchComponent},
 
   { path: "cancel", component: CancelComponent},
   { path: "sucess", component: SucessComponent},
