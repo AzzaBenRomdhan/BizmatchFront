@@ -1,251 +1,248 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xBp/5arbsXzVcfhthAGfKuF7+GsTKlNzCPeLZlKQwrV2Yn/HyrB9y1xTJzypdQc0o28P0oZdiw+za1tDkYtY4w==" crossorigin="anonymous" referrerpolicy="no-referrer" /><i class="fa fa-comment"></i>
-<!-- offset search area start -->
-    <div class="offset-search">
-        <form action="#">
-            <input type="text" name="search" placeholder="Sarch here...">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    <!-- offset search area end -->
-    <!-- body overlay area start -->
-    <div class="body_overlay"></div>
-    <!-- body overlay area end -->
-    <!-- crumbs area start -->
-    <div class="crumbs-area">
-        <div class="container">
-            <div class="crumb-content">
-                <h4 class="crumb-title"><span>Single</span> Blog Deatils</h4>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xBp/5arbsXzVcfhthAGfKuF7+GsTKlNzCPeLZlKQwrV2Yn/HyrB9y1xTJzypdQc0o28P0oZdiw+za1tDkYtY4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .blog-details-area {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .blog-details-area:hover {
+            transform: scale(1.02);
+        }
+
+        .cs-thumb img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .cs-thumb:hover img {
+            transform: scale(1.1);
+        }
+
+        .blog-top-meta {
+            margin-bottom: 20px;
+            color: #3498db;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .blog-top-meta:hover {
+            color: #2980b9;
+        }
+
+        .blog-top-meta i {
+            margin-right: 5px;
+        }
+
+        .cs-content {
+            color: #333;
+        }
+
+        .cs-content h3 {
+            color: #3498db;
+            margin-bottom: 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .cs-content:hover h3 {
+            color: #2980b9;
+        }
+
+        .comment-title {
+            color: #3498db;
+            margin-bottom: 20px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .comment-title:hover {
+            color: #2980b9;
+        }
+
+        .comment-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .comment-info-inner {
+            margin-bottom: 20px;
+        }
+
+        .comment-info-inner article {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .comment-info-inner:hover article {
+            transform: translateX(10px);
+        }
+
+        .comment-thumb img {
+            max-width: 50px;
+            height: auto;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .comment-thumb:hover img {
+            transform: scale(1.2);
+        }
+
+        .delete-icon {
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: auto;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .delete-icon:hover {
+            color: #c0392b;
+        }
+
+        .cs-cmnt-meta ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cs-cmnt-meta li {
+            display: inline-block;
+            color: #2980b9;
+            margin-right: 10px;
+        }
+
+        .leave-comment-area {
+            margin-top: 30px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button.btn-primary {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button.btn-primary:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="blog-details-area">
+        <!-- Section Image -->
+        <div class="cs-thumb">
+            <img [src]="imageData" alt="">
+        </div>
+
+        <!-- Section Content -->
+        <div class="cs-content">
+            <!-- Meta Information -->
+            <div class="blog-top-meta">
+                <i class="fa fa-heart" (click)="onLikeClick()"></i><span class="ml-2"><strong>{{ likeCount }} Likes</strong></span>
+                <i class="fa fa-thumbs-down" (click)="onDislikClick()"></i><span class="ml-2"><strong>{{ dislikeCount }} DisLikes</strong></span>
+            </div>
+
+            <!-- Blog Title -->
+            <h3>{{post.title}}</h3>
+
+            <!-- Blog Content -->
+            <p>{{post.content}}</p>
+
+            <!-- Share Section -->
+            <div class="cs-post-share">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-md-12 col-sm-8">
+                        <!-- Ajoutez du contenu au besoin -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post Author Info -->
+            <div class="post-author-info">
+                <div class="thumb">
+                    <!-- Image de l'auteur -->
+                </div>
+                <div class="fix">
+                    <!-- Informations de l'auteur -->
+                </div>
             </div>
         </div>
-    </div>
-    <!-- crumbs area end -->
-    <!-- course area start -->
-    <div class="blog-details-area ptb--120">
-        <div class="container">
-            <div class="row">
-                <!-- course details start -->
-                <div class="col-lg-8 col-md-8">
-                    <div class="course-details">
-                        <div class="cs-thumb mb-5">
-                            <!--<img  [src]="getImage(post)"></div>-->
-                          <!--<img src="../../../assets/images/blog/blog-thumbnail4.jpg" alt="">-->  
-                         <!-- <img [src]="imageData" alt="Image">-->
-                         <img [src]="imageData" alt="">
-                       </div>
-                        <div class="cs-content">
-                            <div class="blog-top-meta">
+
+        <!-- Section Commentaires -->
+        <div class="comment-area">
+            <!-- Titre Commentaires -->
+            <h4 class="comment-title">Comments <span>({{ commentCount }})</span></h4>
+
+            <!-- Liste des Commentaires -->
+            <ul class="comment-list" *ngFor="let comment of post.comments">
+                <li class="comment-info-inner">
+                    <article>
+                        <div class="comment-thumb">
+                            <img src="../../../assets/images/author/cs-comment-auth1.jpg" alt="image">
+                        </div>
+                        <div class="comment-content">
+                            <h4>Tomas</h4>
+                            <a (click)="deleteComment(comment)"><span class="delete-icon">&#10060;</span></a>
+                            <p>{{comment.content}}</p>
+                            <div class="cs-cmnt-meta">
                                 <ul>
-                                    <li><i class="fa fa-tag"></i> CSE , GMAT</li>
-                                    <li><i class="fa fa-comment-o"></i>({{ commentCount }}) <span>Comments</span></li>                              
-                                    
-                                    <!--Number of like-->
-                                     <li><i class="fa fa-heart" (click)="onLikeClick()"></i><span class="ml-2"><strong>{{ likeCount }}Likes</strong></span></li>   
-                                    <!--End Number of like-->
-                                    <li><i class="fa fa-thumbs-down"(click)="onDislikClick()"></i><span class="ml-2"><strong>{{ dislikeCount }}DisLikes</strong></span></li>   
+                                    <li>{{comment.publishedAt}}</li>
                                 </ul>
-                            </div> 
-                            <h3 class="mb-4" style="color:#cd2122">{{post.title}}</h3>
-                            <p>{{post.content}}</p>
-                            <div class="cs-post-share">
-                                <div class="row align-items-center">
-                                    <div class="col-lg-5 col-md-12 col-sm-8">
-                                        <div class="tags">
-                                            <h4> <strong>TAG</strong></h4>
-                                            <ul class="list-inline">
-                                                <li><a href="#">Marketing</a></li>
-                                                <li><a href="#">Adda</a></li>
-                                                <li><a href="#">Cafe</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7 col-md-12 col-sm-4">
-                                        <div class="cs-share-right">
-                                            <ul class="cs-social">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- post autohr info -->
-                            <div class="post-author-info">
-                                <div class="thumb">
-                                    <img src="../../../assets/images/author/cs-post-author1.jpg" alt="image">
-                                </div>
-                                <div class="fix" >
-                                   <!-- <p>Aenean id ullamcorper libero. Vestibulum imperdiet nibh vel magna lacinia ultrices. Sed id interdum urna. onsectetur adipiscing elit. faucibus risus, a euismod lorem hendrerit ac nisi</p>--> 
-                                    <ul class="social">
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                    </ul>
-                                </div>
+                                <a href="#">REPLY <i class="fa fa-long-arrow-right"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <!-- comments area end -->
-                    <div class="comment-area">
-                        <h4 class="comment-title">Comments <span>({{ commentCount }})</span></h4>
-                        <ul class="comment-list"   *ngFor="let comment of post.comments">
-                            <li class="comment-info-inner">
-                                <article>
-                                    <div class="comment-thumb">
-                                        <img src="../../../assets/images/author/cs-comment-auth1.jpg" alt="image">
-                                    </div>
-                                    <div class="comment-content">
-                                        <h4>Tomas</h4>
-                                       <a  (click)="deleteComment(comment)"> <span class="delete-icon">&#10060;</span></a>
+                    </article>
+                </li>
+            </ul>
 
-                                        <p>{{comment.content}}</p>
-                                        <div class="cs-cmnt-meta">
-                                            <ul>
-                                                <li>{{comment.publishedAt}}</li>
-                                                <li><span>BY</span> Alebert dos</li>
-                                            </ul>
-                                            <a href="#">REPLY <i class="fa fa-long-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </article>
-                             <!--
-                                <ul class="children">
-                                    <li class="comment-info-inner">
-                                        <article>
-                                            <div class="comment-thumb">
-                                                <img src="../../../assets/images/author/cs-comment-auth2.jpg" alt="image">
-                                            </div>
-                                            <div class="comment-content">
-                                                <h4>John doe</h4>
-                                                <p>Ed id interdum urna. Nam ac elit a ante commodo tristique. Duis lacus urna, condimentum a vehicula a, hendrerit ac nisi Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                                                <div class="cs-cmnt-meta">
-                                                    <ul>
-                                                        <li>AUGUST 6, 2018</li>
-                                                        <li><span>BY</span> Alebert dos</li>
-                                                    </ul>
-                                                    <a href="#">REPLY <i class="fa fa-long-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </li>
-                                </ul>
-                             -->   
-                            </li>
-
-                        </ul>
-                         <!-- leave comment area start -->
-                    <div class="leave-comment-area">
-                        <h4 class="comment-title">Leave Your Comment</h4>
-                        <form  #f="ngForm">
-                            <textarea name="msg" id="msg" placeholder="Your message here" name="content"  ngModel #content="ngModel"></textarea>
-                            <button  class="btn btn-primary btn-round"  type="submit" (click)="addComment(f.value)">Post Comment <i class="fa fa-long-arrow-right"></i></button>
-                        </form>
-                    </div>
-                    <!-- leave comment area end -->
-                    </div>
-                    <!-- comments area end -->
-                </div>
-                <!-- course details end -->
-
-                <!-- sidebar start -->
-                <div class="col-lg-4 col-md-4">
-                    <div class="sidebar">
-                        <!-- widget nstructor start -->
-                        <div class="widget widget-search">
-                            <h4 class="widget-title">Search</h4>
-                            <form>
-                                <input type="text" name="search" placeholder="Search...">
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
-                        <!-- widget nstructor end -->
-                        <!-- widget offer start -->
-                        <div class="widget widget-category">
-                            <h4 class="widget-title">Categories</h4>
-                            <ul class="list">
-                                <li><a href="#">GMAT</a></li>
-                                <li><a href="#">BUSINESS</a></li>
-                                <li><a href="#">CSE</a></li>
-                                <li><a href="#">PYTHON</a></li>
-                                <li><a href="#">IELTS</a></li>
-                            </ul>
-                        </div>
-                        <!-- widget offer end -->
-                        <!-- widget course start -->
-                        <div class="widget widget-course">
-                            <h4 class="widget-title">Popular Posts</h4>
-                            <div class="course-list">
-                                <div class="w-cs-single">
-                                    <img src="../../../assets/images/course/cs-small-thumb1.jpg" alt="image">
-                                    <div class="fix">
-                                         <p><a href="#">Ui / Ux Design</a></p>
-                                        <span><i class="fa fa-clock-o"></i> AUGUST 6, 2017</span>
-                                    </div>
-                                </div>
-                                <div class="w-cs-single">
-                                    <img src="../../../assets/images/course/cs-small-thumb2.jpg" alt="image">
-                                    <div class="fix">
-                                         <p><a href="#">Learn Java</a></p>
-                                        <span><i class="fa fa-clock-o"></i> AUGUST 6, 2017</span>
-                                    </div>
-                                </div>
-                                <div class="w-cs-single">
-                                    <img src="../../../assets/images/course/cs-small-thumb3.jpg" alt="image">
-                                    <div class="fix">
-                                         <p><a href="#">C++</a></p>
-                                        <span><i class="fa fa-clock-o"></i> AUGUST 6, 2017</span>
-                                    </div>
-                                </div>
-                                <div class="w-cs-single">
-                                    <img src="../../../assets/images/course/cs-small-thumb4.jpg" alt="image">
-                                    <div class="fix">
-                                         <p><a href="#">Seo</a></p>
-                                        <span><i class="fa fa-clock-o"></i> AUGUST 6, 2017</span>
-                                    </div>
-                                </div>
-                                <div class="w-cs-single">
-                                    <img src="../../../assets/images/course/cs-small-thumb5.jpg" alt="image">
-                                    <div class="fix">
-                                         <p><a href="#">Python</a></p>
-                                        <span><i class="fa fa-clock-o"></i> AUGUST 6, 2017</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- widget course end -->
-                        <!-- widget course start -->
-                        <div class="widget widget-subscribe">
-                            <h4 class="widget-title">Subcribe</h4>
-                            <div class="subscribe">
-                                <p>Subscribe to my Newsletter</p>
-                                <form>
-                                    <input type="email" name="email" placeholder="Email address">
-                                    <button type="submit">Subscribe</button>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- widget course end -->
-                        <!-- widget course start -->
-                        <div class="widget widget-tag">
-                            <h4 class="widget-title">Tag Cloud</h4>
-                            <ul class="widget-tags">
-                                <li><a href="#">Marketing</a></li>
-                                <li><a href="#">Cactus</a></li>
-                                <li><a href="#">Indoor</a></li>
-                                <li><a href="#">Plants</a></li>
-                                <li><a href="#">Potted</a></li>
-                                <li><a href="#">Business Event</a></li>
-                                <li><a href="#">Cafe</a></li>
-                            </ul>
-                        </div>
-                        <!-- widget course end -->
-                    </div>
-                </div>
-                <!-- sidebar end -->
+            <!-- Zone de Commentaire -->
+            <div class="leave-comment-area">
+                <h4 class="comment-title">Leave Your Comment</h4>
+                <form #f="ngForm">
+                    <textarea name="msg" id="msg" placeholder="Your message here" name="content" ngModel #content="ngModel"></textarea>
+                    <button class="btn btn-primary btn-round" type="submit" (click)="addComment(f.value)">Post Comment <i class="fa fa-long-arrow-right"></i></button>
+                </form>
             </div>
+            <!-- Fin Zone de Commentaire -->
         </div>
+        <!-- Fin Section Commentaires -->
     </div>
-    <!-- course area end -->
 
+</body>
+</html>

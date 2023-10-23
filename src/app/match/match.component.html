@@ -1,32 +1,32 @@
 <app-header></app-header>
-<div class="container-fluid">
-
+<div class="container-fluid mb-5">
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form action="#">
                 <h1>Formulaire Partenaire</h1>
-
-                <input type="text" placeholder="Nom de la société" />
-                <input type="text" placeholder="Adresse de la Société" />
-                <input type="text" placeholder="Site Web de la Société" />
-                <input type="number" id="budget" name="budget" placeholder="Entrez le budget" />
-
+                <label>Nom de la sociéte</label>
+                <input id="nom" name="nom" [(ngModel)]="demande.nom" type="text" required>
+                <label>Adresse de la sociéte</label>
+                <input id="adresse" name="adresse" [(ngModel)]="demande.adresse" type="text" required>
+                <label>E-mail</label>
+                <input id="siteWeb" name="siteWeb" [(ngModel)]="demande.siteWeb" type="text" required>
+                <label>Budget</label>
+                <input id="budget" name="budget" [(ngModel)]="demande.budget" type="text" required>
+               
 
                 <fieldset style="margin-bottom: 20px;">
-                    <label for="Durée du partenariat" class="form-label">Durée du partenariat</label>
-                    <select name="Durée du partenariat" class="form-select" aria-label="Default select example" id="choosePartenariat">
-
-                        <option value="à court terme">à court terme</option>
-                        <option value="à moyen terme">à moyen terme</option>
-                        <option value="à long terme">à long terme</option>
-                        <!-- Ajoutez d'autres types de partenariat ici -->
-                    </select>
-
-            </fieldset>
-
-            <fieldset style="margin-bottom: 20px;">
-                <label for="choosePartenariat" class="form-label">Type de Partenariat</label>
-                <select name="Partenariat" class="form-select" aria-label="Default select example" id="choosePartenariat">
+                  <label for="duree" class="form-label">Durée du partenariat</label>
+                  <select name="duree" class="form-select" [(ngModel)]="demande.dure" name="duree" aria-label="Default select example">
+                    <option value="à court terme">à court terme</option>
+                    <option value="à moyen terme">à moyen terme</option>
+                    <option value="à long terme">à long terme</option>
+                    <!-- Ajoutez d'autres types de partenariat ici -->
+                  </select>
+                </fieldset>
+          
+                <fieldset style="margin-bottom: 20px;">
+                  <label for="typePart" class="form-label">Type de Partenariat</label>
+                  <select name="typePart" class="form-select" [(ngModel)]="demande.typePart" name="typePart" aria-label="Default select example">
                     <option value="Marketing">Marketing</option>
                     <option value="Technologie">Technologie</option>
                     <option value="Finance">Finance</option>
@@ -40,49 +40,66 @@
                     <option value="Recherche">Recherche</option>
                     <option value="Autre">Autre</option>
                     <!-- Ajoutez d'autres types de partenariat ici -->
-                </select>
-            </fieldset>
+                  </select>
+                </fieldset>
 
-
-
-                <button>Envoyer Match</button>
+                <button routerLink="/document" (click)="addDemande(demande)">Envoyer Match</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form #f="ngForm" (ngSubmit)="addRecruteur(f.value)">
                 <h1>Formulaire Recruteur</h1>
-                <input type="nom" placeholder="Nom" />
-                <input type="Prenom" placeholder="Prenom" />
-                <input type="email" placeholder="Email" />
-                <input type="tel" placeholder="Téléphone" />
-
-                <!-- Partie de la date de disponibilité -->
-         <fieldset style="margin-bottom: 20px;">
-
-            <label for="disponibilite" class="form-label">Sélectionnez la date de disponibilité :</label>
-         <input type="date" id="disponibilite" name="disponibilite">
-        </fieldset>
-
+                <div class="question">
+                    <label>Nom</label>
+                  <input id="nom" name="nom" [(ngModel)]="recruteur.nom" type="text" required>
+                 
+                </div>
+                <div class="question">
+                    <label>Prénom</label>
+                  <input id="prenom" name="prenom" [(ngModel)]="recruteur.prenom" type="text" required>
+                  
+                </div>
+                <div class="question">
+                    <label>Email</label>
+                  <input id="email" name="email" [(ngModel)]="recruteur.email" type="email" required>
+                  
+                </div>
+                <div class="question">
+                    <label>Téléphone</label>
+                  <input id="telephone" name="telephone" [(ngModel)]="recruteur.telephone" type="tel" required>
+                </div>
                 <fieldset style="margin-bottom: 20px;">
-                    <label for="recruteur" class="form-label">Type de recruteur</label>
-                    <select name="recruteur" class="form-select" aria-label="Default select example" id="recruteur">
-                        <option value="CDI">CDI (Contrat à Durée Indéterminée)</option>
-                        <option value="CDD">CDD (Contrat à Durée Déterminée)</option>
-                        <option value="Stage">Stage</option>
-                        <option value="Freelance">Freelance</option>
-                        <option value="Intérim">Intérim</option>
-                        <option value="Indépendant">Indépendant</option>
-                        <option value="Consultant">Consultant</option>
-                        <option value="Apprentissage">Apprentissage</option>
-                        <option value="Bénévole">Bénévole</option>
-                        <option value="Volontaire">Volontaire</option>
-                        <option value="Autre">Autre</option>
-                        <!-- Ajoutez d'autres types de recruteur ici -->
+                    <label for="choosePartenariat" class="form-label">Durée du contratt</label>
+                    <select id="dure" name="dure" [(ngModel)]="recruteur.dure" required>
+                        <option value="1 mois">1 mois</option>
+                        <option value="3 mois">3 mois</option>
+                        <option value="6 mois">6 mois</option>
+                        <option value="1 an">1 an</option>
+                        <option value="Plus d'un an">Plus d'un an</option>
                     </select>
+                  </fieldset>
+                  
+                  
+                <fieldset style="margin-bottom: 20px;">
+                  <label for="typeRec" class="form-label">Type de recruteur</label>
+                  <select id="typeRec" name="typeRec" [(ngModel)]="recruteur.typeRec" required>
+                    <option value="CDI">CDI (Contrat à Durée Indéterminée)</option>
+                    <option value="CDD">CDD (Contrat à Durée Déterminée)</option>
+                    <option value="Stage">Stage</option>
+                    <option value="Freelance">Freelance</option>
+                    <option value="Intérim">Intérim</option>
+                    <option value="Indépendant">Indépendant</option>
+                    <option value="Consultant">Consultant</option>
+                    <option value="Apprentissage">Apprentissage</option>
+                    <option value="Bénévole">Bénévole</option>
+                    <option value="Volontaire">Volontaire</option>
+                    <option value="Autre">Autre</option>
+                    <!-- Ajoutez d'autres types de recruteur ici -->
+                  </select>
                 </fieldset>
-
-                <button>Envoyez Match</button>
-            </form>
+                <button routerLink="/document" (click)="addRecruteur(f.value)" type ="submit">Envoyez Match</button>
+              </form>
+              
         </div>
         <div class="overlay-container">
             <div class="overlay">

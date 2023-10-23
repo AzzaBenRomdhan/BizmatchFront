@@ -28,11 +28,15 @@ export class EntrepriseService {
   uploadPhoto(formData: FormData): Observable<{ photo: string }> {
     return this.http.post<{ photo: string }>(`${this.url}/upload-file`, formData);
   }
-  
-  // Function to add an enterprise to your backend
+
   addEntreprise(entreprise: Entreprise): Observable<Entreprise> {
-    return this.http.post<Entreprise>(`${this.url}/addavecImage`, entreprise);
+    return this.http.post<Entreprise>(`${this.url}/add`, entreprise);
   }
+
+  add(formData: FormData): Observable<Entreprise> {
+    return this.http.post<Entreprise>(`${this.url}/add`, formData);
+  }
+  
   updateEntreprise(entreprise: Entreprise): Observable<void> {
     return this.http.put<void>(`${this.url}/edit`, entreprise);
   }
@@ -46,6 +50,11 @@ export class EntrepriseService {
     return this.http.get<Entreprise[]>(this.url);
   }
   
-  
+  messageNotif(id:number){
+    return this.http.request('GET',`${this.url + '/meilleurMatch'}/${id}`, { responseType: 'text' });
+  }
+
+
+
   constructor(private http: HttpClient) { }
 }

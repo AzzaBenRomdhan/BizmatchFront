@@ -1,64 +1,56 @@
 <!-- @TODO: Move away from custom props before injecting the polyfill, as it can't handle it -->
 <app-header></app-header>
-<input type="checkbox" id="debug" />
-
 <header>
 	<div>
-		<h1>Vos candidature</h1>
-		<p>👇 Défilez en bas.</p>
+	  <h1>Vos candidatures</h1>
+	  <p>👇 Défilez en bas.</p>
 	</div>
-</header>
-<main>
-	<ul id="cards">
-		<li class="card" id="card_1">
-			<div class="card__content">
-				<div>
-					<h2>Candidature 1</h2>
-					<p>Les infos de la candidature avec l'image de la sociéte que vous avez matcher avec</p>
-					<p><a href="#top" class="btn btn--accent">Supprimer</a></p>
-				</div>
-				<figure>
-					<img src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-1.jpg" alt="Image description">
-				</figure>
-			</div>
-		</li>
-		<li class="card" id="card_2">
-			<div class="card__content">
-				<div>
-					<h2>Candidature 2</h2>
-					<p>Les infos de la candidature avec l'image de la sociéte que vous avez matcher avec</p>
-					<p><a href="#top" class="btn btn--accent">Supprimer</a></p>
-				</div>
-				<figure>
-					<img src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-2.jpg" alt="Image description">
-				</figure>
-			</div>
-		</li>
-		<li class="card" id="card_3">
-			<div class="card__content">
-				<div>
-					<h2>Candidature 3</h2>
-					<p>Les infos de la candidature avec l'image de la sociéte que vous avez matcher avec</p>
-					<p><a href="#top" class="btn btn--accent">Supprimer</a></p>
-				</div>
-				<figure>
-					<img src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-3.jpg" alt="Image description">
-				</figure>
-			</div>
-		</li>
-		<li class="card" id="card_4">
-			<div class="card__content">
-				<div>
-					<h2>Candidature 4</h2>
-					<p>Les infos de la candidature avec l'image de la sociéte que vous avez matcher avec</p>
-					<p><a href="#top" class="btn btn--accent">Supprimer</a></p>
-				</div>
-				<figure>
-					<img src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-2.jpg" alt="Image description">
-				</figure>
-			</div>
-		</li>
-	</ul>
-</main>
+  </header>
+  <main>
+<ul id="cards">
+  <li class="card" *ngFor="let demande of demandes">
+    <div class="card__content">
+      <div>
+        <h2>{{ demande.nom }}</h2>
+		<p>{{ demande.siteWeb}}</p>
+		<p>{{ demande.adresse}}</p>
+		<p>{{ demande.dure}}</p>
+		<p>{{ demande.budget }}</p>
+		<p>{{ demande.typePart }}</p>
+
+        <!-- Autres données de demande ici -->
+        <p><a routerLink="/document" class="btn btn--accent" (click)="deleteDemande(demande.id)">Supprimer</a></p>
+      </div>
+	  <figure>
+		<img src="./assets/images/partenaire.png" alt="Image description">
+	  </figure>
+      <figure>
+     
+      </figure>
+    </div>
+  </li>
+</ul>
+
+<ul id="cards">
+  <li class="card" *ngFor="let recruteur of recruteurs">
+    <div class="card__content">
+      <div>
+        <h2>{{ recruteur.nom }}</h2>
+		<p>{{ recruteur.prenom}}</p>
+        <p>{{ recruteur.email }}</p>
+		<p>{{ recruteur.telephone }}</p>
+		<p>{{ recruteur.dure}}</p>
+		<p>{{ recruteur.typeRec }}</p>
+		
+	
+        <!-- Autres données de recruteur ici -->
+		<p><a routerLink="/document" class="btn btn--accent" (click)="deleteRecruteur(recruteur.idR)">Supprimer</a></p>
+      </div>
+	  <figure>
+		<img src="./assets/images/recruteur.jpg" alt="Image description">
+	  </figure>
+    </div>
+  </li>
+</ul>
 
 <app-footer></app-footer>

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UploadImgService {
 
-  private baseUrl = 'http://localhost:9090/UploadImg'
+  private baseUrl = 'http://localhost:9094/UploadImg'
 
   constructor(private http: HttpClient) {this.http=http }
   uploadImage(idpostBlog: number, image: File): Observable<any> {

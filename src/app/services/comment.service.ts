@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CommentService {
 
-  baseUrl='http://localhost:9090/Comment'
+  baseUrl='http://localhost:9094/Comment'
 
   constructor(private http: HttpClient) {
     this.http=http;
@@ -24,7 +24,7 @@ export class CommentService {
     return this.http.get(`${this.baseUrl +'/NbCommentsPerPost'}/${idpostBlog}`)
   }
   CountTotComment() : Observable<any>{
-    return this.http.get('http://localhost:9090/Comment/nbr/total_Compments')
+    return this.http.get('http://localhost:9094/Comment/nbr/total_Compments')
   }
 
 }

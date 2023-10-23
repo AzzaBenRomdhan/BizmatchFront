@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { Like } from '../model/like';
 import { Dislike } from '../model/dislike';
 
-const baseUrl='http://localhost:9090/PostBlog'
+const baseUrl='http://localhost:9094/PostBlog'
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +42,7 @@ export class PostService {
     return this.http.get<number>(`${baseUrl}/lastidpost`);
   }
   deleteComment(idcomment: number, idpostBlog: number): Observable<void> {
-    return this.http.delete<void>(`http://localhost:9090/Comment/${idcomment}/${idpostBlog}`);
+    return this.http.delete<void>(`http://localhost:9094/Comment/${idcomment}/${idpostBlog}`);
   }
   deletePost(idUser:number, idpostBlog: number): Observable<void>{
     return this.http.delete<void>(`${baseUrl +'/delete'}/${idUser}/${idpostBlog}`);

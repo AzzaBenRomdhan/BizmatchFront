@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 
-const baseUrl='http://localhost:9090/LikeP'
+const baseUrl='http://localhost:9094/LikeP'
 
 @Injectable({
   providedIn: 'root'
@@ -15,17 +15,17 @@ export class LikeAndDislikeService {
   }
 
   NbDislikesPerPost(idpostBlog:any) : Observable<any>{
-    return this.http.get(`http://localhost:9090/Dislike/nbrDislike/${idpostBlog}`)
+    return this.http.get(`http://localhost:9094/Dislike/nbrDislike/${idpostBlog}`)
   }
 
 
   countTotalLikes() : Observable<any>{
-    return this.http.get('http://localhost:9090/LikeP/total_likes')
+    return this.http.get('http://localhost:9094/LikeP/total_likes')
   }
 
 
   countTotaDisLikes() : Observable<any>{
-    return this.http.get('http://localhost:9090/Dislike/total_dilikes')
+    return this.http.get('http://localhost:9094/Dislike/total_dilikes')
   }
 
 }
