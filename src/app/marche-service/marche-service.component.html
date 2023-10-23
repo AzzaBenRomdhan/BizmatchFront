@@ -1,11 +1,103 @@
 <app-header></app-header>
+<style>
+    /* CSS pour centrer le message */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .message-box {
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+/* barre de recherche */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  background: #0d2840;
+  font: 300 1em/1.5 "Lato", "Helvetica Neue", Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+  padding: 2em 0;
+}
+body {
+  max-width: 20em;
+  margin: 0px auto;
+  padding: 2em;
+}
+h1 {
+  font-size: 4em;
+  margin-bottom: 0.5em;
+} 
+
+.custom-btn1 {
+  background-color: rgb(6, 173, 211); /* Votre couleur personnalisée */
+  color: white; /* Couleur du texte */
+  /* Autres styles personnalisés */
+}
+
+
+/* Search styles */
+
+#s {
+  background: rgba(0, 0, 0, 0.375)
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQBJREFUeNqslI0RgyAMhdENWIEVWMEVXIGO0BW6Ah2hHcGOoCPYEewINFzBe9IA9id37w4kfEZesHHOCSYUqSPJML+RJlELDwN1pMHxMZNMkr8RTgyz2YPH5LmtwXpIHkOFmKhIlxowDmYAycKnHAHYcTCsSpXOJCie6YWDnXKLGeHLN2stGaqDsXXrX3GFcYcLrfhjtKEhffQ792gYT2nT6pJDjCw4z7ZGdGipOIqNbXIwFUARmCbKpMfYxsWJBmCEDoW7+gYUTAU2s3HJrK3AJvMLkqGHFLgWXTckm+SfSQexs+tLRqwVfgvjgMsvMAT689S5M/sk/I14kO5PAQYAuk6L1q+EdHMAAAAASUVORK5CYII=)
+    no-repeat 14px 14px;
+  text-indent: 1em;
+  display: inline-block;
+  border: 0 none;
+  width: 0;
+  height: 3em;
+  border-radius: 3em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  outline: none;
+  padding: 1em 1.5em;
+  cursor: pointer;
+  -webkit-appearance: none;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  color: #f0f5f6;
+  vertical-align: baseline;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+#s:hover,
+#s:focus {
+  background: #04a2bd
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAT5JREFUeNqsVLtOw0AQtIMlRJHCEhUVMg398QEUSZnSfILzCXxDPsFu6XAJHWnTcS1lWsprKdmLxtKwvjVBYaTV7cm+udnX5fPb+yyBSmwhVmK/FfPZLyjUPhI8YtXYi23EOovs7PzyevAbsWeoGg5HNUHsCipX8F9TZDOstVgLPxIsxW6w3sHv6dJ2StkLbh6IPtR/AWRfSIET20H9D2U1hfaAgxY2KMagcBSmg9/rmwx0lBqTzGfHoVfVHxXgXzCjHNRHnnHke4vMGc2q0RBR0GSeCLlpLaJGFWKUszVuib32nih7iTFrjXAPyGnQ48c3Gu5AOVlMtMk6NZuf+FiC+AIhV0T+pBQ5ntXceIJKqKko2duJ2TwoLAz5QTVnagJaXWEO8y/wSMuKH9RTJoCTHyNZFidOUEfNu/8WYAAOXUT04MOtlwAAAABJRU5ErkJggg==)
+    10px 10px no-repeat;
+}
+
+#s:focus {
+  width: 100%;
+  cursor: text;
+}
+</style>
 <div class="page-heading">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
             <h4>Expansion des Marchés & Préstation de service</h4>
             <h2>Découverte des Marchés et préstation de service</h2>
-            <div class="border-button"><a href="home">Découvrez plus</a></div>
+            <a routerLink="/ajout-marche" class="btn custom-btn1">Ajouter Nouveau Marché</a>
+
           </div>
       </div>
     </div>
@@ -17,46 +109,26 @@
         <div class="col-lg-12">
           <form id="search-form" name="gs" method="submit" role="search" action="#">
             <div class="row">
-              <div class="col-lg-2">
-                <h4>Trier ces marchés par :</h4>
-              </div>
               <div class="col-lg-4">
-                  <fieldset>
-                    <select name="Category" class="form-select" aria-label="Default select example" id="chooseCategory" onChange="this.form.click()">
-                        <option selected>Catégories</option>
-                        <option value="technologie">Technologie</option>
-                        <option value="agroalimentaire">Agroalimentaire</option>
-                        <option value="services">Services</option>
-                        <option value="industrie">Industrie</option>
-                    </select>
-                  </fieldset>
-              </div>
-              <div class="col-lg-4">
-                  <fieldset>
-                    <select name="Distance" class="form-select" aria-label="Default select example" id="chooseDistance" onChange="this.form.click()">
-                        <option selected>Proximité géographique</option>
-                        <option value="1">Moins de 100 mètres</option>
-                        <option value="2">100 mètres - 500 mètres</option>
-                        <option value="3">500 mètres - 1 km</option>
-                        <option value="4">1 km - 5 km</option>
-                        <option value="5">Plus de 5 km</option>
-                    </select>
-
-                  </fieldset>
+                <input id="s" type="search" [(ngModel)]="offre.location">
               </div>
               <div class="col-lg-2">
-                  <fieldset>
-                      <button class="border-button">chercher</button>
-                  </fieldset>
+                <fieldset>
+                  <button class="border-button" (click)="getOffresByLocation()">Chercher</button>
+                </fieldset>
               </div>
             </div>
+            
+            
+          
           </form>
         </div>
       </div>
     </div>
   </div>
-  <div class="reservation-form">
-    <div class="container">
+  <div class="reservation-form"> 
+    <h2 class="message-box"><i class="fa-regular fa-face-laugh-beam fa-lg" style="color: #12bcdd;"></i> Selectionez Votre Destination et on va vous Guidez !  <i class="fa-solid fa-map-location-dot fa-lg" style="color: #0a7e08;"></i></h2>
+<div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div id="map">
@@ -73,101 +145,58 @@
                         <div class="section-heading text-center">
                             <h2>Offres de Services B2B de la Semaine</h2>
                             <p>Explorez les dernières offres de services dans différentes villes.</p>
+                            <a routerLink="/ajout-marche" class="btn btn-primary" >Ajouter Nouveau Marché</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="image">
-                                        <img src="assets/images/deals-01.jpg" alt="Offre de Service 1">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 align-self-center">
-                                    <div class="content">
-                                        <span class="info">*Offre Limitée au premieum</span>
-                                        <h4>Services Informatiques :</h4>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <i class="fa fa-globe"></i>
-                                                <span class="list">Développement de logiciels</span>
-
-
-                                            </div>
-                                            <div class="col-6">
-                                                <i class="fa fa-phone"></i>
-                                                <span class="list">Services de maintenance informatique</span>
-                                            </div>
-                                            <div class="col-6">
-                                                <i class="fa fa-globe"></i>
-                                                <span class="list">Conception de site web</span>
-                                            </div>
-                                            <div class="col-6">
-                                                <i class="fa fa-envelope"></i>
-                                                <span class="list">Abonnement premieum Populaire</span>
-                                            </div>
-                                        </div>
-                                        <p>Découvrez nos services informatiques de qualité .</p>
-                                        <div class="main-button">
-                                            <a routerLink="/abonnement">Faire une Réservation</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                           
+                    <div class="col-lg-6 col-sm-6" *ngFor="let offre of offres">
+                      <div class="item">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <div class="image">
+                              <img src="assets/images/deals-02.jpg" alt="Offre de Marché">
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="item">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="image">
-                                        <img src="assets/images/deals-02.jpg" alt="Offre de Service 2">
-                                    </div>
+                          </div>
+                          <div class="col-lg-6 align-self-center">
+                            <div class="content">
+                              <span class="info">Offre Marche</span>
+                              <h4>{{ offre.nomOffre }}</h4>
+                              <div class="row">
+                                <div class="col-6">
+                                  <i class="fa fa-globe"></i>
+                                  <span class="list">{{ offre.location }}</span>
                                 </div>
-                                <div class="col-lg-6 align-self-center">
-                                    <div class="content">
-                                        <span class="info">*Offre Limitée au Premium</span>
-                                        <h4>Services Marketing et Publicité :</h4>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <i class="fa fa-globe"></i>
-                                                <span class="list">Agences de marketing numérique</span>
-                                            </div>
-                                            <div class="col-6">
-                                                <i class="fa fa-phone"></i>
-                                                <span class="list">Agences de publicité</span>
-                                            </div>
-                                            <div class="col-6">
-                                                <i class="fa fa-globe"></i>
-                                                <span class="list">Gestionnaires de médias sociaux</span>
-                                            </div>
-                                            <div class="col-6">
-                                                <i class="fa fa-envelope"></i>
-                                                <span class="list">Abonnement premieum débutant</span>
-                                            </div>
-                                        </div>
-                                        <p>Optimisez votre marketing et publicité avec nos services de qualité.</p>
-                                        <div class="main-button">
-                                            <a routerLink="/abonnement">Faire une Réservation</a>
-                                        </div>
+                                <div class="row">
+                                  <div class="col-6">
+                                    <i class="fa fa-globe"></i>
+                                    <span class="list">{{ offre.detailsOffre }}</span>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-6">
+                                      <i class="fa fa-globe"></i>
+                                      <span class="list">{{ offre.capacite }}</span>
                                     </div>
-                                </div>
+                                    <div class="row">
+                                      <div class="col-6">
+                                        <i class="fa fa-globe"></i>
+                                        <span class="list">{{ offre.price }}</span>
+                                      </div>
+                              </div>
+                              <div class="main-button">
+                                <a routerLink="/abonnement">Faire une Réservation</a>
+                              </div>
                             </div>
+                          </div>
                         </div>
+                        
                     </div>
+                    
                     <!-- Vous pouvez ajouter plus d'offres de services ici en suivant la même structure -->
-                    <div class="col-lg-12">
-                        <ul class="page-numbers">
-                            <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
-                        </ul>
-                    </div>
+                    
                 </div>
             </div>
         </div>
-
+</div>
+</div>
        
    <app-footer><app-footer>

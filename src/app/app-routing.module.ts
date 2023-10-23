@@ -33,8 +33,11 @@ import { AllFormationComponent } from './learning/all-formation/all-formation.co
 
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
-import { DemandeComponent } from './demande/demande.component';
+import { AjoutMarcheComponent } from './ajout-marche/ajout-marche.component';
 import { NotifMatchComponent } from './notif-match/notif-match.component';
+import { DemandeComponent } from './demande/demande.component';
+
+
 
 
 
@@ -77,8 +80,8 @@ const routes: Routes = [
   
 
   {path:"Four",component:FournisseurComponent},
-  {path:"DetailsFour",component:FournisseurDetailsComponent}
-
+  { path: 'DetailsFour/:username',component:FournisseurDetailsComponent},
+  {path:'ajout-marche',component:AjoutMarcheComponent}
 
 
 ];

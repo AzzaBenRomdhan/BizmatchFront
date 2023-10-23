@@ -1,37 +1,35 @@
-import { Component, OnInit } from '@angular/core';
-import { OffreMarcheService } from '../services/offre-marche.service';
+import { Component } from '@angular/core';
 import { OffreMarche } from '../model/OffreMarche';
+import { OffreMarcheService } from '../services/offre-marche.service';
 
 @Component({
-  selector: 'app-marche-service',
-  templateUrl: './marche-service.component.html',
-  styleUrls: ['./marche-service.component.css']
+  selector: 'app-ajout-marche',
+  templateUrl: './ajout-marche.component.html',
+  styleUrls: ['./ajout-marche.component.css']
 })
-export class MarcheServiceComponent implements OnInit{
- 
-  offre: any = { location: '' }; // Initialisation avec une valeur par défaut
+export class AjoutMarcheComponent {
+  nouvelleOffre: OffreMarche = new OffreMarche(0, '', '', '', 0, 0);
 
+  
   offres: OffreMarche[] = [];
   constructor(private offreMarcheService: OffreMarcheService) { }
-
+  
   ngOnInit() {
     this.offreMarcheService.getAllOffres().subscribe(data => {
       this.offres = data;
     });
   }
   createOffre(): void {
-    const nouvelleOffre: OffreMarche = {
-      location: '',
-      nomOffre: '',
-      detailsOffre: '',
-      capacite: 0,
-      idoffre: 0 ,
-      price: 0 ,
-    };
-  
-    this.offreMarcheService.createOffre(nouvelleOffre).subscribe(data => {
-      console.log('Offre créée :', data);
-    });
+    if (this.nouvelleOffre.location && this.nouvelleOffre.nomOffre && this.nouvelleOffre.detailsOffre && this.nouvelleOffre.capacite) {
+      this.offreMarcheService.createOffre(this.nouvelleOffre).subscribe(data => {
+        console.log('Offre créée :', data);
+        // Réinitialiser le formulaire après la création réussie
+        this.nouvelleOffre = new OffreMarche(0, '', '', '', 0, 0);
+      });
+    } else {
+      // Afficher un message d'erreur ou empêcher la soumission
+      console.log('Veuillez remplir tous les champs obligatoires.');
+    }
   }
   
 
@@ -67,12 +65,10 @@ export class MarcheServiceComponent implements OnInit{
     });
   }
 
-  getOffresByLocation(): void {
-    const location = this.offre.location; // Utilisez la valeur actuelle de l'emplacement
+  getOffresByLocation(location: string): void {
     this.offreMarcheService.getOffresByLocation(location).subscribe(data => {
       console.log('Offres par emplacement :', data);
     });
   }
-  
 
 }

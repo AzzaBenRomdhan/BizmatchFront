@@ -1,4 +1,4 @@
-<app-header></app-header> 
+<app-header></app-header>
 <style>
     * {
 	margin: 0;
@@ -44,16 +44,35 @@ body {
 		transform: translatey(-15%) scale(1.35);
 	}
 }
+
+.custom-alert {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-success {
+  background-color: #4CAF50; /* Couleur verte pour le succès */
+  color: #fff; /* Texte en blanc */
+}
+
+.custom-error {
+  background-color: #FF5733; /* Couleur rouge pour l'erreur */
+  color: #fff; /* Texte en blanc */
+}
+
 /* styles.css */
 .formulaire-container {
-  max-width: 600px;
+  max-width: 400px;
   position: absolute;
   top: 20px; /* Corrigez la valeur "15" pour le positionnement vertical souhaité */
   right: 0;
   padding: 80px;
   border: 8px solid #ccc;
   border-radius: 8px;
-  height: inherit;
+  height: 90;
   background-image: url('assets/images/Collab-bro.png');
   background-size: cover; /* Ajustez la taille de l'image à la div */
   background-repeat: no-repeat; /* Empêche la répétition de l'image */
@@ -77,56 +96,100 @@ body {
   border: none;
 }
 
+/* barre de recherche */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  background: #0d2840;
+  font: 300 1em/1.5 "Lato", "Helvetica Neue", Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+  padding: 2em 0;
+}
+body {
+  max-width: 20em;
+  margin: 0px auto;
+  padding: 2em;
+}
+h1 {
+  font-size: 4em;
+  margin-bottom: 0.5em;
+}
+
+/* Search styles */
+
+#s {
+  background: rgba(0, 0, 0, 0.375)
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQBJREFUeNqslI0RgyAMhdENWIEVWMEVXIGO0BW6Ah2hHcGOoCPYEewINFzBe9IA9id37w4kfEZesHHOCSYUqSPJML+RJlELDwN1pMHxMZNMkr8RTgyz2YPH5LmtwXpIHkOFmKhIlxowDmYAycKnHAHYcTCsSpXOJCie6YWDnXKLGeHLN2stGaqDsXXrX3GFcYcLrfhjtKEhffQ792gYT2nT6pJDjCw4z7ZGdGipOIqNbXIwFUARmCbKpMfYxsWJBmCEDoW7+gYUTAU2s3HJrK3AJvMLkqGHFLgWXTckm+SfSQexs+tLRqwVfgvjgMsvMAT689S5M/sk/I14kO5PAQYAuk6L1q+EdHMAAAAASUVORK5CYII=)
+    no-repeat 14px 14px;
+  text-indent: 1em;
+  display: inline-block;
+  border: 0 none;
+  width: 0;
+  height: 3em;
+  border-radius: 3em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  outline: none;
+  padding: 1em 1.5em;
+  cursor: pointer;
+  -webkit-appearance: none;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  color: #f0f5f6;
+  vertical-align: baseline;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+#s:hover,
+#s:focus {
+  background: #05c9ec
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAT5JREFUeNqsVLtOw0AQtIMlRJHCEhUVMg398QEUSZnSfILzCXxDPsFu6XAJHWnTcS1lWsprKdmLxtKwvjVBYaTV7cm+udnX5fPb+yyBSmwhVmK/FfPZLyjUPhI8YtXYi23EOovs7PzyevAbsWeoGg5HNUHsCipX8F9TZDOstVgLPxIsxW6w3sHv6dJ2StkLbh6IPtR/AWRfSIET20H9D2U1hfaAgxY2KMagcBSmg9/rmwx0lBqTzGfHoVfVHxXgXzCjHNRHnnHke4vMGc2q0RBR0GSeCLlpLaJGFWKUszVuib32nih7iTFrjXAPyGnQ48c3Gu5AOVlMtMk6NZuf+FiC+AIhV0T+pBQ5ntXceIJKqKko2duJ2TwoLAz5QTVnagJaXWEO8y/wSMuKH9RTJoCTHyNZFidOUEfNu/8WYAAOXUT04MOtlwAAAABJRU5ErkJggg==)
+    14px 14px no-repeat;
+}
+
+#s:focus {
+  width: 100%;
+  cursor: text;
+}
+
 
 
 </style>
+<br>
+<br>
+<br>
 <div class="container">
-    
-    <div class="card">
-      <img src="https://lh3.googleusercontent.com/ytP9VP86DItizVX2YNA-xTYzV09IS7rh4WexVp7eilIcfHmm74B7odbcwD5DTXmL0PF42i2wnRKSFPBHlmSjCblWHDCD2oD1oaM1CGFcSd48VBKJfsCi4bS170PKxGwji8CPmehwPw=w200-h247-no" alt="Person" class="card__image">
-      <p class="card__name">Lily-Grace Colley</p>
-      <div class="grid-container">
   
-        <div class="grid-child-posts">
-          156 Post
-        </div>
-  
-        <div class="grid-child-followers">
-          1012 Likes
-        </div>
-  
-      </div>
-      <p>Rating: <span class="star-rating">
-		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
-		<input type="radio" name="rating" id="rate-1" value="1">
-		<label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
-		<input type="radio" name="rating" id="rate-2" value="2" checked>
-		<label for="rate-3" style="--i:3"><i class="fa-solid fa-star"></i></label>
-		<input type="radio" name="rating" id="rate-3" value="3">
-		<label for="rate-4" style="--i:4"><i class="fa-solid fa-star"></i></label>
-		<input type="radio" name="rating" id="rate-4" value="4">
-		<label for="rate-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
-		<input type="radio" name="rating" id="rate-5" value="5">
-	</span></p>
-     
-    <button class="btn draw-border" [routerLink]="['/DetailsFour']">Details</button>
+  <input id='s' type='search' [(ngModel)]="domaine" (input)="searchFournisseurs()">
 
-  
+    <p style="color: #121111;">Bonjour cher Utilisateurs. Cette section est dédiée à tous les types d'utilisateurs qui souhaitent ajouter et trouver des collaborations avec les fournisseurs.</p>
+    <i class="fa-solid fa-lightbulb fa-2xl" style="color: #ddba0e;"></i>
+  <div class="card" *ngFor="let fournisseur of fournisseurs">
+    <img src="https://lh3.googleusercontent.com/pZwZJ5HIL5iKbA91UGMUIPR0VJWa3K0vOGzDZmY6wU3EJBUdfsby3VEyxU162XxTyOyP3D154tjkr-4Jgcx8lygYUR8eB-jVmld4dsHi1c-mE_A8jKccseAG7bdEwVrcuuk6ciNtSw=s170-no" alt="Person" class="card__image">
+    <p class="card__name">{{ fournisseur.username }}</p>
+    <div class="grid-container">
+      <div class="grid-child-posts">
+        Offre : 
+       <br> {{ fournisseur.details }} 
+      </div>
+      <div class="grid-child-followers">
+        Domaines
+        {{ fournisseur.domainesactivite }} 
+      </div>
     </div>
-    <div class="card">
-      <img src="https://lh3.googleusercontent.com/oUUiPB9sq3ACq4bUaRmo8pgvC4FUpRRrQKcGIBSOsafawZfRpF1vruFeYt6uCfL6wGDQyvOi6Ez9Bpf1Fb7APKjIyVsft7FLGR6QqdRFTiceNQBm1In9aZyrXp33cZi9pUNqjHASdA=s170-no" alt="Person" class="card__image">
-      <p class="card__name">Murray Reeve</p>
-      <div class="grid-container">
-  
-        <div class="grid-child-posts">
-          305 Post
-        </div>
-  
-        <div class="grid-child-followers">
-          2643 Likes
-        </div>
-  
-      </div>
       <p>Rating: <span class="star-rating">
 		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
 		<input type="radio" name="rating" id="rate-1" value="1">
@@ -139,77 +202,88 @@ body {
 		<label for="rate-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
 		<input type="radio" name="rating" id="rate-5" value="5">
 	</span></p>
-    
-    <button class="btn draw-border" [routerLink]="['/DetailsFour']">Details</button>
+  
+  <button class="btn draw-border" [routerLink]="['/DetailsFour', fournisseur.username]">Details</button>
 
+</div>
+<div class="formulaire-container">
+  <h4 class="mb-4">
+    <i class="fa-solid fa-lightbulb" style="color: #f2e44a;"></i> Collaborez
+  </h4>
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom :</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fa-solid fa-user" > </i></span>
+        <input type="text" id="nom" name="nom" class="form-control" [(ngModel)]="fournisseurData.username">
+      </div>
     </div>
-    <div class="card">
-      <img src="https://lh3.googleusercontent.com/pZwZJ5HIL5iKbA91UGMUIPR0VJWa3K0vOGzDZmY6wU3EJBUdfsby3VEyxU162XxTyOyP3D154tjkr-4Jgcx8lygYUR8eB-jVmld4dsHi1c-mE_A8jKccseAG7bdEwVrcuuk6ciNtSw=s170-no" alt="Person" class="card__image">
-      <p class="card__name">Bianca Serrano</p>
-      <div class="grid-container">
-  
-        <div class="grid-child-posts">
-          902 Post
-        </div>
-  
-        <div class="grid-child-followers">
-          1300 Likes
-        </div>
-  
+    <div class="mb-3">
+      <label for="prenom" class="form-label">Prénom :</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fa-solid fa-user" style="color: #072f74;"></i></span>
+        <input type="text" id="prenom" name="prenom" class="form-control" [(ngModel)]="fournisseurData.prenom">
       </div>
-      <p>Rating: <span class="star-rating">
-		<label for="rate-1" style="--i:1"><i class="fa-solid fa-star"></i></label>
-		<input type="radio" name="rating" id="rate-1" value="1">
-		<label for="rate-2" style="--i:2"><i class="fa-solid fa-star"></i></label>
-		<input type="radio" name="rating" id="rate-2" value="2" checked>
-		<label for="rate-3" style="--i:3"><i class="fa-solid fa-star"></i></label>
-		<input type="radio" name="rating" id="rate-3" value="3">
-		<label for="rate-4" style="--i:4"><i class="fa-solid fa-star"></i></label>
-		<input type="radio" name="rating" id="rate-4" value="4">
-		<label for="rate-5" style="--i:5"><i class="fa-solid fa-star"></i></label>
-		<input type="radio" name="rating" id="rate-5" value="5">
-	</span></p>
-      
-    <button class="btn draw-border" [routerLink]="['/DetailsFour']">Details</button>
+    </div>
+    <div class="mb-3">
+      <label for="details" class="form-label" routerLink="DetailsFour">Détails :</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fa-solid fa-circle-info" style="color: #072f74;"></i></span>
+        <textarea id="details" name="details" class="form-control" [(ngModel)]="fournisseurData.details"></textarea>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="Domaine" class="form-label">Domaine :</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fa-brands fa-creative-commons-pd" style="color: #072f74;"></i></span>
+        <textarea id="Domaine" name="Domaine" class="form-control" [(ngModel)]="fournisseurData.domainesactivite"></textarea>
+      </div>
+    </div>
 
-    </div> 
-    <div class="formulaire-container">
-         <h1 class="mb-4">
-            <i class="fa-solid fa-lightbulb" style="color: #f2e44a;"></i> Collaborez
-  </h1>
-        <form>
-          <div class="mb-3">
-            <label for="nom" class="form-label">Nom :</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fa-solid fa-user" > </i></span>
-              <input type="text" id="nom" name="nom" class="form-control">
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="prenom" class="form-label">Prénom :</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fa-solid fa-user" style="color: #072f74;"></i></span>
-              <input type="text" id="prenom" name="prenom" class="form-control">
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="details" class="form-label" routerLink="DetailsFour">Détails :</label>
-            <div class="input-group">
-              <span class="input-group-text"><i class="fa-solid fa-circle-info" style="color: #072f74;"></i></span>
-              <textarea id="details" name="details" class="form-control"></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="details" class="form-label">Domaine :</label>
-            <div class="input-group">
-                <span class="input-group-text"><i class="fa-brands fa-creative-commons-pd" style="color: #072f74;"></i></span>
-                <textarea id="Domaine" name="Domaine" class="form-control"></textarea>
-              </div>
-            <button class="btn draw-border"> Confirmer</button>
-          </div>
-          </div>
-        </form>
+    <div class="mb-3">
+      <label for="Domaine" class="form-label">Email :</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fa-brands fa-creative-commons-pd" style="color: #072f74;"></i></span>
+        <textarea id="Domaine" name="Email" class="form-control" [(ngModel)]="fournisseurData.email"></textarea>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="Domaine" class="form-label">Address :</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fa-brands fa-creative-commons-pd" style="color: #072f74;"></i></span>
+        <textarea id="Domaine" name="Address" class="form-control" [(ngModel)]="fournisseurData.address"></textarea>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="Domaine" class="form-label">Partenaire :</label>
+      <div class="input-group">
+        <span class="input-group-text"><i class="fa-brands fa-creative-commons-pd" style="color: #072f74;"></i></span>
+        <textarea id="Domaine" name="Partenaire" class="form-control" [(ngModel)]="fournisseurData.partenaire"></textarea>
+      </div>
+    </div>
+    <button class="btn draw-border" type="submit">Confirmer</button>
+  </form>
+</div>
+
+      <!-- Alert en cas de succès -->
+      <div *ngIf="successAlert" class="alert alert-success">
+        <!-- Icône de succès (par exemple, une coche) -->
+        <i class="bi bi-check-circle"></i>
+        Cher fournisseur, votre offre est ajoutée avec succès.
       </div>
       
-  </div>
+      <div *ngIf="errorAlert" class="alert alert-danger">
+        <!-- Icône d'erreur (par exemple, une croix) -->
+        <i class="bi bi-x-circle"></i>
+        Une erreur s'est produite lors de l'ajout de votre offre.
+      </div>
+      
+
+  </div> 
+<br>
+<br>
+<br> 
+      
+   
   
 <app-footer></app-footer>
