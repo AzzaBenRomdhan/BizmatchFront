@@ -9,6 +9,8 @@ import { Demande } from '../model/Demande';
 export class DemandeService {
   
   private url = 'http://localhost:9093/demandeAchat';
+  private url2 = 'http://localhost:9093/entreprise';
+
 
   constructor(private http: HttpClient) {}
 
@@ -30,6 +32,15 @@ export class DemandeService {
 
   deleteDemande(id: number): Observable<void> {
     return this.http.delete<void>(`${this.url}/delete/${id}`);
+  }
+
+  getLastId(): Observable<number> {
+    return this.http.get<number>(`${this.url}/lastidpost`);
+  }
+
+  trouverMeilleurMatch(id: number){
+    return this.http.request('GET',`${this.url2}/meilleurMatch/${id}`, { responseType: 'text' });
+
   }
  
   

@@ -22,6 +22,7 @@ export class DialogElementsExampleDialogComponent {
     userEmail:'',
     userCode:'',
     role : [],
+    isPremium:false
   };
   UserNewPassword: UserNewPassword = {
     

@@ -22,6 +22,7 @@ constructor(private userService: UserService,private router: Router){}
     userEmail:'',
     userCode:'',
     role : [],
+    isPremium:false,
   };
 
   UserNewPassword: UserNewPassword = {

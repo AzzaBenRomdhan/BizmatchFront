@@ -45,6 +45,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatChipsModule} from '@angular/material/chips';
 import { AddObjectifComponent } from './objectifs/add-objectif/add-objectif.component';
 import { EntrepriseComponent } from './entreprise/entreprise.component';
+import { NgToastModule } from 'ng-angular-popup';
+import { FormationComponent } from './learning/formation/formation.component';
+import { AllFormationComponent } from './learning/all-formation/all-formation.component';
+import {MatListModule} from '@angular/material/list';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
 import { UploadFileService } from './services/upload-file.service';
@@ -83,6 +87,8 @@ import { DemandeComponent } from './demande/demande.component';
     AddObjectifComponent,
     
     EntrepriseComponent,
+          FormationComponent,
+          AllFormationComponent,
           FournisseurComponent,
           FournisseurDetailsComponent,
           NotifMatchComponent,
@@ -110,7 +116,9 @@ import { DemandeComponent } from './demande/demande.component';
     MatNativeDateModule,
     MatChipsModule,
 
-    ScheduleModule, RecurrenceEditorModule
+    ScheduleModule, RecurrenceEditorModule,
+    NgToastModule,
+    MatListModule
   ],
   providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService, UploadFileService ],
   bootstrap: [AppComponent]
