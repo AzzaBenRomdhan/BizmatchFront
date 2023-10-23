@@ -7,9 +7,10 @@ import { User } from '../model/User';
 export class UserAuthService {
   private username: string | null = null;
   private userEmail: string | null = null;
+  private currentUserRole!: string;
   user!: User;
   constructor() {}
-  
+
   setLoggedInUsername(username: string): void {
     this.username = username;
   }
@@ -28,10 +29,16 @@ export class UserAuthService {
     }
     return []; // Retourne un tableau vide si les rôles ne sont pas trouvés dans le localStorage.
   }
-  
+
 
   public setToken(jwtToken: string) {
     localStorage.setItem('jwtToken', jwtToken);
+  }
+
+
+  isUser(): boolean {
+    // Vérifiez si le rôle de l'utilisateur est "utilisateur" (ou tout autre rôle que vous utilisez).
+    return this.currentUserRole === 'utilisateur'; // Remplacez 'utilisateur' par le rôle réel.
   }
 
   public setUser(user: User) {
@@ -46,10 +53,11 @@ export class UserAuthService {
     return null;
   }
 
+
   public getToken(): string {
-    return localStorage.getItem('jwtToken') ?? ''; 
+    return localStorage.getItem('jwtToken') ?? '';
   }
-  
+
   public clear() {
     localStorage.clear();
   }

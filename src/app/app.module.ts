@@ -51,6 +51,8 @@ import { AllFormationComponent } from './learning/all-formation/all-formation.co
 import {MatListModule} from '@angular/material/list';
 import { FournisseurComponent } from './fournisseur/fournisseur.component';
 import { FournisseurDetailsComponent } from './fournisseur-details/fournisseur-details.component';
+import { AjoutMarcheComponent } from './ajout-marche/ajout-marche.component';
+
 import { UploadFileService } from './services/upload-file.service';
 import { NotifMatchComponent } from './notif-match/notif-match.component';
 import { DemandeComponent } from './demande/demande.component';
@@ -91,8 +93,10 @@ import { DemandeComponent } from './demande/demande.component';
           AllFormationComponent,
           FournisseurComponent,
           FournisseurDetailsComponent,
+          AjoutMarcheComponent,
           NotifMatchComponent,
           DemandeComponent,
+
   ],
   imports: [
     BrowserModule,

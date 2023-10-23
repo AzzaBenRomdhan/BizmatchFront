@@ -6,14 +6,14 @@
   grid-gap: 60px;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   background-color: #ffffff;
   font-family: "Baloo Paaji 2", cursive;
 }
 
 .card {
   background-color: #45a2be;
-  height: 25rem;
+  height: 20rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -167,5 +167,87 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   font-size: 1.2em;
-}
+} 
+
+
  
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  margin-top: 0; /* Ajout de cette ligne pour déplacer la barre de recherche en haut */
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+}
+
+input[type="search"] {
+  width: 100px;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-results {
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  background: #0d2840;
+  font: 100 1em/1.5 "Lato", "Helvetica Neue", Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+  padding: 2em 0;
+}
+body {
+  max-width: 20em;
+  margin: 0px auto;
+  padding: 2em;
+}
+h1 {
+  font-size: 4em;
+  margin-bottom: 0.5em;
+}
+
+/* Search styles */
