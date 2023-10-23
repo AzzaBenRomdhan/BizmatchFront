@@ -518,7 +518,7 @@ button, a {
   position: absolute;
   bottom: 16px;
   left: 16px;
-  font-size: 12px;
+  font-size: 11px;
 }
 .project-boxes.jsListView .box-progress-wrapper {
   order: 3;
